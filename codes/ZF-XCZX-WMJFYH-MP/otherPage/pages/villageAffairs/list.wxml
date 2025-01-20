@@ -1,0 +1,40 @@
+<!--otherPage/pages/villageAffairs/list.wxml-->
+<view class="page">
+  <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content">{{name?name:'“三资”公开'}}</view>
+  </cu-custom>
+  <view class="page-content">
+    <view class="shaixuanBox" style="top:{{CustomBar}}px;">
+      <view class="searchBox flex-l-c">
+        <view class="icon flex-c">
+          <van-icon name="search" size="38rpx" color="#3D3D3D" />
+        </view>
+        <input style="font-size: calc(28rpx * {{fontMultiple}});" type="text" bindinput="syncInputValue" placeholder="按标题名称搜索" value="{{kw}}" />
+      </view>
+    </view>
+    <view class="list">
+      <view class="item" wx:for="{{d}}" mark:item="{{item}}" catch:tap="goDetail">
+        <view class="tit">{{item.title}}</view>
+        <view class="time">发布于:{{item.pubTime}}</view>
+        <view class="flex-l-c mar-b-10">
+          <image class="icon" src="../../images/57.png" mode="widthFix" />发布来源：{{item.pubSource}}
+        </view>
+        <view class="flex-l-c mar-b-10">
+          <image class="icon" src="../../images/58.png" mode="widthFix" />发布人：{{item.pubUser}}
+        </view>
+        <view class="flex-l-c">
+          <image class="icon" src="../../images/59.png" mode="widthFix" />所属村镇：{{item.deptname}}
+        </view>
+
+        <view class="btn flex-c">查看详情</view>
+      </view>
+    </view>
+    <view class="no-data" wx:if="{{!kong}}">
+      <text>{{noData?'已经到底啦！~':'正在加载~'}}</text>
+    </view>
+    <view class="nodata" wx:if="{{kong}}">
+      <image src="../../images/empty2.png" mode="widthFix"></image>
+      <view>暂无数据~</view>
+    </view>
+  </view>
+</view>

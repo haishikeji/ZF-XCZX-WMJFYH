@@ -1,0 +1,47 @@
+<!--otherPage/pages/jinrongchaoshi/index.wxml-->
+<view class="page">
+    <cu-custom bgImage="/otherPage/images/jinrongchaoshi/01.png" isBack="{{true}}">
+        <view slot="content">金融超市</view>
+    </cu-custom>
+    <image class="bg" src="/otherPage/images/jinrongchaoshi/01.png" mode="widthFix"></image>
+
+    <view class="page-content">
+        <view class="banner">
+            <swiper class="swiper-box" autoplay="{{true}}" indicator-dots="{{false}}" indicator-color="#fff" indicator-active-color="#0AB481">
+                <block wx:for="{{banner}}" wx:key="*this" wx:if="{{item}}">
+                    <swiper-item>
+                        <image src="{{item.image}}" mode="aspectFill" />
+                    </swiper-item>
+                </block>
+                <block wx:if="{{!banner||banner.length==0}}">
+                    <swiper-item>
+                        <image src="/otherPage/images/jinrongchaoshi/02.png" mode="aspectFill" />
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+
+        <!-- <view class="banks">
+            <view class="banksItem" wx:for="{{grid}}" mark:item="{{item}}" catch:tap="goCateList">
+                <image src="{{item.icon}}" mode="aspectFit" />
+                <view>{{item.title}}</view>
+            </view>
+        </view> -->
+
+        <view class="list">
+            <view class="item" wx:for="{{d}}" catch:tap="goDetail" mark:item="{{item}}">
+                <image src="{{item.image}}" mode="aspectFill" />
+                <view class="tit line1">{{item.title}}</view>
+                <view class="dec line1">{{item.content||''}}</view>
+            </view>
+            <view class="no-data">
+                <text>{{noData?'已经到底啦！':'正在加载~'}}</text>
+            </view>
+        </view>
+        <view class="nodata" wx:if="{{d.length==0}}">
+            <image src="../../images/empty2.png" mode="widthFix"></image>
+            <view>暂无数据~</view>
+        </view>
+
+    </view>
+</view>

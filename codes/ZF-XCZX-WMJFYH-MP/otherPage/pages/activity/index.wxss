@@ -1,0 +1,158 @@
+/* pages/home/activity.wxss */
+.page {
+    background: #f6f6f6;
+    min-height: 100vh;
+}
+
+.page-content {
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+
+/* .searchview {
+    width: 100%;
+    background-color: #ffffff;
+    position: fixed;
+    left: 0;
+    top: 2rpx;
+    padding: 20rpx 30rpx;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.searchbar {
+    width: 690rpx;
+    height: 80rpx;
+    border: 2rpx solid #f7f7f7;
+    display: flex;
+    align-items: center;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    border-radius: 40rpx;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.searchbar image {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.searchbar input {
+    width: 410rpx;
+    font-size: 28rpx;
+}
+
+.searchbtn {
+    width: 154rpx;
+    height: 74rpx;
+    text-align: center;
+    line-height: 74rpx;
+    color: #ffffff;
+    font-size: 30rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbtn image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+} */
+
+
+.searchBox {
+    height: 80rpx;
+    background: #ffffff;
+    border-radius: 94rpx;
+    margin-bottom: 30rpx;
+}
+
+.searchBox .icon {
+    padding-left: 30rpx;
+    padding-right: 20rpx;
+    height: 100%;
+}
+
+.searchBox input {
+    height: 100%;
+    width: calc(100% - 88rpx);
+}
+
+.intro {
+    box-sizing: border-box;
+    padding-top: 0;
+}
+
+.intro image {
+    width: 100%;
+    margin-bottom: 10rpx;
+    background-color: #f7f7f7;
+}
+
+.activity-item {
+    /* display: flex; */
+    border-radius: 20rpx;
+    padding: 30rpx;
+    background: #fff;
+    align-items: center;
+    margin-bottom: 30rpx;
+}
+
+.activity-item image {
+    width: 220rpx;
+    height: 170rpx;
+    background-color: #f7f7f7;
+    border-radius: 10rpx;
+    margin-bottom: 0;
+}
+
+.activity-info {
+    /* width: 430rpx; */
+    /* min-height: 170rpx; */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.activity-title {
+    font-size: 32rpx;
+    color: #333333;
+    /* height: 120rpx; */
+    font-weight: 500;
+    color: #000000;
+    width: 100%;
+    margin-bottom: 20rpx;
+}
+
+.activity-time {
+    font-size: 24rpx;
+    color: #999;
+    text-align: right;
+    margin-top: 10rpx;
+    width: 100%;
+}
+
+.activity-time .icon {
+    width: 24rpx;
+    margin-right: 10rpx;
+}
+
+.activity-content {
+    font-size: 24rpx;
+    color: #000000;
+    margin-bottom: 20rpx;
+}
+
+.nodata {
+    position: relative;
+    height: 50vh;
+    background-color:none;
+    background:none;
+}

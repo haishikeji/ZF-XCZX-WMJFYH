@@ -1,0 +1,238 @@
+/* otherPage/pages/sunVillageAffairs/triplingAlarge/index.wxss */
+.page {
+	position: relative;
+}
+
+.topBox {
+	position: fixed;
+	left: 0rpx;
+	width: 100%;
+}
+
+.townBox {
+	height: 80rpx;
+	background: #ffffff;
+	border: 2rpx solid #f6f6f6;
+	padding: 0 30rpx;
+}
+
+.tabsBox {
+	height: 80rpx;
+	background: #ffffff;
+	line-height: 80rpx;
+	padding: 0 26rpx 0 40rpx;
+	width: calc(100% - 150rpx);
+	/* overflow-x: scroll; */
+	/* border: 1px solid; */
+}
+.tabsBoxTwo{
+	background: #ffffff;
+	line-height: 80rpx;
+	padding: 0 26rpx 0 40rpx;
+	width: 100%;
+	/* width: calc(100% - 150rpx); */
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.tabsTitle {
+	font-size: 28rpx;
+	font-family: PingFang SC, PingFang SC-400;
+	font-weight: 400;
+	text-align: center;
+	color: #999999;
+}
+
+.tabsTitleChoose {
+	font-size: 28rpx;
+	text-align: center;
+	font-family: PingFang SC, PingFang SC-500;
+	font-weight: 500;
+	color: #cf2b1e;
+	position: relative;
+}
+
+.tabsTitleChoose::after {
+	content: '';
+	position: absolute;
+	left: 20rpx;
+	bottom: 0;
+	width: 80%;
+	/* 线的长度小于文本长度的一个比例，可以根据需要调整 */
+	height: 4rpx;
+	/* 线的高度 */
+	background: #cf2b1e;
+	/* 线的颜色 */
+	transform: scaleX(0.5);
+	/* 线宽度的一半，可以根据需要调整 */
+}
+
+
+.chooseTitle {
+	padding: 0rpx 44rpx 0 0rpx !important;
+}
+
+.chooseCustom {
+	background-color: transparent !important;
+	box-shadow: 0rpx 0rpx 0rpx 0rpx !important;
+	margin-left: -5rpx !important;
+}
+
+.chooseCustom .van-ellipsis {
+	color: #CF2B1E !important;
+	font-size: 28rpx;
+}
+
+/*  */
+.dateBox {
+	width: 330rpx;
+	height: 80rpx;
+	background: #ffffff;
+	border-radius: 40rpx;
+	text-align: center;
+	position: relative;
+	/* margin-top: 110rpx; */
+}
+
+.dateMonthImg {
+	width: 26rpx;
+	height: 26rpx;
+}
+
+.dateImg {
+	width: 12rpx;
+	height: 12rpx;
+	position: absolute;
+	right: 30rpx;
+}
+
+/*  */
+.listBigBox {
+	position: fixed;
+	left: 0rpx;
+	overflow-y: scroll;
+	padding-bottom: 30rpx;
+	width: 100%;
+}
+
+.listBox {
+	padding: 30rpx;
+	background: #ffffff;
+	border-radius: 20rpx;
+	margin: 30rpx 30rpx 0rpx 30rpx;
+}
+
+.listImg {
+	width: 28rpx;
+	height: 28rpx;
+}
+
+.showBox {
+	width: 150rpx;
+	height: 80rpx;
+	background: #ffffff;
+	box-shadow: -2rpx 0rpx 0rpx 0rpx rgba(0, 0, 0, 0.15);
+	text-align: center;
+	line-height: 80rpx;
+	position: fixed;
+	right: 0rpx;
+}
+.showBoxTwo{
+	width: 150rpx;
+	height: 80rpx;
+	background: #ffffff;
+	/* box-shadow: -2rpx 0rpx 0rpx 0rpx rgba(0, 0, 0, 0.15); */
+	text-align: center;
+	line-height: 80rpx;
+	position: absolute;
+	right: 0rpx;
+	bottom: 0rpx;
+}
+
+.showImg {
+	width: 28rpx;
+	height: 28rpx;
+}
+
+.resultBox {
+	border-top: 2rpx solid #F6F6F6;
+	margin-top: 24rpx;
+	padding-top: 22rpx;
+}
+
+.resultBtn {
+	width: 96rpx;
+	height: 40rpx;
+	background: #ecffef;
+	border-radius: 10rpx;
+	font-family: PingFang SC, PingFang SC-400;
+	font-weight: 400;
+	text-align: center;
+	color: #02986b;
+	line-height: 40rpx;
+}
+.noresultBtn {
+	width: 106rpx;
+	height: 40rpx;
+	background: #FFF3F2;
+	border-radius: 10rpx;
+	font-family: PingFang SC, PingFang SC-400;
+	font-weight: 400;
+	text-align: center;
+	color: #CF2B1E;
+	line-height: 40rpx;
+}
+/*  */
+.videoBox {
+	height: 140rpx;
+	background: linear-gradient(100deg, #ed5441, #f45f4c 100%);
+	border-radius: 30rpx 30rpx 0px 0px;
+	box-sizing: border-box;
+	padding: 30rpx 20rpx 30rpx 30rpx;
+	position: fixed;
+	bottom: 0rpx;
+	left: 0rpx;
+	width: 100%;
+}
+
+.videoImg {
+	width: 76rpx;
+	height: 76rpx;
+}
+
+.line {
+	width: 2rpx;
+	height: 68rpx;
+	border: 2rpx solid rgba(255, 255, 255, 0.50);
+	margin: 4rpx 0;
+}
+
+.beginBtn {
+	width: 100rpx;
+	height: 36rpx;
+	background: #fa523d;
+	border: 2rpx solid #ffffff;
+	border-radius: 10rpx;
+	text-align: center;
+	line-height: 36rpx;
+}
+
+.joinBtn {
+	width: 120rpx;
+	height: 56rpx;
+	background: #ffffff;
+	border-radius: 28rpx;
+	text-align: center;
+	line-height: 56rpx;
+	z-index: 99;
+	margin: 12rpx 0 0 70rpx;
+}
+
+.backImg {
+	width: 112rpx;
+	height: 124rpx;
+	position: fixed;
+	bottom: 4rpx;
+	right: 138rpx;
+	z-index: 1;
+}

@@ -1,0 +1,67 @@
+/* otherPage/pages/sunVillageAffairs/collectiveMoney/threeIndex.wxss */
+.oneBox {
+	height: 180rpx;
+	background: linear-gradient(107deg, #ed5441, #f45f4c 100%);
+	border-radius: 20rpx;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.oneContent {
+	padding-top: 18rpx;
+}
+
+.font-tc {
+	font-family: PingFang TC, PingFang TC-400;
+}
+
+.oneMoney {
+	font-size: 40rpx;
+	font-family: D-DIN Exp, D-DIN Exp-400;
+	text-align: center;
+}
+
+.twoMoneyLine {
+	padding: 0 30rpx;
+	border-left: 2rpx solid #fff;
+	border-right: 2rpx solid #fff;
+}
+
+/*  */
+.twoBox {
+	background: #ffffff;
+	border-radius: 20rpx;
+	padding: 30rpx;
+}
+
+.policyLine {
+	width: 8rpx;
+	height: 32rpx;
+	background: #cf2b1e;
+	border-radius: 8rpx;
+}
+
+.txtCF {
+	color: #cf2b1e;
+}
+
+
+/*  */
+.nameImg {
+	width: 88rpx;
+	height: 88rpx;
+}
+
+.listLine {
+	padding-bottom: 30rpx;
+	border-bottom: 2rpx solid #F6F6F6;
+}
+
+.listLine:last-child {
+	padding-bottom: 0rpx;
+	border-bottom: none;
+}
+
+.txt481 {
+	color: #0ab481;
+}

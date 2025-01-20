@@ -1,0 +1,107 @@
+<!--pages/home/integral/index.wxml-->
+
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content">我要兑换</view>
+</cu-custom>
+<!-- <view class="jifenview">
+    <view>我的积分：<text>{{myScore}}</text></view>
+    <view class="" bindtap="gorecord">兑换记录</view>
+</view> -->
+<!-- <view class="tabnav">
+  <block wx:for="{{shopData}}" wx:key='item'>
+    <view class="tabnav-one">
+      {{item.name}}
+    </view>
+  </block>
+</view> -->
+
+<!-- <view class="tabnav">
+  <view bindtap="allShop" class="tabnavone {{(activeFlag==null)?'active':''}}">全部</view>
+  <block wx:for="{{shopData}}" wx:key='item'>
+    <view class="tabnavone {{(activeFlag==item.id)?'active':''}}" bindtap="tabnav" data-id="{{item.id}}">{{item.name}}</view>
+  </block>
+</view> -->
+
+<!-- <l-segment bind:linchange="changeTabs" active-key="0" active-color="#2A78FF" scrollable="{{true}}" even="{{true}}" l-class='l-segment'>
+    <block wx:for="{{shopData}}" wx:key='item'>
+        <l-segment-item tab="{{item.name}}" key="{{index}}" />
+    </block>
+</l-segment> -->
+
+<view class="page">
+    <view class="shopInfo" wx:if="{{shopInfo}}">
+        <view class="changeBtn" catch:tap="changeShop">
+            <view class="flex-c icon3">
+                <image src="./../../images/24.png" mode="aspectFill" />
+            </view>
+            <view>切换店铺</view>
+        </view>
+        <view class="flex-l-c">
+            <image class="pic" src="{{shopInfo.shopImg}}" mode="aspectFill" />
+            <view class="info">
+                <view class="flex-l-c name" wx:if="{{shopInfo.relation==0}}">
+                    <view class="tag2 flex-c">暂停兑换</view>
+                    <view class="line1" style="width: 250rpx;">{{shopInfo.shopName}}</view>
+                </view>
+                <view class="name" wx:if="{{shopInfo.relation!=0}}">{{shopInfo.shopName}}</view>
+                <view class="num">店铺商品：{{shopInfo.goodNum||0}}个</view>
+                <view class="flex">
+                    <view class="tag" wx:if="{{zuijinId==shopInfo.id}}">距我最近</view>
+                    <!-- <view class="tag">总兑换{{shopInfo.allShopScore||0}}件</view> -->
+                </view>
+            </view>
+        </view>
+        <view class="flex-space bottom">
+            <view class="flex-l-c">
+                <image class="icon" src="./../../images/22.png" mode="widthFix" />
+                <view class="line1" style="max-width: 450rpx;">{{shopInfo.shopAddress||'--'}}</view>
+            </view>
+            <view class="gpsBtn flex-c" catch:tap="daohang" mark:gps="{{shopInfo.shopCoordinate}}">
+                <image class="icon2" src="./../../images/23.png" mode="widthFix" />导航
+            </view>
+        </view>
+    </view>
+    <view class="searchBox flex-l-c">
+        <view class="icon flex-c">
+            <van-icon name="search" size="38rpx" color="#0AB481" />
+        </view>
+        <input type="text" bindinput="syncInputValue" placeholder="按名称搜索商品" value="{{kw}}" />
+    </view>
+    <view class="list" wx:if="{{shopList.length>0}}">
+        <block wx:for="{{shopList}}" wx:key='item'>
+            <!-- <navigator hover-class="none" url="../integral/detail"> -->
+            <view class="item" data-id="{{item.id}}" bindtap="lookDetail">
+                <view class="picBox">
+                    <image class="pic" src="{{item.image}}" mode="aspectFill"></image>
+                    <view class="address flex-c">
+                        <image class="icon" src="./../../images/07.png" mode="widthFix"></image>
+                        <view class="line1" style="max-width: 220rpx;">{{item.shopName}}</view>
+                    </view>
+                </view>
+                <view class="name line1">{{item.name}}</view>
+                <view class="info">
+                    <view class="flex-l-c mar-b-15">
+                        <image class="icon" src="./../../images/08.png" mode="widthFix" />
+                        已兑换：{{item.buys}}
+                    </view>
+                    <view class="flex-l-c">
+                        <image class="icon" src="./../../images/09.png" mode="widthFix" />
+                        库存：{{item.stock}}
+                    </view>
+                    <view class="flex-space jifenNum">
+                        <view>兑换积分：</view>
+                        <view class="num">{{item.points}}</view>
+                    </view>
+                    <!-- <view>{{item.points}}积分</view>
+                    <view>库存：{{item.stock}}</view> -->
+                </view>
+            </view>
+            <!-- </navigator> -->
+        </block>
+    </view>
+
+    <view class="nodata1" wx:if="{{shopList.length==0}}">
+        <image src="../../images/empty4.png" mode="widthFix"></image>
+        <view>暂无商品~</view>
+    </view>
+</view>

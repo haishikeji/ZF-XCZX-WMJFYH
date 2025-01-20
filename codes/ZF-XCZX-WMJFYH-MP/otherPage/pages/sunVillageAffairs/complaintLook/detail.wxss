@@ -1,0 +1,46 @@
+/* otherPage/pages/sunVillageAffairs/complaintLook/detail.wxss */
+.page {
+	/* background: #fff; */
+	padding-bottom: 30rpx;
+}
+
+.oneBox {
+	background: #ffffff;
+	border-radius: 20rpx;
+	padding: 30rpx;
+}
+
+
+
+.con {
+	line-height: 60rpx;
+}
+
+/*  */
+.onLineBox {
+	background: #ffffff;
+	border: 2rpx solid #cccccc;
+	border-radius: 20rpx;
+	padding: 30rpx;
+}
+
+.onLineImg {
+	width: 92rpx;
+	height: 108rpx;
+}
+
+.listLine {
+	padding-bottom: 30rpx;
+	border-bottom: 2rpx solid #F6F6F6;
+}
+
+.policyLine {
+	width: 8rpx;
+	height: 32rpx;
+	background: #cf2b1e;
+	border-radius: 8rpx;
+}
+
+.font-cf {
+	color: #cf2b1e;
+}

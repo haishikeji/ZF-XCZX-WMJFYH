@@ -1,0 +1,110 @@
+<!--pages/login/login.wxml-->
+<view class="page">
+    <image src="/images/01.png" mode="widthFix" class="banner"></image>
+
+    <view class="info">
+        <image src="/images/logo.png" class="logo" mode="widthFix"></image>
+        <view class="tit">欢迎登录</view>
+        <view class="dec">嵩县乡村振兴积分超市</view>
+    </view>
+    <view class="btns">
+        <view class="btn flex-c" catch:tap="cunminLogin">居民登录</view>
+        <view class="btn flex-c btn2" catch:tap="openPop">管理登录</view>
+
+        <!-- <button hover-class="none" class="btn flex-c btn2" open-type="getPhoneNumber" type="primary" bindgetphonenumber="onGetPhoneNumber">干部登录</button>
+        <button hover-class="none" class="btn btn2 flex-c" open-type="getPhoneNumber" type="primary" bindgetphonenumber="onGetPhoneNumber4">三委登录</button>
+        <button hover-class="none" class="btn flex-c btn2" open-type="getPhoneNumber" type="primary" bindgetphonenumber="onGetPhoneNumber2">商家登录</button>
+        <view class="btn flex-c btn2" catch:tap="zhiyuanzheLogin">三自组织登录</view> -->
+
+        <view class="flex-c"><text catch:tap="youkeLogin">游客登录</text></view>
+
+    </view>
+
+    <view class="zhichi">
+        <zhichi style="color:#fff" />
+    </view>
+
+    <van-popup show="{{ guanliPopShow }}" custom-style="background:none;">
+        <view class="guanliBox">
+            <view class="guanlitit">请选择您的身份</view>
+            <view class="guanlidec">请选择您的所属身份进行登录</view>
+            <view class="flex-space">
+                <button hover-class="none" open-type="getPhoneNumber" type="primary" bindgetphonenumber="onGetPhoneNumber">
+                    <image class="pic" src="./../../images/14.png" mode="aspectFit" />
+                    <view>干部</view>
+                </button>
+                <button hover-class="none" open-type="getPhoneNumber" type="primary" bindgetphonenumber="onGetPhoneNumber4">
+                    <image class="pic" src="./../../images/15.png" mode="aspectFit" />
+                    <view>三委</view>
+                </button>
+            </view>
+            <view class="flex-space">
+                <button hover-class="none" open-type="getPhoneNumber" type="primary" bindgetphonenumber="onGetPhoneNumber2">
+                    <image class="pic" src="./../../images/16.png" mode="aspectFit" />
+                    <view>商家</view>
+                </button>
+                <button hover-class="none" open-type="getPhoneNumber" type="primary" bindgetphonenumber="onGetPhoneNumber5">
+                    <image class="pic" src="./../../images/17.png" mode="aspectFit" />
+                    <view>三自组织</view>
+                </button>
+            </view>
+
+            <!-- <button hover-class="none" open-type="getPhoneNumber" type="primary" bindgetphonenumber="onGetPhoneNumber4">三委登录</button>
+            <button hover-class="none" open-type="getPhoneNumber" type="primary" bindgetphonenumber="onGetPhoneNumber2">商家登录</button>
+            <button hover-class="none" open-type="getPhoneNumber" type="primary" bindgetphonenumber="onGetPhoneNumber5">三自组织登录</button> -->
+
+        </view>
+
+        <view class="flex-c" style="padding-top:50rpx;">
+            <van-icon name="close" size="70rpx" bind:tap="closeGuanliPop" />
+        </view>
+    </van-popup>
+</view>
+
+<van-popup show="{{ infoPopShow }}" custom-style="background:none;">
+
+    <view class="cunInfoBox">
+        <view class="cunInfo">
+            <view class="videoImage" wx:if="{{infoPopContent.banner&&infoPopContent.banner.length}}">
+                <swiper current="{{bannerIndex}}" class="swiper-box" indicator-dots="{{true}}" bindchange="swiperChange">
+                    <block wx:for="{{infoPopContent.banner}}" wx:key="*this">
+                        <swiper-item>
+                            <image wx:if="{{item.type!='video'}}" src="{{item.url}}" mode="aspectFill" />
+                            <video id="video{{infoPopContent.deptId}}" autoplay controls class="video" initial-time='0.01' wx:if="{{item.type=='video'&&infoPopShow}}" src="{{item.url}}" />
+                        </swiper-item>
+                    </block>
+                </swiper>
+                <view class="numBox flex-c">{{bannerIndex+1}}/{{infoPopContent.banner.length}}</view>
+            </view>
+            <view class="text">
+                <view class="name">{{infoPopContent.parentName}}·{{infoPopContent.name}}</view>
+                <view class="dec" wx:if="{{infoPopContent.content}}">{{infoPopContent.content}}</view>
+            </view>
+
+
+        </view>
+        <view class="flex-space cunbtns">
+            <view class="cunbtn flex-c" catch:tap="closePop">返回</view>
+            <view class="cunbtn cunbtn2 flex-c" catch:tap="enter">进入</view>
+        </view>
+
+    </view>
+
+</van-popup>
+
+<van-popup close-on-click-overlay="{{false}}" show="{{phonePopShow}}" custom-style="background:none;">
+
+    <view class="zhangbei">
+        <view class="tit1">授权申请</view>
+        <view class="tit2">您未绑定，需要获取您的手机号，以便完善信息</view>
+        <view class="pic">
+            <image src="../../images/09.png" mode="aspectFit" />
+        </view>
+        <view class="btns flex">
+            <view class="btn flex-c" catch:tap="closePhonePop">取消</view>
+            <!-- <view class="btn btn2 flex-c" catch:tap="iknow">授权</view> -->
+            <button hover-class="none" class="btn btn2 flex-c" open-type="getPhoneNumber" type="primary" bindgetphonenumber="onGetPhoneNumber3">授权</button>
+        </view>
+    </view>
+
+</van-popup>

@@ -1,0 +1,69 @@
+<!--pages/mine/myintegral.wxml-->
+<wxs src="../../../utils/tool.wxs" module="tools"></wxs>
+<view class="topline"></view>
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content">{{lang.a5}}积分台账</view>
+</cu-custom>
+<!-- <view class="jifenview">
+  <view class="jifenbg">
+    <image src="../../images/17.png" mode="aspectFill"></image>
+    <view class="myjifen">
+      <view class="title">我的积分</view>
+      <view class="num">{{detail.score || 0}}</view>
+    </view>
+  </view>
+  
+  <view class="jifeninfo">
+    <view class="infoitem">
+      <view class="num">{{detail.allScore || 0}}</view>
+      <view class="title">累计积分</view>
+    </view>
+    <view class="infoitem">
+      <view class="num">{{detail.used || 0}}</view>
+      <view class="title">累计消耗</view>
+    </view>
+    <view class="infoitem">
+      <view class="num">{{detail.today || 0}}</view>
+      <view class="title">今日获得</view>
+    </view>
+  </view>
+</view> -->
+<!-- <view class="tiptitle">积分记录</view> -->
+<view class="list">
+    <!-- <view class="item">
+        <view class="flex-l-c">
+            <image class="icon" src="../../images/17.png" mode="aspectFill" />
+            <view>
+                <view class="mark" style="font-size: calc(32rpx * {{fontMultiple}});">参与任务获得100积分参与任务获得100积分</view>
+                <view class="time" style="font-size: calc(24rpx * {{fontMultiple}});">2023-08-28 10:00</view>
+            </view>
+        </view>
+        <view class="item-r jian"  style="font-size: calc(36rpx * {{fontMultiple}});">+999</view>
+    </view> -->
+    <block wx:for="{{list}}" wx:key='item'>
+        <view class="item">
+            <view class="flex-l-c">
+                <image class="icon" src="{{item.opType==3&&item.goods&&item.goods.image?item.goods.image:'../../images/17.png'}}" mode="aspectFill" />
+                <view>
+                    <!-- <view class="mark" wx:if="{{item.opType==1}}">参与投票{{item.operator==1?'获得':'减少'}}{{item.points}}积分</view>
+                    <view class="mark" wx:if="{{item.opType==2}}">系统操作{{item.operator==1?'获得':'减少'}}{{item.points}}积分</view>
+                    <view class="mark" wx:if="{{item.opType==3}}">兑换商品消耗{{item.points}}积分</view>
+                    <view class="mark" wx:if="{{item.opType==4}}">参与任务{{item.operator==1?'获得':'减少'}}{{item.points}}积分</view> -->
+                    <view class="mark" style="font-size: calc(32rpx * {{fontMultiple}});">{{item.msg}}</view>
+                    <view class="time" style="font-size: calc(24rpx * {{fontMultiple}});">{{tools.substr(item.createTime,16)}}</view>
+                </view>
+            </view>
+            <view class="item-r {{item.operator==1?'':'jian'}}" style="font-size: calc(36rpx * {{fontMultiple}});">{{item.operator==1?'+':'-'}}{{item.points}}</view>
+        </view>
+    </block>
+
+    <view class="norecord" style="font-size: calc(28rpx * {{fontMultiple}});" wx:if="{{list.length==0}}">
+        <image src="../../images/empty5.png" mode="widthFix"></image>
+        <text>暂无积分记录~</text>
+    </view>
+</view>
+
+<!-- <view class="nodata" wx:if="{{list.length==0}}">
+  <image src="../../images/empty5.png" mode="widthFix"></image>
+  <view>暂无积分信息~</view>
+</view> -->

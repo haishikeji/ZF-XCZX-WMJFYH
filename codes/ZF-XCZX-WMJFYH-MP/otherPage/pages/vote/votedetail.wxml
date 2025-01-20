@@ -1,0 +1,142 @@
+<!--pages/home/vote/votedetail.wxml-->
+<import src="/wxParse/wxParse.wxml" />
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content">选手详情</view>
+</cu-custom>
+<view class="topline"></view>
+<image src="{{detail.image}}" class="banner" mode="widthFix"></image>
+
+<view class="page-content">
+    <view class="numinfoBox">
+        <view class="numinfoCont">
+            <view class="title">{{detail.name}}</view>
+            <view class="numinfo">
+                <view class="numinfo-item">
+                    <view class="numinfo-num">{{detail.number}}</view>
+                    <view>TA的编号</view>
+                </view>
+                <view class="numinfo-item addline">
+                    <view class="numinfo-num">{{detail.num}}</view>
+                    <view>获得票数</view>
+                </view>
+                <view class="numinfo-item">
+                    <view class="numinfo-num">{{detail.rank}}</view>
+                    <view>TA的排名</view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+    <!-- <view class="numinfo">
+        <view class="numinfo-item">
+            <view class="numtext">{{detail.number}}</view>
+            <view>编号</view>
+        </view>
+        <view class="numinfo-item">
+            <view class="numtext">{{detail.num}}</view>
+            <view>票数</view>
+        </view>
+        <view class="numinfo-item">
+            <view class="numtext">{{detail.rank}}</view>
+            <view>排名</view>
+        </view>
+    </view> -->
+
+    <!-- <view class="userinfo">
+        <view>{{detail.dname}}</view>
+    </view> -->
+    <view class="descBox">
+        <view class="title flex-l-c">
+            <image src="../../images/20.png" mode="widthFix" />
+            选手介绍
+        </view>
+        <view class='desc'>
+            <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+        </view>
+
+    </view>
+
+
+    <!-- <view class="whitespace"></view>
+
+    <image src="../../../images/t_14.png" class="act_img" mode="widthFix"></image>
+    <view class="activityview" wx:if="{{detail.szVote.name}}">
+        <view class="act_title">{{detail.szVote.name}}</view>
+        <view class='act_desc'>
+            <template is="wxParse" data="{{wxParseData:content1.nodes}}" />
+        </view>
+    </view>
+    <view class="actback" bindtap="goback">
+        <image src="../../../images/t_15.png" mode="aspectFit"></image>
+        <view>返回</view>
+    </view> -->
+    <!-- <view class="bomview">
+  <view class="bomview-left">
+    <view class="bomitem">
+      <image src=""></image>
+      <text>首页</text>
+    </view>
+    <view class="bomitem">
+      <image src=""></image>
+      <text>分享</text>
+    </view>
+  </view>
+  <view class="bomview-right bgcolor">给他投票</view>
+</view> -->
+
+    <!-- <authorize bind:onLoadFun="onLoadFun" isShow="{{isShow}}" isGoIndex="{{isGoIndex}}"></authorize> -->
+
+    <!-- <l-popup show="{{detail.timeStatus==3}}">
+  <view class="popview">
+    <image src="../../../images/t_end.png" mode="widthFix"></image>
+    <view class="poptitle">亲 您来迟了 活动已结束</view>
+    <view class="popdesc">下次记得早点来哦</view>
+    <view class="popbtn" bindtap="goback">知道了</view>
+  </view>
+</l-popup> -->
+
+    <!-- <zhichi /> -->
+
+    <view class="fix" wx:if="{{role==1}}">
+        <view class="flex-space" wx:if="{{islogin==7}}">
+            <button class="sharebtn" open-type="share" wx:if="{{detail.timeStatus==2}}">
+                <image src="../../images/fx.png" mode="widthFix" />
+                <view>分享</view>
+            </button>
+            <view class="votebtn" wx:if="{{detail.voteStatus==1 && detail.timeStatus==2 && !detail.islimit}}">已投票</view>
+            <view class="votebtn" bindtap="voterequest" wx:if="{{ detail.isVote==1 && detail.timeStatus==2 && !detail.islimit}}">
+                给TA投票</view>
+            <view class="votebtn" wx:if="{{detail.islimit==1 && detail.timeStatus==2 }}">您不是居民无法投票</view>
+
+            <view class="votebtn nostart" wx:if="{{detail.timeStatus==3}}">活动已结束</view>
+            <view class="votebtn nostart" wx:if="{{detail.timeStatus==1}}">活动未开始</view>
+        </view>
+        <view class="flex-space" wx:else>
+            <button class="sharebtn" open-type="share" wx:if="{{detail.timeStatus==2}}">
+                <image src="../../images/fx.png" mode="widthFix" />
+                <view>分享</view>
+            </button>
+            <view class="votebtn" bindtap="voterequest" wx:if="{{detail.timeStatus==2}}">给TA投票</view>
+            <view class="votebtn nostart" wx:if="{{detail.timeStatus==3}}">活动已结束</view>
+            <view class="votebtn nostart" wx:if="{{detail.timeStatus==1}}">活动未开始</view>
+        </view>
+    </view>
+
+
+    <!-- <l-popup show="{{showverify}}" bind:lintap='closepop'>
+  <view class="popview">
+    <view class="poptitle">验证</view>
+    <view class="aaa">
+      <move-verify bind:result="verifyResult" isShow="{{showverify}}"></move-verify>
+    </view>
+    
+  </view>
+</l-popup> -->
+
+    <view class="popalert" hidden="{{!showverify}}" bindtap="closepop">
+        <view class="popview" catchtap="ok" catchtouchmove='true'>
+            <view class="poptitle">验证</view>
+            <move-verify bind:result="verifyResult" isShow="{{showverify}}"></move-verify>
+        </view>
+    </view>
+</view>

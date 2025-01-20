@@ -1,0 +1,100 @@
+/* otherPage/pages/activity2/detail2.wxss */
+
+.page {
+    min-height: 100vh;
+    background: #f6f6f6;
+}
+
+.page-content {
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 20rpx;
+    margin-bottom: 30rpx;
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
+
+.tit {
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 20rpx;
+    line-height: 40rpx;
+}
+
+.timeIcon {
+    width: 28rpx;
+    margin-right: 10rpx;
+}
+
+.tit2 {
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #0ab481;
+    margin-bottom: 30rpx;
+}
+
+.tit2 .icon {
+    width: 28rpx;
+    margin-right: 12rpx;
+}
+
+.fileItem {
+    height: 120rpx;
+    background: rgba(10, 180, 129, 0.10);
+    border-radius: 20rpx;
+    margin-bottom: 30rpx;
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+
+.fileItem .pic {
+    width: 56rpx;
+    margin-right: 30rpx;
+}
+
+.fileItem:last-child {
+    margin-bottom: 0;
+}
+
+.fileItem .tit {
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #666666;
+    margin-bottom: 0rpx;
+    max-width: 300rpx;
+}
+
+.size {
+    font-size: 24rpx;
+    color: #999999;
+}
+
+.xiazai {
+    color: #0ab481;
+}
+
+.xiazai image {
+    width: 32rpx;
+    margin-right: 10rpx;
+}
+
+.content {
+    padding: 30rpx;
+    font-size: 28rpx;
+    line-height: 48rpx;
+    color: #333333;
+
+}
+
+.content image {
+    max-width: 100%;
+}

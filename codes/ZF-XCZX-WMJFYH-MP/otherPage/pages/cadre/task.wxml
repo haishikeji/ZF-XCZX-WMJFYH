@@ -1,0 +1,97 @@
+<!--otherPage/pages/cadre/task.wxml-->
+<view class="page">
+    <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+        <view slot="content">完成任务列表</view>
+    </cu-custom>
+
+    <view class="page-content">
+        <view class="navBox" style="top:{{CustomBar}}px;">
+            <van-tabs ellipsis="{{false}}" active="{{ menuindex }}" sticky="{{true}}" color="#0AB481" title-active-color="#0AB481" title-inactive-color="#999" bind:change="changeTabs">
+                <block wx:for="{{catearr}}">
+                    <van-tab title="{{item.name}}"></van-tab>
+                </block>
+            </van-tabs>
+        </view>
+
+        <view class="flex-space shaixuanBox">
+            <view class="searchBox flex-l-c">
+                <view class="icon flex-c">
+                    <van-icon name="search" size="38rpx" color="#0AB481" />
+                </view>
+                <input type="text" bindinput="syncInputValue" placeholder="按名称搜索任务" value="{{kw}}" />
+            </view>
+            <!-- <view class="flex-c btn2">
+                    <van-checkbox value="{{ checked }}" icon-size="30rpx" checked-color="#0AB481" shape="square" bind:change="onChange">未完成</van-checkbox>
+                </view> -->
+        </view>
+
+
+        <!--pages/task/index.wxml-->
+        <!-- <l-tab-bar list="{{list}}" text-selected-color="#2A78FF" text-unselected-colo="#999999"/> -->
+        <!-- <view class="topline"></view> -->
+        <!-- <l-tabs bind:linchange="changeTabs" animated='{{true}}' active-color="#2A78FF">
+  <block wx:for="{{catearr}}" wx:key='item'>
+    <l-tabpanel tab="{{item.name}}" key="{{index}}" slot="one">
+    </l-tabpanel>
+  </block>
+</l-tabs> -->
+        <!-- <view class="catemenu" style="top:{{CustomBar}}px">
+            <block wx:for="{{catearr}}" wx:key='item'>
+                <view class="catemenu-item" bindtap="changeTabs" data-index="{{index}}">
+                    <view class="catename {{menuindex==index?'active':''}}">{{item.subname || item.name}}</view>
+                    <view class="cateline bgcolor" wx:if="{{menuindex==index}}"></view>
+                </view>
+            </block>
+        </view> -->
+
+        <!-- <view style="height:82rpx"></view> -->
+        <view class="list" wx:for="{{list}}" wx:key='item' wx:if="{{list.length>0}}">
+            <view class="taskitem">
+                <view class="tasktitle">
+                    <view class="taskname line1">{{item.tname}}</view>
+                </view>
+                <view class="taskjifen">
+                    <image src="./../../images/29.png" mode="aspectFit"></image>积分：
+                    <text style="{{item.type==1?'':'color:#F22D39'}}">{{item.type==1?'+':'-'}}{{item.points}}分</text>
+
+                </view>
+                <!-- <view class="taskjifen cishu">
+                    <image src="./../../images/30.png" mode="aspectFit"></image>
+                    完成次数：<block wx:if="{{item.allNum!=0}}"> 每{{item.period==1?'天':''}}{{item.period==2?'周':''}}{{item.period==3?'月':''}}{{item.period==4?'季度':''}}{{item.period==5?'年':''}}</block>{{item.allNum==0?'不限制':item.allNum+'次'}}
+                </view> -->
+
+                <view class="userInfoBox">
+                    <view class="flex-space" style="flex-wrap: wrap;">
+                        <view class="name">完成{{lang.a2}}：{{item.uname||'未知'}}</view>
+                        <view class="time">完成时间：{{item.shTime}}</view>
+                    </view>
+                    <view class="dec">
+                        完成描述：{{item.mark}}
+                    </view>
+                    <view class="imgBox flex">
+                        <block wx:for="{{item.image}}" wx:for-index="j" wx:for-item="i">
+                            <image catch:tap="yulan" mark:arr="{{item.image}}" mark:index="{{j}}" src="{{i}}" mode="aspectFill" />
+                        </block>
+                    </view>
+                </view>
+
+            </view>
+        </view>
+        <view style="height:30rpx"></view>
+
+        <view class="nodata1" wx:if="{{list.length==0}}">
+            <image src="../../images/empty2.png" mode="widthFix"></image>
+            <view>暂无积分任务~</view>
+        </view>
+
+
+        <view class="subcateview" wx:if="{{showsub}}">
+            <view class="subcate">
+                <block wx:for="{{subcate}}" wx:key='item'>
+                    <view class="subcate-name {{subcateindex==index?'subactive':''}}" bindtap="subcateclick" data-index="{{index}}">{{item.name}}</view>
+                </block>
+                <view class="catebom" bindtap="resetcate">重置</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,49 @@
+<!--otherPage/pages/sunVillageAffairs/manageFramework/add.wxml-->
+<view class="page">
+	<cu-custom bgColor="bg-gradual-orangeRed" isBack="{{true}}">
+		<view slot="content">党务公开新增</view>
+	</cu-custom>
+	<view class="page-content">
+
+		<form catchsubmit="formSubmit">
+			<view class="inputItem">
+				<view class="label"><text>*</text>标题：</view>
+				<input name="name" placeholder="请输入标题" type="text" value="{{name}}" />
+			</view>
+			<view class="inputItem">
+				<view class="label"><text>*</text>图片:</view>
+				<view class="imagepicker">
+					<l-image-picker size-type="compressed" size="3" count="1" bind:linchange="onChangeTap" bind:linremove="onRemoveTap" />
+				</view>
+			</view>
+			<view class="inputItem" wx:for="{{customList}}" wx:key="{{index}}">
+				<view class="label"><text wx:if="{{item.isRequired==1}}">*</text>{{item.name}}：</view>
+				<input name="address" placeholder="请输入{{item.name}}" type="text" value="{{item.value}}" wx:if="{{item.type==1}}" bindinput="bindCustom" data-item="{{item}}"/>
+				<van-radio-group value="{{ radio }}" bind:change="onRadioChange" wx:if="{{item.type==2}}" data-item="{{item}}">
+					<view class="mar-t-30" wx:for="{{item.valList}}" wx:for-item="radioItem" wx:for-index="radioIndex" wx:key="{{radioIndex}}">
+						<van-radio name="{{radioItem}}" class="mar-t-30">
+							<view class="">{{radioItem}}</view>
+						</van-radio>
+					</view>
+
+				</van-radio-group>
+			</view>
+			<view class="inputItem">
+				<view class="label">附件：</view>
+				<view class="uploadBox">
+					<image src="/images/villageAffairs/25.png" mode="" class="uploadImg" wx:if="{{fileList.length==0}}" />
+					<view class="c-0 font-28 uploadTxt line2 mar-b-30" wx:for="{{fileList}}" wx:key="{{index}}">
+						<view bind:tap="delClick" data-index="{{index}}">
+							{{item.label}}
+							<van-icon name="cross" size="12px" class="mar-t-10 mar-l-30" />
+						</view>
+					</view>
+					<view class="c-9 font-24 mar-t-20">支持上传：.png、.jpg、.doc、.docx、.pdf、.xlsx、.xls</view>
+					<view class="c-0 font-28 uploadBtn" bind:tap="uploadClick">点击上传</view>
+					<!--  -->
+				</view>
+			</view>
+			<button hover-class="none" class="subBtn flex-c c-f font-600 font-32" formType="submit">确认新增</button>
+		</form>
+	</view>
+</view>

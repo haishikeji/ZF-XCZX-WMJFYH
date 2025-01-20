@@ -1,0 +1,37 @@
+<!--pages/home/vote/index.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content">线上投票</view>
+</cu-custom>
+<view class="topline"></view>
+<view class="list">
+    <block wx:for="{{list}}" wx:key='item'>
+        <navigator hover-class="none" url="../vote/detail?id={{item.id}}">
+            <view class="item">
+                <view class="picBox">
+                    <image src="{{item.pic}}" mode="aspectFill" class="itemimg"></image>
+                    <view class="status bgcolor" wx:if='{{item.timeStatus==1}}'>未开始</view>
+                    <view class="status ing" wx:if='{{item.timeStatus==2}}'>进行中</view>
+                    <view class="status over" wx:if='{{item.timeStatus==3}}'>已结束</view>
+                </view>
+                <view class="info" style="font-size: calc(28rpx * {{fontMultiple}});">
+                    <view class="name line1" style="font-size: calc(32rpx * {{fontMultiple}});line-height: 1.1;">{{item.name}}</view>
+                    <view class="piaonum">
+                        <image src="../../images/14.png"></image>参与人数：{{item.participateNum}}人
+                    </view>
+                    <view class="piaonum">
+                        <image src="../../images/16.png"></image>总投票数：{{item.voteNum}}票
+                    </view>
+                    <view class="piaonum">
+                        <image src="../../images/18.png"></image>截止：{{item.stoptime}}
+                    </view>
+                </view>
+            </view>
+        </navigator>
+    </block>
+</view>
+
+
+<view class="nodata" wx:if="{{list.length==0}}">
+    <image src="../../images/empty1.png" mode="widthFix"></image>
+    <view>暂无投票活动~</view>
+</view>

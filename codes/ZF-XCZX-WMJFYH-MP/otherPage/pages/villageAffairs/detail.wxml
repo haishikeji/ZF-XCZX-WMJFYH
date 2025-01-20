@@ -1,0 +1,20 @@
+<!--otherPage/pages/villageAffairs/detail.wxml-->
+<view class="page">
+  <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content">{{d?d.title:'“三资”公开详情'}}</view>
+  </cu-custom>
+  <view class="topline"></view>
+  <view class="title">{{d.title}}</view>
+  <view class="info flex-c">
+    <view>发布时间：{{d.pubTime}}</view>
+    <view>发布人：{{d.pubUser}}</view>
+  </view>
+  <view class="info flex-c">
+    <view>发布来源：{{d.pubSource}}</view>
+    <view>所属村镇：{{d.deptname}}</view>
+  </view>
+  <view class="content">
+    <import src="../../../wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:rule.nodes}}" />
+  </view>
+</view>

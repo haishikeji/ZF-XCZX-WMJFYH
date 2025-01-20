@@ -1,0 +1,48 @@
+<!--otherPage/pages/sunVillageAffairs/manageFramework/details.wxml-->
+<view class="page">
+	<cu-custom bgColor="bg-gradual-orangeRed" isBack="{{true}}">
+		<view slot="content">党务公开</view>
+	</cu-custom>
+	<!--  -->
+	<view class="messageBox mar-t-30 mar-l-30 mar-r-30">
+		<image src="{{detail.img}}" mode="" class="headImg" />
+		<view class="font-500 c-0 font-36 mar-t-30 mar-b-20">{{detail.name}}</view>
+		<view class="font-24 c-9">{{detail.duties}}</view>
+		<view class="notesBox">
+			<view class="font-32 font-500 notesTitle">个人简历</view>
+			<view class="font-28 c-6 mar-t-30 notesCon">
+				<view class="">
+					<import src="../../../../wxParse/wxParse" />
+					<template is="wxParse" data="{{wxParseData:rule.nodes}}" />
+				</view>
+			</view>
+		</view>
+	</view>
+	<!--  -->
+
+	<view class="listBigBox mar-t-30 mar-l-30 mar-r-30 " wx:if="{{list.length}}">
+		<view class="flex-l-c listTitleBox">
+			<view class="notesLine mar-l-30 mar-r-20"></view>
+			<view class="font-32 font-500  notesTitle">工作动态</view>
+		</view>
+		<block wx:for="{{list}}" wx:key="{{index}}">
+			<view class="listBox " bind:tap="goDetail" data-id="{{item.id}}">
+				<view class="c-3 font-32 font-500 line1">{{item.name}}</view>
+				<view class="listBottom flex-between a-center ">
+					<view class="flex-l-c">
+						<image src="/images/villageAffairs/15.png" mode="" class="listImg" />
+						<view class="c-9 font-28 mar-l-10">发布于 {{item.publishTime}}</view>
+					</view>
+					<view class="flex-l-c">
+						<image src="/images/villageAffairs/16.png" mode="" class="listImg" />
+						<view class="c-9 font-28 mar-l-10">{{item.views}}</view>
+					</view>
+				</view>
+			</view>
+		</block>
+		<view class="emptyview" wx:if="{{list.length==0}}">
+			<image src="/images/villageAffairs/e2.png" mode="aspectFit"></image>
+			<view class="f-28 c-9"> 暂无数据~</view>
+		</view>
+	</view>
+</view>

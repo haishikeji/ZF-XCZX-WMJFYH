@@ -1,0 +1,33 @@
+<!--pointsPage/pages/integral/list.wxml-->
+<view class="page">
+    <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+        <view slot="content">切换店铺</view>
+    </cu-custom>
+    <view class="page-content">
+        <view class="list">
+            <view class="item" wx:for="{{list}}" catch:tap="godetail" mark:item="{{item}}">
+                <view class="tag2 flex-c" wx:if="{{item.relation==0}}">已暂停兑换</view>
+                <view class="flex-l-c">
+                    <image class="pic" src="{{item.shopImg}}" mode="aspectFill" />
+                    <view class="info">
+                        <view class="name line1">{{item.shopName}}</view>
+                        <view class="num">店铺商品：{{item.goodNum||0}}个</view>
+                        <view class="flex">
+                            <view class="tag" wx:if="{{item.id==zuijinId}}">距我最近</view>
+                            <!-- <view class="tag">总兑换{{item.allShopScore||0}}件</view> -->
+                        </view>
+                    </view>
+                </view>
+                <view class="flex-space bottom">
+                    <view class="flex-l-c">
+                        <image class="icon" src="./../../images/22.png" mode="widthFix" />
+                        <view class="line1" style="max-width: 450rpx;">{{item.shopAddress||'--'}}</view>
+                    </view>
+                    <view class="gpsBtn flex-c" catch:tap="daohang" mark:item="{{item}}">
+                        <image class="icon2" src="./../../images/23.png" mode="widthFix" />导航
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

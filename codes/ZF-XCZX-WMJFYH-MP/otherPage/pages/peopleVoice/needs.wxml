@@ -1,0 +1,52 @@
+<!--pages/home/needs.wxml-->
+<view class="page">
+    <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+        <view slot="content">百姓呼声</view>
+    </cu-custom>
+    <view class="topline"></view>
+
+    <!-- <view class="inputitem addmagin">
+        <view class="title">需求标题:</view>
+        <view class="content">
+            <input type="text" placeholder="请输入需求标题" bindinput="gettitle"></input>
+        </view>
+    </view> -->
+
+
+    <view class="inputitem txt">
+        <view class="title">投诉/建议内容：</view>
+        <view class="content">
+            <textarea name="" id="" cols="30" rows="10" maxlength="120" placeholder="请输入投诉/建议内容" bindinput="getcontent"></textarea>
+        </view>
+    </view>
+
+    <view class="inputitem">
+        <view class="title">上传照片<text style="color: #666; font-size: 24rpx;">（最多三张）</text>:</view>
+        <view class="imagepicker">
+            <l-image-picker size-type="compressed" size="4" count="3" bind:linchange="onChangeTap" bind:linremove="onRemoveTap" />
+        </view>
+    </view>
+    <view class="inputitem">
+        <view class="title">上传视频<text style="color: #666; font-size: 24rpx;">（50M以内）</text>:</view>
+        <view class="imagepicker">
+            <van-uploader accept="video" max-count="1" file-list="{{ fileList }}" bind:after-read="afterRead" />
+        </view>
+    </view>
+    <view class="inputitem">
+        <view class="title">您的姓名:</view>
+        <view class="content">
+            <input type="text" placeholder="请输入您的姓名" bindinput="getname"></input>
+        </view>
+    </view>
+
+    <view class="inputitem">
+        <view class="title">您的联系电话:</view>
+        <view class="content">
+            <input type="text" placeholder="请输入您的联系电话" bindinput="getphone"></input>
+        </view>
+    </view>
+
+    <view class="btn" bindtap="uploaddata">发布</view>
+
+    <l-dialog show="{{isShow}}" type="confirm" title="提示" content="请先登录" bind:linconfirm="gologin" bind:lincancel="goback" />
+</view>

@@ -1,0 +1,110 @@
+<!--pages/login/setShequ.wxml-->
+<view class="page">
+    <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+        <view slot="content">居住地选择</view>
+    </cu-custom>
+
+    <view class="page-content">
+        <view class="flex-space mar-b-30" style="padding: 0 30rpx;">
+            <!-- <view class="chooseZhenBtn flex-space" catch:tap="chooseZhen">
+                <view class="moren" wx:if="{{!zhen}}">选择镇</view>
+                <view class="name line1" wx:if="{{zhen}}">{{zhen.name}}</view>
+                <van-icon class="icon" name="play" size="24rpx" />
+            </view> -->
+            <!-- <view class="flex-c GPSBtn" catch:tap="getGPS">
+                <image class="icon" src="/images/06.png" mode="widthFix" />获取定位
+            </view> -->
+            <view class="searchBox flex-space" style="width: 100%;">
+                <view class="searchIcon flex-c">
+                    <van-icon name="search" size="38rpx" color="#0AB481" />
+                </view>
+                <input class="searchInput" type="text" placeholder="按名称搜索" value="{{name}}" placeholder-style="color:#999" bindinput="syncInputValue" />
+            </view>
+        </view>
+        <view class="page-list flex-space" style="height: calc(100vh - 140rpx - {{CustomBar}}px );">
+            <view class="leftBar">
+                <view class="leftItem flex-c {{item.deptId==zhen.deptId?'on':''}}" wx:for="{{columns}}" catch:tap="changeLeftItem" mark:item="{{item}}">
+                    {{item.name}}
+                </view>
+            </view>
+            <view class="rightList">
+                <view class="list ">
+                    <view class="item flex-space {{item.open==0?'noEnter':''}}" catch:tap="openInfoPop" mark:item="{{item}}" wx:for="{{list}}" wx:key="{{item.deptId}}">
+                        <view class="flex-l-c">
+                            <image class="icon" src="/images/02.png" mode="widthFix" />
+                            <view class="line1">{{item.name}}</view>
+                        </view>
+                        <block wx:if="{{item.open==0}}">
+                            <view class="tag flex-c">未开放</view>
+                        </block>
+                        <!-- <block wx:else>
+                            <van-icon name="arrow" color="#0AB481" size="24rpx" />
+                        </block> -->
+                        <block wx:else>
+                            <van-icon name="arrow" color="#0AB481" size="24rpx" wx:if="{{item.isGroup==1}}" />
+                            <van-icon name="arrow-down" color="#0AB481" size="24rpx" wx:if="{{item.isGroup==2}}" />
+
+                        </block>
+                    </view>
+                    <view class="flex-l-c" style="flex-wrap: wrap;" wx:if="{{item.isGroup==2}}">
+                        <view class=" font-28 mar-r-30 mar-b-30 {{groupId==groupItem.id?'groupNameChoose':'groupName'}}" wx:for="{{item.groupList}}" wx:for-item="groupItem" wx:for-index="groupIndex" bind:tap="bindGroup" data-item="{{groupItem}}" data-lastitem="{{item}}">{{groupItem.name}}</view>
+                    </view>
+                </view>
+
+                <view style="text-align: center;padding:30rpx 0 0;color:#666;" wx:if="{{list.length==0}}">
+                    <!-- <image style="width: 70%;margin-bottom: 30rpx;" src="/images/05.png" mode="widthFix" /> -->
+                    <view> 未找到您要的数据 ~</view>
+                </view>
+            </view>
+        </view>
+
+        <!-- <view class="list flex ">
+            <view class="item flex-space" catch:tap="openInfoPop" mark:item="{{item}}" wx:for="{{list}}" wx:key="{{item.deptId}}">
+                <view class="flex-l-c">
+                    <image class="icon" src="/images/02.png" mode="widthFix" />
+                    <view class="line1">{{item.name}}</view>
+                </view>
+                <van-icon name="arrow" color="#0AB481" size="24rpx" />
+            </view>
+        </view>
+
+        <view style="text-align: center;padding:18vh 0 0;color:#666;" wx:if="{{list.length==0}}"> 未找到您要的数据 ~</view> -->
+    </view>
+</view>
+<!-- <van-popup show="{{ chooseZhenPopshow }}" position="bottom">
+
+
+    <van-picker bind:cancel="onCancel" bind:confirm="onConfirm" title="选择镇" show-toolbar columns="{{ columns }}" value-key="name" />
+
+</van-popup> -->
+
+<van-popup show="{{ infoPopShow }}" custom-style="background:none;">
+
+    <view class="cunInfoBox">
+        <view class="info">
+            <view class="videoImage" wx:if="{{infoPopContent.banner&&infoPopContent.banner.length}}">
+                <swiper current="{{bannerIndex}}" class="swiper-box" indicator-dots="{{true}}" bindchange="swiperChange">
+                    <block wx:for="{{infoPopContent.banner}}" wx:key="*this">
+                        <swiper-item>
+                            <image wx:if="{{item.type!='video'}}" src="{{item.url}}" mode="aspectFill" />
+                            <video id="video{{infoPopContent.deptId}}" autoplay controls class="video" initial-time='0.01' wx:if="{{item.type=='video'&&infoPopShow}}" src="{{item.url}}" />
+                        </swiper-item>
+                    </block>
+                </swiper>
+                <view class="numBox flex-c">{{bannerIndex+1}}/{{infoPopContent.banner.length}}</view>
+            </view>
+            <view class="text">
+                <view class="name">{{infoPopContent.parentName}}·{{infoPopContent.name}}</view>
+                <view class="dec" wx:if="{{infoPopContent.content}}">{{infoPopContent.content}}</view>
+            </view>
+
+
+        </view>
+        <view class="flex-space btns">
+            <view class="btn flex-c" catch:tap="closePop">返回</view>
+            <view class="btn btn2 flex-c" catch:tap="enter">进入</view>
+        </view>
+
+    </view>
+
+</van-popup>

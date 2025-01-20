@@ -1,0 +1,74 @@
+/* otherPage/pages/sunVillageAffairs/manageFramework/details.wxss */
+.page{
+	padding-bottom: 30rpx;
+}
+.messageBox {
+	background: #ffffff;
+	border-radius: 20rpx;
+	text-align: center;
+	padding: 30rpx 30rpx 0 30rpx;
+}
+
+.headImg {
+	width: 210rpx;
+	height: 270rpx;
+	border-radius: 10rpx;
+	margin-top: 30rpx;
+}
+
+.notesBox {
+	border-top: 2rpx solid #F6F6F6;
+	margin-top: 60rpx;
+	padding-top: 40rpx;
+}
+
+.notesTitle {
+	color: #cf2b1e;
+}
+
+.notesCon {
+	line-height: 56rpx;
+	padding-bottom: 56rpx;
+}
+
+/*  */
+.listBigBox {
+	background: #ffffff;
+	border-radius: 20rpx;
+	padding: 30rpx 0 0 0;
+}
+
+.listTitleBox {
+	border-bottom: 2rpx solid #F6F6F6;
+	padding-bottom: 28rpx;
+}
+
+.notesLine {
+	width: 6rpx;
+	height: 32rpx;
+	background: #cf2b1e;
+}
+
+.listBox {
+	background: #ffffff;
+	margin: 30rpx 30rpx 0 30rpx;
+	padding-bottom: 30rpx;
+	box-sizing: border-box;
+	border-bottom: 2rpx solid #F6F6F6;
+	
+}
+
+.listBottom {
+	margin-top: 40rpx;
+}
+
+.listLine {
+	border-right: 1px solid #DEDEDE;
+	margin: 0 20rpx;
+	padding-right: 20rpx;
+}
+
+.listImg {
+	width: 24rpx;
+	height: 24rpx;
+}

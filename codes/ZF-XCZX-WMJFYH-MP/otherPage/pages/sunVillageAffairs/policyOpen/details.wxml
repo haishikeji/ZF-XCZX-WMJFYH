@@ -1,0 +1,35 @@
+<!--otherPage/pages/sunVillageAffairs/policyOpen/details.wxml-->
+<view class="page">
+	<cu-custom bgColor="bg-gradual-orangeRed" isBack="{{true}}">
+		<view slot="content">政策公开</view>
+	</cu-custom>
+	<view class="contentBox">
+		<view class="font-44 c-3 font-500  mar-l-20 mar-r-10">
+			{{detail.name}}
+		</view>
+		<view class="flex-c mar-t-30 mar-b-20">
+			<view class="c-9 font-28 listLine"> {{cName}}</view>
+			<view class="c-9 font-28">{{detail.duties}}</view>
+		</view>
+		<view class=" font-28 c-9">{{detail.publishTime}}</view>
+		<view class="con font-32 c-3 mar-t-40">
+			<view class="">
+				<import src="../../../../wxParse/wxParse" />
+				<template is="wxParse" data="{{wxParseData:rule.nodes}}" />
+			</view>
+		</view>
+	</view>
+	<block wx:for="{{detail.newFile}}" wx:key="{{index}}">
+		<view class="onLineBox mar-t-40 mar-l-30 mar-r-30 flex-l-c" bind:tap="onLineLook" data-url="{{item.value}}">
+			<image src="/images/villageAffairs/17.png" mode="" class="onLineImg" wx:if="{{item.type=='pdf'||item.type=='PDF'}}" />
+			<image src="/images/villageAffairs/20.png" mode="" class="onLineImg" wx:if="{{item.type=='XLSX'||item.type=='XLS'||item.type=='xlsx'||item.type=='xls'}}" />
+			<image src="/images/villageAffairs/21.png" mode="" class="onLineImg" wx:if="{{item.type=='doc'||item.type=='DOC'||item.type=='docx'||item.type=='DOCX'}}" />
+			<image src="/images/villageAffairs/25.png" mode="" class="onLineImg" wx:if="{{item.type=='jpg'||item.type=='JPG'||item.type=='png'||item.type=='PNG'}}" />
+			<view class="mar-l-30">
+				<view class=" font-28 c-3 line2" style="width:476rpx;">{{item.label}}</view>
+				<!-- <view class="font-24 c-9 mar-t-10">文件大小：2.45M</view> -->
+			</view>
+		</view>
+	</block>
+
+</view>

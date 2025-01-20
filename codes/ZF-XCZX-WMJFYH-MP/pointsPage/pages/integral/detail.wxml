@@ -1,0 +1,71 @@
+<!--pages/home/integral/detail.wxml-->
+
+<view class="page">
+    <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+        <view slot="content">商品详情</view>
+    </cu-custom>
+    <!-- <import src="../../../wxParse/wxParse.wxml"/> -->
+    <image src="{{shopDetail.image}}" class="banner" mode="aspectFill"></image>
+    <view class="page-content">
+
+        <view class="goodsInfo">
+            <view class="name">{{shopDetail.name}}</view>
+            <view class="flex-l-c">
+                <view class="flex-l-c">
+                    <image src="./../../images/08.png" class="icon" mode="widthFix"></image>已兑换：{{shopDetail.buys}}
+                </view>
+                <view class="xian"></view>
+                <view class="flex-l-c">
+                    <image src="./../../images/09.png" class="icon" mode="widthFix"></image>库存：{{shopDetail.stock}}
+                </view>
+            </view>
+            <view class="numBox flex-space">
+                <view class="flex-l-c">
+                    <image class="icon" src="./../../images/11.png" mode="widthFix" />兑换积分：
+                </view>
+                <view class="num">{{shopDetail.points}}</view>
+            </view>
+        </view>
+        <view class="shopBox flex-l-c">
+            <image class="pic" src="{{shopDetail.shopUser.shopImg}}" mode="aspectFill" />
+            <view>
+                <view class="name">{{shopDetail.shopUser.shopName}}</view>
+                <view class="address">{{shopDetail.shopUser.shopAddress||'暂无'}}</view>
+            </view>
+
+            <view class="GPSbtn" catch:tap="goMap">
+                <image src="./../../images/10.png" mode="widthFix" />
+                <view>导航</view>
+            </view>
+        </view>
+
+        <view class="xuzhiBox">
+            <view class="title flex-l-c">
+                <image src="./../../images/12.png" mode="widthFix" />
+                <view>兑换须知</view>
+                <!-- <template is="wxParse" data="{{wxParseData:rule.nodes}}"/> -->
+            </view>
+            <view class="xuzhi">
+                <view>
+                    1、使用积分兑换的产品一旦兑换完成，不支持取消兑换，积分不予退还，请在兑换前谨慎选择兑换产品。若因不可抗力，导致订单无法交易成功，订单将被取消，积分将返还回原支付账户。
+                </view>
+                <view>
+                    2、兑换后请前往所辖村委会站点领取该产品，30天内如若没有领取视为自动放弃该产品，积分不予退还。
+                </view>
+                <view>
+                    3、用户收到产品后，需严格遵守相关法律和产品使用说明， 产品使用中造成的人身、财产损失与平台无关。
+                </view>
+            </view>
+
+        </view>
+
+
+
+
+        <view class="btnBox flex-c">
+            <view class="btn flex-c" bindtap="confirm" wx:if="{{shopDetail.shopUser.relation==1}}">立即兑换</view>
+            <view class="btn btn2 flex-c" wx:if="{{shopDetail.shopUser.relation==0}}">商铺已暂停兑换</view>
+        </view>
+    </view>
+
+</view>

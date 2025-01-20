@@ -1,0 +1,33 @@
+/* otherPage/pages/sunVillageAffairs/onlineComplaint/notice.wxss */
+.page {
+	padding-bottom: 40rpx;
+	background: #fff;
+}
+
+.title {
+	font-size: 44rpx;
+	font-family: PingFang SC, PingFang SC-500;
+	font-weight: 500;
+	text-align: CENTER;
+	color: #cf2b1e;
+}
+
+.content {
+	line-height: 60rpx;
+	text-indent: 2em;
+}
+
+.isChoose {
+	margin: 50rpx 0 0 178rpx;
+	color: #cf2b1e;
+}
+
+.isChooseTxt {
+	color: #cf2b1e;
+}
+
+button.subBtn {
+	height: 100rpx;
+	background: linear-gradient(98deg, #ed5441, #f45f4c 100%);
+	border-radius: 74rpx;
+}

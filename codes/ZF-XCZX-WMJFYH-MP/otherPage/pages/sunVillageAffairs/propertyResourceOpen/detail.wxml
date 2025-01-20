@@ -1,0 +1,61 @@
+<!--otherPage/pages/sunVillageAffairs/villageOpen/detail.wxml-->
+<view class="page">
+	<cu-custom bgColor="bg-gradual-orangeRed" isBack="{{true}}">
+		<view slot="content">资产资源公开</view>
+	</cu-custom>
+	<view>
+		<view class="oneBox mar-t-30 mar-l-30 mar-r-30">
+			<view class="flex  a-baseline">
+				<view class="policyLine"></view>
+				<view class="font-32 font-cf font-500 mar-l-20"  style="white-space: pre-wrap;width: 100%;padding-right: 20rpx;"> {{detail.name}}</view>
+			</view>
+			<view class="flex-between mar-t-40 listLine">
+				<view class="c-6 font-28">乡/社区 ：</view>
+				<view class="c-3 font-28">{{detail.dname}}</view>
+			</view>
+			<view class="flex-between mar-t-20">
+				<view class="c-6 font-28">构建日期：</view>
+				<view class="c-3 font-28">{{detail.publishTime}}</view>
+			</view>
+		</view>
+		<view class="oneBox mar-t-30 mar-l-30 mar-r-30">
+			<view class="flex  a-center">
+				<view class="policyLine"></view>
+				<view class="font-32 font-cf font-500 mar-l-20">描述</view>
+			</view>
+			<view class="font-28 c-6 mar-t-30" style="line-height: 48rpx;" bind:tap="onlookImg" >
+				<view class="">
+				<image src="{{detail.content}}" mode="aspectFit" style="width: 100%;height: 500rpx;" />
+					<!-- <import src="../../../../wxParse/wxParse" />
+					<template is="wxParse" data="{{wxParseData:rule.nodes}}" /> -->
+				</view>
+			</view>
+		</view>
+		<view class="oneBox mar-t-30 mar-l-30 mar-r-30" wx:if="{{detail.newFile.length}}">
+			<view class="flex  a-center">
+				<view class="policyLine"></view>
+				<view class="font-32 font-cf font-500 mar-l-20">附件</view>
+			</view>
+			<block wx:for="{{detail.newFile}}" wx:key="{{index}}">
+				<view class="onLineBox mar-t-40   flex-l-c" bind:tap="onLineLook" data-url="{{item.value}}">
+					<image src="/images/villageAffairs/17.png" mode="" class="onLineImg" wx:if="{{item.type=='pdf'||item.type=='PDF'}}" />
+					<image src="/images/villageAffairs/20.png" mode="" class="onLineImg" wx:if="{{item.type=='XLSX'||item.type=='XLS'||item.type=='xlsx'||item.type=='xls'}}" />
+					<image src="/images/villageAffairs/21.png" mode="" class="onLineImg" wx:if="{{item.type=='doc'||item.type=='DOC'||item.type=='docx'||item.type=='DOCX'}}" />
+					<image src="/images/villageAffairs/25.png" mode="" class="onLineImg" wx:if="{{item.type=='jpg'||item.type=='JPG'||item.type=='png'||item.type=='PNG'}}" />
+					<view class="mar-l-30 ">
+						<view class=" font-28 c-3 line2 mar-r-30" style="width:446rpx;">{{item.label}}</view>
+						<!-- <view class="font-24 c-9 mar-t-10">文件大小：2.45M</view> -->
+					</view>
+				</view>
+			</block>
+		</view>
+		<!--  -->
+		<view class="detailBox " bind:tap="goComplain">
+			<view class="flex">
+				<view class="editBox c-f font-32 font-600 mar-r-30" bind:tap="editBind" wx:if="{{userInfo.isCadre==1}}">编辑</view>
+				<view class="complaintBtn c-f font-32 font-600 " bind:tap="goComplain" style="{{userInfo.isCadre!=1?'width:100%':''}}">我要投诉</view>
+			</view>
+		</view>
+		<!--  -->
+	</view>
+</view>

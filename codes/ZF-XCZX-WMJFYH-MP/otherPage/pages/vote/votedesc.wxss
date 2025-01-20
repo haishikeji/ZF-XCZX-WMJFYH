@@ -1,0 +1,22 @@
+/* pages/home/vote/votedesc.wxss */
+@import "/wxParse/wxParse.wxss";
+
+page {
+    background: #fff;
+}
+
+.desc {
+    margin-left: 30rpx;
+    width: 690rpx;
+    margin-top: 30rpx;
+}
+
+.desc image {
+    width: 690rpx !important;
+}
+
+.wxParse-inline {
+    white-space: normal;
+    word-break: break-all;
+    padding: 0 !important;
+}

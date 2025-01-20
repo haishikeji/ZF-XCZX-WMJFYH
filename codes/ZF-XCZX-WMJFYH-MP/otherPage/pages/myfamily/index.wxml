@@ -1,0 +1,51 @@
+<!--pages/mine/myfamily.wxml-->
+
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content">我的家庭</view>
+</cu-custom>
+<image class="bg" src="../../images/10.png" mode="widthFix" />
+<view class="page-content">
+    <view class="list" wx:if="{{list.length>0}}">
+        <view class="listtop flex-l-c" style="font-size: calc(32rpx * {{fontMultiple}});">
+            <image src="./../../images/09.png" mode="widthFix" />
+            <view>家庭成员</view>
+        </view>
+        <block wx:for="{{list}}" wx:key='item'>
+            <view class="item" style="font-size: calc(28rpx * {{fontMultiple}});">
+                <view class="flex-space">
+                    <view class="flex-l-c mar-b-15">
+                        <image class="icon" src="./../../images/11.png" mode="widthFix" />姓名：{{item.name}}
+                    </view>
+                    <view class="tag" style="font-size: calc(20rpx * {{fontMultiple}});" wx:if="{{item.relation==1}}">家庭联系人</view>
+                </view>
+                <view class="flex-l-c mar-b-15">
+                    <image class="icon" src="./../../images/12.png" mode="widthFix" />身份证号：{{item.idcard||'暂无'}}
+                </view>
+                <view class="flex-l-c">
+                    <image class="icon" src="./../../images/13.png" mode="widthFix" />联系电话：{{item.phone||'暂无'}}
+                </view>
+                <!-- <view class="flex">
+                    <view class="name">姓名：{{item.name}}
+                        <text wx:if="{{item.login==1}}">登录人</text>
+                    </view>
+                    <image src="../../images/mine/13.png" mode="aspectFit" bindtap="gopage" data-item="{{item}}" wx:if="{{curruid!=item.id}}"></image>
+                </view>
+                <view class="flex">
+                    <view>性别：{{item.sex==1?'男':'女'}}</view>
+                    <view class="flex-item">身份证号：{{item.idcard || ''}}</view>
+                </view>
+                <view class="flex">
+                    <view>关系：{{item.relation}}</view>
+                    <view class="flex-item">电话：{{item.phone || ''}}</view>
+                </view> -->
+            </view>
+        </block>
+    </view>
+    <!-- <view style="height:150rpx"></view> -->
+    <!-- <view class="addbtn" bindtap="addclick">添加家庭成员</view> -->
+
+    <view class="nodata" wx:if="{{list.length==0}}" style="font-size: calc(28rpx * {{fontMultiple}});">
+        <image src="../../images/empty2.png" mode="widthFix"></image>
+        <view>暂无家庭成员信息~</view>
+    </view>
+</view>

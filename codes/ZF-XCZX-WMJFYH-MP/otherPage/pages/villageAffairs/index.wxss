@@ -1,0 +1,21 @@
+/* otherPage/pages/villageAffairs/index.wxss */
+
+.page {
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+.list {
+  padding: 30rpx;
+  box-sizing: border-box;
+
+}
+
+.item {
+  font-size: 0;
+  margin-bottom: 30rpx;
+}
+
+.item image {
+  width: 100%;
+}

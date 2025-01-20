@@ -1,0 +1,48 @@
+<!--otherPage/pages/sunVillageAffairs/collectiveProperty/add.wxml-->
+<view class="page">
+	<cu-custom bgColor="bg-gradual-orangeRed" isBack="{{true}}">
+		<view slot="content">新增资源</view>
+	</cu-custom>
+	<view class="page-content">
+
+		<form catchsubmit="formSubmit">
+			<view class="inputItem">
+				<view class="label"><text>*</text>资源名称：</view>
+				<input name="name" placeholder="请输入资源名称" type="text" value="{{name}}" />
+			</view>
+			<view class="inputItem">
+				<view class="label"><text>*</text>乡/社区：</view>
+				<view class="inputBox" catch:tap="openChooseCun">
+					<view style="width:0;height:0;overflow: hidden;"><input name="did" placeholder="请选择居住镇" type="text" value="{{did}}" /> <input name="cdid" placeholder="请选择居住村/社区" type="text" value="{{cdid}}" style="pointer-events: none;" /></view>
+					<input class="sex_input" placeholder="请选择乡/社区" type="text" value="{{cuntext}}{{zutext?'/'+zutext:''}}" style="pointer-events: none;" />
+				</view>
+			</view>
+			<view class="inputItem">
+				<view class="label"><text>*</text>详细地址：</view>
+				<input name="address" placeholder="请输入详细地址" type="text" value="{{address}}" />
+			</view>
+			<view class="inputItem">
+				<view class="label">资源资料：</view>
+				<view class="uploadBox">
+					<image src="/images/villageAffairs/25.png" mode="" class="uploadImg" wx:if="{{fileList.length==0}}" />
+					<view class="c-0 font-28 uploadTxt line2 mar-b-30" wx:for="{{fileList}}" wx:key="{{index}}">
+						<view bind:tap="delClick" data-index="{{index}}">
+							{{item.label}}
+							<van-icon name="cross" size="12px" class="mar-t-10 mar-l-30" />
+						</view>
+					</view>
+					<view class="c-9 font-24 mar-t-20">支持上传：.png、.jpg、.doc、.docx、.pdf、.xlsx、.xls</view>
+					<view class="c-0 font-28 uploadBtn" bind:tap="uploadClick">点击上传</view>
+				</view>
+			</view>
+
+			<button hover-class="none" class="subBtn flex-c c-f font-600 font-32" formType="submit">确认新增</button>
+
+		</form>
+	</view>
+</view>
+
+<!-- 乡/社区： -->
+<van-popup show="{{ chooseCunPopshow }}" position="bottom">
+	<van-picker bind:cancel="CancelXiang" loading="{{getCunLoading}}" bind:confirm="ConfirmXiang" title="选择村" show-toolbar columns="{{ columns }}" value-key="name" bind:change="chooseCunOnChange" />
+</van-popup>

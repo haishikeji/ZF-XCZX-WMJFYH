@@ -1,0 +1,41 @@
+/* otherPage/pages/cadre/detail.wxss */
+
+page {
+    background: #fff !important;
+}
+
+.page-content {
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+
+.peopleList {
+    /* padding-left: 50rpx; */
+}
+
+.peopleList .peoItem {
+    margin-bottom: 40rpx;
+    color: #333;
+}
+
+.peopleList .peoItem .head {
+    width: 80rpx;
+    background: #c4c4c4;
+    margin-right: 20rpx;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.peopleList .peoItem .name {
+    font-size: 32rpx;
+    margin-bottom: 10rpx;
+}
+
+.peopleList .peoItem .phone {
+    font-size: 24rpx;
+    color: #666666;
+}
+
+.title {
+    padding: 20rpx 0 !important;
+}

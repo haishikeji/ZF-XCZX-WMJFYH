@@ -1,0 +1,56 @@
+<!--otherPage/pages/sunVillageAffairs/collectiveProperty/index.wxml-->
+<view class="page">
+	<cu-custom bgColor="bg-gradual-orangeRed" newIsBack="{{true}}" bind:tap="backMessage">
+		<view slot="content">资产公开</view>
+	</cu-custom>
+	<view class="topBox">
+		<view class="flex-between townBox">
+			<view class="flex-l-c">
+				<view class="font-28 c-3">乡镇：</view>
+				<view bindtap="chooseMessage" class="flex-l-c">
+					<view class="font-28 chooseTitle">{{townTxt}}</view>
+				</view>
+			</view>
+			<view class="flex-l-c" style="margin-left: -10rpx;">
+				<view class="font-28 c-3">村社区：</view>
+				<view bindtap="chooseMessage" class="flex-l-c">
+					<view class="font-28 chooseTitle">{{villageTxt}}</view>
+				</view>
+			</view>
+			<view class="flex-l-c" style="margin-left: -10rpx;" wx:if="{{groupTxt!='--'}}">
+				<view class="font-28 c-3">村组：</view>
+				<view bindtap="chooseMessage" class="flex-l-c">
+					<view class="font-28 chooseTitle">{{groupTxt}}</view>
+					<image src="/images/villageAffairs/23.png" mode="" class="arrowImg" />
+				</view>
+			</view>
+		</view>
+		<!--  -->
+
+		<view class="listBigBox" style="{{'height: calc(100% - ' + StatusBarBar+')'}}">
+			<block wx:for="{{list}}" wx:key="{{index}}">
+				<view class="listBox mar-l-30 mar-r-30 mar-t-30" bind:tap="goDetail" data-id="{{item.id}}">
+					<view class="c-3 font-32 font-500 line1">{{item.name}}</view>
+					<view class="flex-l-c mar-t-20">
+						<image src="/images/villageAffairs/15.png" mode="" class="listImg" />
+						<view class="font-28 mar-l-10">时间：{{item.publishTime}}</view>
+					</view>
+					<view class="flex-l-c mar-t-20">
+						<image src="/images/villageAffairs/19.png" mode="" class="listImg" />
+						<view class="font-28 mar-l-10 line1">地址：{{item.address}}</view>
+					</view>
+				</view>
+			</block>
+			<view class="emptyview" wx:if="{{list.length==0}}">
+				<image src="/images/villageAffairs/e2.png" mode="aspectFit"></image>
+				<view class="f-28 c-9">{{emptyTxt}}~</view>
+			</view>
+			<!--  -->
+		</view>
+		<!--  -->
+		<!-- <view class="propertyBox" bind:tap="addProperty">
+			<view class="addBtn c-f font-32 font-600">新增资产</view>
+		</view> -->
+	</view>
+</view>
+<!--  -->

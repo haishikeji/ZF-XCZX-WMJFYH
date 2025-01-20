@@ -1,0 +1,143 @@
+/* otherPage/pages/sunVillageAffairs/villageOpen/index.wxss */
+.topBox {
+	position: fixed;
+	left: 0rpx;
+	width: 100%;
+}
+
+.tabsBox {
+	height: 80rpx;
+	background: #ffffff;
+	line-height: 80rpx;
+	padding: 0 50rpx 0 50rpx;
+}
+
+.tabsTitle {
+	font-size: 28rpx;
+	font-family: PingFang SC, PingFang SC-400;
+	font-weight: 400;
+	text-align: center;
+	color: #999999;
+}
+
+.tabsTitleChoose {
+	font-size: 28rpx;
+	text-align: center;
+	font-family: PingFang SC, PingFang SC-500;
+	font-weight: 500;
+	color: #cf2b1e;
+	position: relative;
+}
+
+.tabsTitleChoose::after {
+	content: '';
+	position: absolute;
+	left: 20rpx;
+	bottom: 0;
+	width: 80%;
+	/* 线的长度小于文本长度的一个比例，可以根据需要调整 */
+	height: 4rpx;
+	/* 线的高度 */
+	background: #cf2b1e;
+	/* 线的颜色 */
+	transform: scaleX(0.5);
+	/* 线宽度的一半，可以根据需要调整 */
+}
+
+.chooseTitle {
+	padding: 0rpx 6rpx 0 0rpx !important;
+	color: #cf2b1e;
+}
+
+/*  */
+.listBigBox {
+	position: fixed;
+	margin-top: 80rpx;
+	left: 0rpx;
+	overflow-y: scroll;
+	padding-bottom: 30rpx;
+	width: 100%;
+}
+
+.listBox {
+	padding: 30rpx 30rpx 20rpx 30rpx;
+	background: #ffffff;
+	border-radius: 20rpx;
+	margin: 30rpx 30rpx 0rpx 30rpx;
+}
+
+.listImg {
+	width: 28rpx;
+	height: 28rpx;
+}
+
+.showBox {
+	width: 150rpx;
+	height: 80rpx;
+	background: #ffffff;
+	box-shadow: -2rpx 0rpx 0rpx 0rpx rgba(0, 0, 0, 0.15);
+	text-align: center;
+	line-height: 80rpx;
+	position: fixed;
+	right: 0rpx;
+}
+
+.showBoxTwo {
+	width: 150rpx;
+	height: 80rpx;
+	background: #ffffff;
+	/* box-shadow: -2rpx 0rpx 0rpx 0rpx rgba(0, 0, 0, 0.15); */
+	text-align: center;
+	line-height: 80rpx;
+	position: absolute;
+	right: 0rpx;
+	bottom: 0rpx;
+}
+
+.showImg {
+	width: 28rpx;
+	height: 28rpx;
+}
+
+.resultBox {
+	border-top: 2rpx solid #F6F6F6;
+	/* margin-top: 32rpx; */
+	padding-top: 22rpx;
+}
+
+.resultBtn {
+	/* height: 40rpx; */
+	background: #FFF3F2;
+	border-radius: 10rpx;
+	font-family: PingFang SC, PingFang SC-400;
+	font-weight: 400;
+	text-align: center;
+	color: #CF2B1E;
+	line-height: 40rpx;
+	padding: 6rpx 10rpx;
+}
+
+.stausImg {
+	width: 120rpx;
+	height: 120rpx;
+}
+
+.addBox {
+	width: 100%;
+	height: 120rpx;
+	background: #ffffff;
+	border-radius: 40rpx 40rpx 0rpx 0rpx;
+	box-shadow: 0rpx -4rpx 16rpx 0rpx rgba(0, 0, 0, 0.04);
+	position: fixed;
+	left: 0;
+	bottom: 0rpx;
+	padding: 20rpx;
+}
+
+.addBtn {
+	height: 80rpx;
+	background: linear-gradient(96deg, #ed5441, #f45f4c 100%);
+	border-radius: 20rpx;
+	text-align: center;
+	line-height: 80rpx;
+}

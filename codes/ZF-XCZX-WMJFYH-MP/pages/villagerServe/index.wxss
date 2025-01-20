@@ -1,0 +1,101 @@
+/* pages/villagerServe/index.wxss */
+
+.page {
+    min-height: 100vh;
+    background: #f6f6f6;
+    padding-bottom: calc(calc(100rpx + env(safe-area-inset-bottom) / 2));
+    box-sizing: border-box;
+}
+
+.page-content {
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 32rpx;
+    font-weight: 600;
+    padding-left: 28rpx;
+    position: relative;
+    margin-bottom: 40rpx;
+}
+
+.title .xian {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8rpx;
+    height: 32rpx;
+    background: #0ab481;
+    border-radius: 8rpx;
+}
+
+/* .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8rpx;
+    height: 32rpx;
+    background: #0ab481;
+    border-radius: 8rpx;
+} */
+
+.lifeServe .list {
+    margin: 0 -15rpx 0rpx;
+    flex-wrap: wrap;
+    line-height: 1.1;
+}
+
+.lifeServe .list .item {
+    margin: 0 15rpx 30rpx;
+    width: 210rpx;
+    height: 180rpx;
+    background: #ffffff;
+    border-radius: 20rpx;
+    text-align: center;
+    font-size: 24rpx;
+}
+
+.lifeServe .list .item image {
+    width: 88rpx;
+    margin-bottom: 13rpx;
+}
+
+
+.otherServe .list .item {
+    font-size: 32rpx;
+    line-height: 1.1;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.90);
+    height: 100rpx;
+    background: #ffffff;
+    border-radius: 20rpx;
+    margin-bottom: 30rpx;
+    padding: 0 30rpx 0 20rpx;
+    box-sizing: border-box;
+}
+
+.otherServe .list .icon {
+    width: 60rpx;
+    margin-right: 20rpx;
+}
+
+.otherServe .list .arrow image {
+    width: 40rpx;
+}
+
+.list2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40rpx;
+    text-align: center;
+}
+
+
+.list2 image {
+    width: 108rpx;
+    margin-bottom: 10rpx;
+}

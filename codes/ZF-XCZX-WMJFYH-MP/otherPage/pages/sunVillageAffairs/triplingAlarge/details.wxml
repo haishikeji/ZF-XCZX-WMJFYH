@@ -1,0 +1,126 @@
+<!--otherPage/pages/sunVillageAffairs/triplingAlarge/details.wxml-->
+<view class="page">
+	<cu-custom bgColor="bg-gradual-orangeRed" isBack="{{true}}">
+		<view slot="content">三重一大</view>
+	</cu-custom>
+	<view>
+		<view class="oneBox mar-t-30 mar-l-30 mar-r-30">
+			<view class="font-500 font-32 c-3"> {{detail.name}}</view>
+			<view class="flex-l-c mar-t-20">
+				<view class="c-6 font-28">乡/社区 ：</view>
+				<view class="c-3 font-28">{{detail.dname}}</view>
+			</view>
+			<view class="flex-l-c mar-t-20">
+				<view class="c-6 font-28">时 间 ：</view>
+				<view class="c-3 font-28">{{detail.publishTime}}</view>
+			</view>
+			<view class="flex-l-c mar-t-20">
+				<view class="c-6 font-28">资金来源：</view>
+				<view class="c-3 font-28">{{detail.zjly}}</view>
+			</view>
+			<view class="flex-l-c mar-t-20">
+				<view class="c-6 font-28">预算金额：</view>
+				<view class="c-3 font-28">{{detail.ysje}}（元）</view>
+			</view>
+		</view>
+		<view class="oneBox mar-t-30 mar-l-30 mar-r-30">
+			<view class="font-32 c-3 font-500">事项详情：</view>
+			<view class="font-28 c-6 mar-t-30" style="line-height: 48rpx;">
+				<view class="">
+					<import src="../../../../wxParse/wxParse" />
+					<template is="wxParse" data="{{wxParseData:rule.nodes}}" />
+				</view>
+			</view>
+		</view>
+		<!--  -->
+		<view class="twoBox mar-t-30 mar-l-30 mar-r-30">
+			<view class="titleBox flex-l-c">
+				<view class="titleLine"></view>
+				<view class="c-f font-32 font-500 mar-l-20">商议</view>
+			</view>
+			<view class="mar-l-30 mar-r-30 flex-between mar-b-30">
+				<view class="timeBox">
+					<view class="c-3 font-36 font-500">{{detail.syTime}}</view>
+					<view class="mar-t-20 font-28 c-6">公示时间</view>
+				</view>
+				<view class="timeBox">
+					<view class="c-3 font-36 font-500">{{detail.syPeolpe}}</view>
+					<view class="mar-t-20 font-28 c-6">实到人数</view>
+				</view>
+				<view class="timeBox">
+					<view class="c-3 font-36 font-500">{{detail.syAgree}}</view>
+					<view class="mar-t-20 font-28 c-6">赞成票数</view>
+				</view>
+			</view>
+		</view>
+		<view class="twoBox mar-t-30 mar-l-30 mar-r-30">
+			<view class="titleBox flex-l-c">
+				<view class="titleLine"></view>
+				<view class="c-f font-32 font-500 mar-l-20">审议</view>
+			</view>
+			<view class="mar-l-30 mar-r-30 flex-between mar-b-30">
+				<view class="timeBox">
+					<view class="c-3 font-36 font-500">{{detail.considerTime}}</view>
+					<view class="mar-t-20 font-28 c-6">公示时间</view>
+				</view>
+				<view class="timeBox">
+					<view class="c-3 font-36 font-500">{{detail.considerPeolpe}}</view>
+					<view class="mar-t-20 font-28 c-6">实到人数</view>
+				</view>
+				<view class="timeBox">
+					<view class="c-3 font-36 font-500">{{detail.considerAgree}}</view>
+					<view class="mar-t-20 font-28 c-6">赞成票数</view>
+				</view>
+			</view>
+		</view>
+		<view class="twoBox mar-t-30 mar-l-30 mar-r-30">
+			<view class="titleBox flex-l-c">
+				<view class="titleLine"></view>
+				<view class="c-f font-32 font-500 mar-l-20">决议</view>
+			</view>
+			<view class="mar-l-30 mar-r-30 flex-between mar-b-30">
+				<view class="timeBox">
+					<view class="c-3 font-36 font-500">{{detail.jyTime}}</view>
+					<view class="mar-t-20 font-28 c-6">公示时间</view>
+				</view>
+				<view class="timeBox">
+					<view class="c-3 font-36 font-500">{{detail.jyPeolpe}}</view>
+					<view class="mar-t-20 font-28 c-6">实到人数</view>
+				</view>
+				<view class="timeBox">
+					<view class="c-3 font-36 font-500">{{detail.jyAgree}}</view>
+					<view class="mar-t-20 font-28 c-6">赞成票数</view>
+				</view>
+			</view>
+		</view>
+		<view class="twoBox mar-t-30 mar-l-30 mar-r-30 mar-b-30">
+			<view class="titleBox flex-l-c">
+				<view class="titleLine"></view>
+				<view class="c-f font-32 font-500 mar-l-20">公示</view>
+			</view>
+			<view class="mar-l-30 mar-r-30 flex-between mar-b-30">
+				<view class="timeBoxOne">
+					<view class="c-3 font-36 font-500">{{detail.lastTime}}</view>
+					<view class="mar-t-20 font-28 c-6">公示时间</view>
+				</view>
+				<view class="timeBoxOne">
+					<view class="c-3 font-36 font-500">{{detail.result}}</view>
+					<view class="mar-t-20 font-28 c-6">公示结果</view>
+				</view>
+			</view>
+			<block wx:for="{{detail.newFile}}" wx:key="{{index}}">
+				<view class="onLineBox mar-t-40 mar-l-30 mar-r-30 flex-l-c mar-b-30" bind:tap="onLineLook" data-url="{{item.value}}">
+					<image src="/images/villageAffairs/17.png" mode="" class="onLineImg" wx:if="{{item.type=='pdf'||item.type=='PDF'}}" />
+					<image src="/images/villageAffairs/20.png" mode="" class="onLineImg" wx:if="{{item.type=='XLSX'||item.type=='XLS'||item.type=='xlsx'||item.type=='xls'}}" />
+					<image src="/images/villageAffairs/21.png" mode="" class="onLineImg" wx:if="{{item.type=='doc'||item.type=='DOC'||item.type=='docx'||item.type=='DOCX'}}" />
+					<image src="/images/villageAffairs/25.png" mode="" class="onLineImg" wx:if="{{item.type=='jpg'||item.type=='JPG'||item.type=='png'||item.type=='PNG'}}" />
+					<view class="mar-l-30">
+						<view class=" font-28 c-3 line2" style="width:424rpx;">{{item.label}}</view>
+						<!-- <view class="font-24 c-9 mar-t-10">文件大小：2.45M</view> -->
+					</view>
+				</view>
+			</block>
+
+		</view>
+	</view>
+</view>

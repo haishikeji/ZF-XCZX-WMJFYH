@@ -1,0 +1,225 @@
+/* otherPage/pages/guangrongbang/inde.wxss */
+
+.page {
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    background: #f6f6f6;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.page-content {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.top {
+    margin-top: 10rpx;
+    padding-left: 60rpx;
+    color: #ffffff;
+    margin-bottom: 60rpx;
+}
+
+.top .tit {
+    font-size: 56rpx;
+    font-weight: 700;
+    margin-bottom: 20rpx;
+}
+
+.scrollBox {
+    white-space: nowrap;
+    /* 防止内容换行 */
+    display: flex;
+    /* 使用 Flexbox 布局水平排列子元素 */
+    overflow-x: auto;
+    box-sizing: border-box;
+    height: 770rpx;
+    margin-bottom: 30rpx;
+}
+
+.bangList .item {
+    vertical-align: top;
+    display: inline-block;
+    width: 520rpx;
+    height: 770rpx;
+    margin-left: 30rpx;
+    padding: 30rpx;
+    box-sizing: border-box;
+    border-radius: 20rpx;
+}
+
+.bangList .item:nth-child(1) {
+    background: linear-gradient(180deg, #d6f9e6, #ffffff 30%, #ffffff 100%);
+}
+
+.bangList .item:nth-child(2) {
+    background: linear-gradient(180deg, #f8ebd3, #ffffff 30%, #ffffff 100%);
+}
+
+.bangList .item:nth-child(3) {
+    background: linear-gradient(180deg, #ffd4d1, #ffffff 30%, #ffffff 100%);
+}
+
+.bangList .item:last-child {
+    margin-right: 30rpx;
+}
+
+.itemTop {
+    border-bottom: 2rpx solid #eeeeee;
+    padding-bottom: 30rpx;
+}
+
+.itemTop .tit {
+    font-size: 36rpx;
+    color: #000000;
+    font-weight: 500;
+}
+
+.itemTop .dec {
+    font-size: 24rpx;
+    color: #999999;
+}
+
+.itemTop .btn {
+    width: 180rpx;
+    height: 68rpx;
+    border-radius: 52rpx;
+    line-height: 1.1;
+}
+
+.bangList .item:nth-child(1) .itemTop .btn {
+    background: #c1f0d8;
+    color: #0ab481;
+}
+
+.bangList .item:nth-child(2) .itemTop .btn {
+    background: #f4e1c3;
+    color: #DC9610;
+}
+
+.bangList .item:nth-child(3) .itemTop .btn {
+    background: #ffd0d0;
+    color: #FA4B4B;
+}
+
+.itemTop .btn image {
+    width: 28rpx;
+    margin-right: 5rpx;
+}
+
+.tableBox .head {
+    font-size: 24rpx;
+    color: #666666;
+    padding: 20rpx 0 17rpx;
+}
+
+.tableBox .head .ge2 {
+    padding-left: 16rpx;
+    box-sizing: border-box;
+}
+
+.tableItem {
+    padding: 15rpx 0;
+}
+
+.tableBox .ge {
+    width: 70rpx;
+    text-align: center;
+}
+
+.tableBox .ge3 {
+    width: 100rpx;
+}
+
+.tableBox .ge2 {
+    text-align: left;
+    width: calc(100% - 170rpx);
+}
+
+.ge2 image {
+    min-width: 80rpx;
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20rpx;
+}
+
+.ge2 .name {
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 10rpx;
+}
+
+.ge2 .cun {
+    font-size: 24rpx;
+    color: #999999;
+}
+
+.tableItem .ge3 {
+    color: #333333;
+    font-weight: 500;
+}
+
+.rankList {
+    padding: 0 30rpx 1rpx;
+    box-sizing: border-box;
+}
+
+.rankList .item {
+    background: #ffffff;
+    border-radius: 20rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    margin-bottom: 30rpx;
+}
+
+.rankList .pic {
+    min-width: 180rpx;
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 20rpx;
+    margin-right: 20rpx;
+}
+
+.rankList .info {
+    width: calc(100% - 200rpx);
+}
+
+.rankList .icon {
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 10rpx;
+}
+
+.rankList .tit {
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 10rpx;
+}
+
+.rankList .dec {
+    color: #999999;
+}
+
+.rankList .info {
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+.rankList .info>view {
+    width: 100%;
+}
+
+.rankList .time {
+    color: #999;
+}

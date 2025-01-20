@@ -1,0 +1,135 @@
+/* otherPage/pages/jinrongchaoshi/index.wxss */
+.page {
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 700rpx, #f6f6f6 900rpx, #f6f6f6 100%);
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.page-content {
+    padding: 30rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.banner {
+    overflow: hidden;
+    margin: 0 -30rpx 30rpx;
+}
+
+.banner swiper {
+    width: 100%;
+    height: 240rpx;
+}
+
+.banner swiper-item {
+    width: 100%;
+    height: 100%;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+
+.banner swiper-item image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20rpx;
+    background: #f6f6f6;
+}
+
+/* .banner .swiper-box .wx-swiper-dots.wx-swiper-dots-horizontal {
+    margin-bottom: -10rpx;
+}
+
+.banner .swiper-box .wx-swiper-dot {
+    width: 12rpx;
+    display: inline-flex;
+    height: 12rpx;
+    justify-content: center;
+    border-radius: 6rpx;
+    overflow: hidden;
+}
+
+.banner .swiper-box .wx-swiper-dot::before {
+    content: '';
+    flex-grow: 1;
+    border-radius: 6rpx;
+    background: rgba(200, 199, 199, .5);
+}
+
+.banner .swiper-box .wx-swiper-dot-active {
+    width: 36rpx;
+}
+
+.banner .swiper-box .wx-swiper-dot-active::before {
+    background: #0AB481;
+
+} */
+
+.banner .item {
+    text-align: center;
+}
+
+.banner .item .icon {
+    width: 48rpx;
+    height: 48rpx;
+    margin-bottom: 5rpx;
+}
+
+.banks {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.banks .banksItem {
+    width: calc(20% - 20rpx);
+    text-align: center;
+    margin: 0 10rpx 30rpx;
+    font-size: 24rpx;
+}
+
+.banks .banksItem image {
+    width: 80rpx;
+    height: 80rpx;
+    margin-bottom: 10rpx;
+}
+
+.list .item {
+    background: #ffffff;
+    border-radius: 20rpx;
+    overflow: hidden;
+    margin-bottom: 30rpx;
+}
+
+.list .item image {
+    width: 100%;
+    height: 240rpx;
+}
+
+.list .item .tit {
+    padding: 20rpx 30rpx 10rpx;
+    font-size: 32rpx;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.list .item .dec {
+    padding: 0 30rpx 20rpx;
+    box-sizing: border-box;
+    color: #999999;
+}
+
+.nodata {
+    position: relative;
+    height: 50vh;
+    background-color: none;
+    background: none;
+}

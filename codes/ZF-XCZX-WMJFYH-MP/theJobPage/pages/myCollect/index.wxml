@@ -1,0 +1,117 @@
+<!--theJobPage/pages/myCollect/index.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content">我的收藏</view>
+</cu-custom>
+<van-tabs active="{{ active }}" color="#0AB481" title-active-color="#0AB481" bind:change="onChange" ellipsis="{{false}}">
+    <van-tab wx:if="{{role!=4}}" title="简历" name="{{1}}"></van-tab>
+    <van-tab wx:if="{{role!=4}}" title="工作" name="{{2}}"></van-tab>
+    <van-tab title="富民文章" name="{{4}}"></van-tab>
+    <van-tab title="金融文章" name="{{9}}"></van-tab>
+</van-tabs>
+<view class="page">
+    <view class="searchBox flex-l-c">
+        <view class="icon flex-c">
+            <van-icon name="search" size="38rpx" color="#0AB481" />
+        </view>
+        <input type="text" bindinput="syncInputValue" placeholder="按名称搜索收藏的内容" value="{{kw}}" />
+    </view>
+    <view class="list_0" wx:if="{{active==1}}">
+        <view class="item" wx:for="{{list}}" wx:key="index" wx:if="{{list.length}}" data-id="{{item.szInfomation.id}}" bindtap="goDetail">
+            <view class="title line1">
+                {{item.szInfomation.title}}
+            </view>
+            <view class="red_font flex-l-c">
+                <image class="icon" src="../../images/7.png" />
+                期待薪资：{{item.szInfomation.minmoney || 0}}-{{item.szInfomation.maxmoney || 0}}元
+            </view>
+            <view class="infos flex-l-c">
+                <view class="info flex-l-c">
+                    <image class="icon" src="../../images/10.png" />
+                    称呼：{{item.szInfomation.position}}
+                </view>
+                <view class="info flex-l-c">
+                    <image class="icon" src="../../images/8.png" />
+                    性别：
+                    <text wx:if="{{item.szInfomation.sex==0}}">保密</text>
+                    <text wx:if="{{item.szInfomation.sex==1}}">男</text>
+                    <text wx:if="{{item.szInfomation.sex==2}}">女</text>
+                </view>
+                <view class="info flex-l-c">
+                    <image class="icon" src="../../images/9.png" />
+                    年龄：{{item.szInfomation.age}}
+                </view>
+            </view>
+            <view class="bot">更新时间：{{item.szInfomation.timer}}</view>
+        </view>
+    </view>
+    <view class="list_1" wx:if="{{active==2}}">
+        <view class="item" wx:for="{{list}}" wx:key="index" wx:if="{{list.length}}" data-id="{{item.szInfomation.id}}" bindtap="goDetail">
+            <view class="title flex-l-c">
+                <view class="tag">认证</view>
+                <view class="line1">{{item.szInfomation.title}}</view>
+            </view>
+            <view class="info flex-l-c">
+                <image class="icon" src="../../images/15.png" />
+                招募公司：{{item.szInfomation.unit}}
+            </view>
+            <view class="info flex-l-c">
+                <image class="icon" src="../../images/13.png" />
+                招募地址：{{item.szInfomation.address}}
+            </view>
+            <view class="info flex-l-c">
+                <image class="icon" src="../../images/14.png" />
+                招募人数：{{item.szInfomation.number}}
+            </view>
+            <view class="bot flex-space">
+                <view>更新时间：{{item.szInfomation.timer}}</view>
+                <view class="xz">薪资：<text class="xz-red">{{item.szInfomation.minmoney || 0}}-{{item.szInfomation.maxmoney || 0}}</text></view>
+            </view>
+        </view>
+    </view>
+
+    <view class="list_2" wx:if="{{active==9}}">
+        <block wx:for="{{list}}">
+            <view class="activity-item" bindtap="goDetail2" mark:id="{{item.szFinace.id}}" mark:type="{{item.szFinace.type}}" mark:cate="{{item.szFinace.cate}}">
+                <view class="activity-info">
+                    <view class="activity-title line1">{{item.szFinace.title}}</view>
+                    <view class="activity-content line2">{{item.szFinace.sortcontent||''}}</view>
+                    <view class="activity-time flex-space">
+                        <view class="flex-l-c">
+                            <image class="icon" src="../../images/18.png" mode="widthFix"></image>
+                            发布于 {{item.szFinace.timer}}
+                        </view>
+                        <!-- <view class="flex-l-c">
+                            <image class="icon" src="../../images/22.png" mode="widthFix"></image>
+                            {{item.szFinace.views||0}}
+                        </view> -->
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="list_2" wx:if="{{active==4}}">
+        <block wx:for="{{list}}">
+            <view class="activity-item" bindtap="goDetail3" mark:id="{{item.szPeopling.id}}">
+                <view class="activity-info">
+                    <view class="activity-title line1">{{item.szPeopling.title}}</view>
+                    <view class="activity-content line2">{{item.szPeopling.content||''}}</view>
+                    <view class="activity-time flex-space">
+                        <view class="flex-l-c">
+                            <image class="icon" src="../../images/18.png" mode="widthFix"></image>
+                            发布于 {{item.szPeopling.timer}}
+                        </view>
+                        <!-- <view class="flex-l-c">
+                            <image class="icon" src="../../images/22.png" mode="widthFix"></image>
+                            {{item.szPeopling.views||0}}
+                        </view> -->
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <view class="nolist" wx:if="{{list.length==0}}">
+        <image src="../../images/empty2.png" mode="widthFix"></image>
+        <view>暂无收藏~</view>
+    </view>
+</view>

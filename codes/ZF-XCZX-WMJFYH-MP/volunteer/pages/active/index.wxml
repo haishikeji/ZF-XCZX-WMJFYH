@@ -1,0 +1,42 @@
+<!--volunteer/pages/active/index.wxml-->
+<view class="page">
+    <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+        <view slot="content">精彩活动</view>
+    </cu-custom>
+
+    <view class="page-content">
+        <view class="topline"></view>
+        <view class="searchBox flex-l-c">
+            <view class="icon flex-c">
+                <van-icon name="search" size="38rpx" color="#0AB481" />
+            </view>
+            <input type="text" bindinput="search" placeholder="按名称搜索" value="{{kw}}" />
+        </view>
+
+        <view class="intro" wx:if="{{!kong}}">
+            <block wx:for="{{d}}" wx:key='item'>
+                <view class="activity-item" bindtap="godetail" mark:id="{{item.id}}">
+                    <view class=" activity-info">
+                        <view class="activity-title line1">{{item.title}}</view>
+                        <view class="activity-content line2">{{item.content||''}}</view>
+                        <view class="activity-time flex-space">
+                            <view class="flex-l-c">
+                                <image class="icon" src="./../../images/18.png" mode="widthFix"></image>
+                                发布于 {{item.createTime}}
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+
+            <view class="no-data">
+                <text>{{noData?'已经到底啦！~':'正在加载~'}}</text>
+            </view>
+        </view>
+        <view class="nodata" wx:if="{{kong}}">
+            <image src="../../images/empty2.png" mode="widthFix"></image>
+            <view>暂无数据~</view>
+        </view>
+    </view>
+
+</view>

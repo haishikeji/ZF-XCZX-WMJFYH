@@ -1,0 +1,113 @@
+/* otherPage/pages/sunVillageAffairs/collectiveMoney/twoIndex.wxss */
+.oneBox {
+	height: 220rpx;
+	background: linear-gradient(107deg, #ed5441, #f45f4c 100%);
+	border-radius: 20rpx;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.twoImg {
+	width: 36rpx;
+	height: 36rpx;
+}
+
+.oneTop {
+	padding: 0 20rpx;
+	height: 52rpx;
+	box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.30);
+	border: 2rpx solid #ffffff;
+	border-radius: 0rpx 0rpx 20rpx 20rpx;
+	position: absolute;
+	left: calc((100% - 176rpx) / 2);
+}
+
+.oneContent {
+	padding-top: 56rpx;
+}
+
+.font-tc {
+	font-family: PingFang TC, PingFang TC-400;
+}
+
+.oneMoney {
+	font-size: 40rpx;
+	font-family: D-DIN Exp, D-DIN Exp-400;
+	text-align: center;
+}
+
+.twoMoneyLine {
+	padding: 0 30rpx;
+	border-left: 2rpx solid #fff;
+	border-right: 2rpx solid #fff;
+}
+
+/*  */
+.twoBox {
+	background: #ffffff;
+	border-radius: 20rpx;
+	padding: 30rpx;
+}
+
+.policyLine {
+	width: 8rpx;
+	height: 32rpx;
+	background: #cf2b1e;
+	border-radius: 8rpx;
+}
+
+.txtCF {
+	color: #cf2b1e;
+}
+
+/*  */
+
+.listLine {
+	padding-bottom: 30rpx;
+	border-bottom: 2rpx solid #F6F6F6;
+}
+
+.listLine:last-child {
+	padding-bottom: 0rpx;
+	border-bottom: none;
+}
+
+.txt481 {
+	color: #0ab481;
+}
+
+.tabsBox {
+	height: 80rpx;
+	background: #ffffff;
+	border: 2rpx solid #fafafa;
+	border-radius: 100rpx;
+	padding: 10rpx;
+	box-sizing: border-box;
+}
+
+.shouBtn {
+	width: 320rpx;
+	height: 60rpx;
+	background: linear-gradient(100deg, #ed5441, #f45f4c 100%);
+	border-radius: 40rpx;
+	font-size: 32rpx;
+	font-family: PingFang SC, PingFang SC-600;
+	font-weight: 600;
+	text-align: center;
+	color: #ffffff;
+	line-height: 60rpx;
+}
+
+.zhiBtn {
+	width: 320rpx;
+	height: 60rpx;
+	background: #FAFAFA;
+	border-radius: 40rpx;
+	font-size: 28rpx;
+	font-family: PingFang SC, PingFang SC-400;
+	font-weight: 400;
+	text-align: center;
+	color: #333;
+	line-height: 60rpx;
+}

@@ -1,0 +1,152 @@
+/* pages/getPoints/index.wxss */
+
+.page {
+    min-height: 100vh;
+    background: #fff;
+    padding-bottom: calc(calc(100rpx + env(safe-area-inset-bottom) / 2));
+    box-sizing: border-box;
+}
+
+.page-content {
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+
+.page-content .item {
+    width: 690rpx;
+    height: 150rpx;
+    border-radius: 20rpx;
+    padding: 20rpx 30rpx 20rpx 20rpx;
+    margin-bottom: 30rpx;
+}
+
+.page-content .item .icon {
+    width: 110rpx;
+    margin-right: 20rpx;
+}
+
+.page-content .item .tit {
+    font-size: 36rpx;
+    font-weight: 600;
+    margin-bottom: 15rpx;
+}
+
+.page-content .item .dec {
+    font-size: 24rpx;
+}
+
+.page-content .item .btn {
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 78rpx;
+    color: #fff;
+}
+
+.page-content .item1 {
+    background: linear-gradient(90deg, #ffeebb, #ffd6bf 100%);
+}
+
+.page-content .item1 .tit {
+    color: #75170e;
+}
+
+.page-content .item1 .dec {
+    color: #AC7059;
+}
+
+.page-content .item1 .btn {
+    background: linear-gradient(180deg, #ff5c01, #fe0001 100%);
+}
+
+.page-content .item2 {
+    background: #ffffff linear-gradient(90deg, #cae9fe, #e6e7fd 100%);
+}
+
+.page-content .item2 .tit {
+    color: #3558B6;
+}
+
+.page-content .item2 .dec {
+    color: #7692C4;
+}
+
+.page-content .item2 .btn {
+    background: linear-gradient(180deg, #0052fe, #3383ff 100%);
+}
+
+.page-content .item3 {
+    background: linear-gradient(90deg, #ffeee4, #ffd3cc 100%);
+}
+
+.page-content .item3 .tit {
+    color: #701310;
+}
+
+.page-content .item3 .dec {
+    color: #9C6059;
+}
+
+.page-content .item3 .btn {
+    background: linear-gradient(180deg, #ff5c01, #fe0001 100%);
+}
+
+
+
+.page-content .item4 {
+    background: linear-gradient(90deg, #e9ffe1, #ddffd4 100%, #d5f6cc 100%);
+}
+
+.page-content .item4 .tit {
+    color: #127010;
+}
+
+.page-content .item4 .dec {
+    color: #599C74;
+}
+
+.page-content .item4 .btn {
+    background: linear-gradient(180deg, #21c38e, #38d090 100%);
+}
+
+
+
+.page-content .item5 {
+    background: linear-gradient(90deg, #f4effe, #dfdcff 100%);
+}
+
+.page-content .item5 .tit {
+    color: #5030BC;
+}
+
+.page-content .item5 .dec {
+    color: #9183BC;
+}
+
+.page-content .item5 .btn {
+    background: linear-gradient(180deg, #7802ff, #5d32fe 100%);
+}
+
+
+
+
+.page-content .item6 {
+    background: linear-gradient(90deg, #ffeebb, #ffd6bf 100%);
+}
+
+.page-content .item6 .tit {
+    color: #75170E;
+}
+
+.page-content .item6 .dec {
+    color: #AC7059;
+}
+
+.page-content .item6 .btn {
+    background: linear-gradient(180deg, #ff5c01, #fe0001 100%);
+}
+
+.picItem {
+    min-height: 150rpx;
+    border-radius: 20rpx;
+    margin-bottom: 30rpx;
+}

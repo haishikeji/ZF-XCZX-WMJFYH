@@ -1,0 +1,45 @@
+/* otherPage/pages/jinrongchaoshi/list.wxss */
+.page {
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    background: #f6f6f6;
+}
+
+.page-content {
+    padding: 30rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.list .item {
+    background: #ffffff;
+    border-radius: 20rpx;
+    overflow: hidden;
+    margin-bottom: 30rpx;
+}
+
+.list .item image {
+    width: 100%;
+    height: 240rpx;
+}
+
+.list .item .tit {
+    padding: 20rpx 30rpx 10rpx;
+    font-size: 32rpx;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.list .item .dec {
+    padding: 0 30rpx 20rpx;
+    box-sizing: border-box;
+    color: #999999;
+}
+
+.nodata {
+    position: relative;
+    height: 50vh;
+    background-color: none;
+    background: none;
+}

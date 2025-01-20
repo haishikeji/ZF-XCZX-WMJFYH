@@ -1,0 +1,33 @@
+<!--pages/mine/myneed.wxml-->
+<view class="topline"></view>
+<view class="list" wx:if="{{array.length>0}}">
+  <block wx:for="{{array}}" wx:key='item'>
+    <!-- <navigator url="../mine/needdetail" hover-class="none"> -->
+    <view class="item" bindtap="godetail" data-index="{{index}}">
+      <view class="item-title">
+        <view class="item-title-t">{{item.title}}</view>
+        <!-- <view class="item-title-s" wx:if="{{item.state==0}}">待审核</view>
+        <view class="item-title-s pass" wx:if="{{item.state==1}}">已通过</view>
+        <view class="item-title-s nopass" wx:if="{{item.state==2}}">未通过</view> -->
+      </view>
+      <view class="item-content">{{item.content}}</view>
+      <view class="item-line"></view>
+      <view class="item-info">
+        <view class="item-info-l">
+          <!-- <image src="" mode="aspectFill"></image> -->
+          <!-- <view>{{item.contact}}</view> -->
+        </view>
+        <view class="item-info-r">
+          <image src="../../images/t_3.png" mode="aspectFill"></image>
+          <view>{{item.ctime}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- </navigator> -->
+  </block>
+</view>
+
+<view class="nodata" wx:if="{{array.length==0}}">
+  <image src="../../images/empty2.png" mode="widthFix"></image>
+  <view>暂无需求~</view>
+</view>

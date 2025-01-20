@@ -1,0 +1,268 @@
+<!--otherPage/pages/zhenDataAnalysis/index.wxml-->
+<view class="page">
+    <view class="flex-space" style="margin-bottom: 30rpx;">
+        <view class="town" catch:tap="openChooseCun">
+            <view class="font1">统计范围：</view>
+            <view class="font2">{{cuntext || '嵩县'}}</view>
+            <view class="btn flex-c">
+                <image src="/images/index/05.png" />
+            </view>
+        </view>
+        <view class="youkeBtn flex-c" catch:tap="goYouke">首页</view>
+    </view>
+
+
+    <view class="part1 flex-space">
+        <view class="item flex-l-c">
+            <view>
+                <view class="name">注册用户总数</view>
+                <view class="num">{{partNumData.EnrollmentCount}}<text>人</text></view>
+            </view>
+            <image class="icon" src="./../../images/53.png" mode="aspectFit" />
+        </view>
+        <view class="item item2 flex-l-c">
+            <view>
+                <view class="name">登录用户总数</view>
+                <view class="num">{{partNumData.LoginCount}}<text>人</text></view>
+            </view>
+            <image class="icon" src="./../../images/54.png" mode="aspectFit" />
+        </view>
+    </view>
+    <view class="part2 flex-c">
+        <view class="item">
+            <view class="num">{{partNumData.MouthEnrollmentCount}}<text>人</text></view>
+            <view class="name">近30日注册总量</view>
+        </view>
+        <view class="xian"></view>
+        <view class="item">
+            <view class="num">{{partNumData.MouthLoginCount}}<text>人</text></view>
+            <view class="name">近30日登录总量</view>
+        </view>
+    </view>
+
+    <view class="part3 echarts section">
+        <view class="echartsBox">
+            <view class="flex-space title3">
+                <view class="tit">平台活跃度</view>
+                <view class="tabBox flex">
+                    <view class="tabitem flex-c {{hydIndex==1?'on':''}}" bindtap="hydChange" mark:index="{{1}}">近30天</view>
+                    <view class="tabitem flex-c {{hydIndex==2?'on':''}}" bindtap="hydChange" mark:index="{{2}}">近半年</view>
+                    <view class="tabitem flex-c {{hydIndex==3?'on':''}}" bindtap="hydChange" mark:index="{{3}}">近一年</view>
+                </view>
+            </view>
+            <view class="flex-l-c tuli">
+                <view class="item">注册用户总数</view>
+                <view class="item item2">登录用户总数</view>
+            </view>
+            <block wx:if="{{!chooseCunPopshow}}">
+                <chart width="100%" height="320rpx" chart-class="chart" option="{{ option5 }}" />
+            </block>
+        </view>
+    </view>
+
+    <view class="part3 echarts section">
+        <view class="echartsBox">
+            <view class="flex-space title3">
+                <view class="tit">各村情况分析</view>
+                <view class="tabBox flex">
+                    <view class="tabitem flex-c {{gcqkTimeIndex==1?'on':''}}" bindtap="gcqkTimeChange" mark:index="{{1}}">近一月</view>
+                    <view class="tabitem flex-c {{gcqkTimeIndex==2?'on':''}}" bindtap="gcqkTimeChange" mark:index="{{2}}">近一季</view>
+                    <view class="tabitem flex-c {{gcqkTimeIndex==3?'on':''}}" bindtap="gcqkTimeChange" mark:index="{{3}}">近一年</view>
+                </view>
+            </view>
+            <view class="cont">
+                <view class="table2 flex-space">
+                    <view class="item flex-c {{gcqkIndex==1?'on':''}}" bindtap="gcqkChange" mark:index="{{1}}">各村登录情况分析</view>
+                    <view class="item flex-c {{gcqkIndex==2?'on':''}}" bindtap="gcqkChange" mark:index="{{2}}">各村注册情况分析</view>
+                </view>
+            </view>
+            <view class="bingBox" wx:if="{{!chooseCunPopshow}}">
+                <chart width="100%" height="300rpx" chart-class="chart" option="{{ option6 }}" />
+                <view class="numBox">
+                    <view class="num">{{zong2}}</view>
+                    <view>总数</view>
+                </view>
+            </view>
+            <view class="tableBox">
+                <view class="table">
+                    <view class="head flex-l-c">
+                        <view class="ge">颜色</view>
+                        <view class="ge ge1">村名称</view>
+                        <view class="ge ge2">数量</view>
+                    </view>
+                    <block wx:for="{{list2}}" wx:key="index">
+                        <view class="item flex-l-c" wx:if="{{showMore2?true:index<maxCount2}}">
+                            <view class="ge">
+                                <view class="color" style="background:{{echartsColor[index % echartsColor.length]}}"></view>
+                            </view>
+                            <view class="ge ge1">{{item.name1}}</view>
+                            <view class="ge ge2">{{item.value}}</view>
+                        </view>
+                    </block>
+
+                </view>
+            </view>
+            <view class="more flex-c" catch:tap="changeShowMore2" wx:if="{{list2.length>maxCount2}}">
+                <block wx:if="{{!showMore2}}">点击展开全部数据
+                    <van-icon name="arrow-down" />
+                </block>
+                <block wx:if="{{showMore2}}">点击收起全部数据
+                    <van-icon name="arrow-up" />
+                </block>
+            </view>
+
+
+        </view>
+    </view>
+
+    <view class="page-top flex-space">
+        <view class="item">
+            <image class="icon" src="../../images/ganbu/01.png" mode="widthFix" />
+            <view class="tit">本镇居民数</view>
+            <view class="numBox"><text class="num">{{numData.mannumber||0}}</text>户</view>
+        </view>
+        <view class="item">
+            <image class="icon" src="../../images/ganbu/08.png" mode="widthFix" />
+            <view class="tit">完成任务数</view>
+            <view class="numBox"><text class="num">{{numData.taskrodenumber||0}}</text>人</view>
+        </view>
+        <view class="item">
+            <image class="icon" src="../../images/ganbu/03.png" mode="widthFix" />
+            <view class="tit">总兑换数</view>
+            <view class="numBox"><text class="num">{{numData.pointlognumber||0}}</text>件</view>
+        </view>
+    </view>
+    <view style="margin-bottom: 30rpx;">
+        <!-- <view class="title" style="margin-bottom: 35rpx;padding-top:10rpx;">兑换数据分析</view> -->
+        <view class="echarts section" wx:if="{{!chooseCunPopshow}}">
+            <view class="flex-space title3">
+                <view class="tit">兑换数据分析</view>
+                <view class="tabBox flex">
+                    <view class="tabitem flex-c {{sectionIndex1==1?'on':''}}" bindtap="dataChange1" mark:index="{{1}}">本月</view>
+                    <view class="tabitem flex-c {{sectionIndex1==2?'on':''}}" bindtap="dataChange1" mark:index="{{2}}">本季</view>
+                    <view class="tabitem flex-c {{sectionIndex1==3?'on':''}}" bindtap="dataChange1" mark:index="{{3}}">本年</view>
+                </view>
+            </view>
+            <view class="flex-c" style="{{option2hide?'width:0;height:0;overflow:hidden;':''}}">
+                <chart width="690rpx" height="320rpx" chart-class="chart" option="{{ option2 }}" />
+            </view>
+            <view class="flex-c" style="{{option2hide?'':'display:none;'}}height:300rpx;color:#666;">
+                暂无数据
+            </view>
+        </view>
+
+    </view>
+
+    <view class="data-analysis">
+        <!-- <view class="flex-space" style="margin-bottom: 28rpx;">
+            <view class="title">数据分析</view>
+            <view class="tabBox flex">
+                <view class="tabTit tabTit1 flex-c {{tabIndex==1?'on':''}}" mark:index="{{1}}" catchtap="changeTab">完成任务数</view>
+                <view class="xian"></view>
+                <view class="tabTit tabTit2 flex-c {{tabIndex==2?'on':''}}" mark:index="{{2}}" catchtap="changeTab">获取积分数</view>
+            </view>
+        </view> -->
+        <view class="echarts section">
+            <view class="flex-space title3">
+                <view class="tit">数据分析</view>
+                <view class="tabBox2 flex">
+                    <view class="tabTit tabTit1 flex-c {{tabIndex==1?'on':''}}" mark:index="{{1}}" catchtap="changeTab">完成任务数</view>
+                    <view class="xian"></view>
+                    <view class="tabTit tabTit2 flex-c {{tabIndex==2?'on':''}}" mark:index="{{2}}" catchtap="changeTab">获取积分数</view>
+                </view>
+            </view>
+            <view class='echartsBox'>
+                <view class="flex-space title2" style="margin-bottom:50rpx;">
+                    <!-- <view class="">数量统计</view> -->
+                    <view class=""></view>
+                    <view class="tabBox flex">
+                        <view class="tabitem flex-c {{sectionIndex==1?'on':''}}" bindtap="dataChange" mark:index="{{1}}">本月</view>
+                        <view class="tabitem flex-c {{sectionIndex==2?'on':''}}" bindtap="dataChange" mark:index="{{2}}">本季</view>
+                        <view class="tabitem flex-c {{sectionIndex==3?'on':''}}" bindtap="dataChange" mark:index="{{3}}">本年</view>
+                    </view>
+                </view>
+                <view style="{{zong==0?'width:0;height:0;overflow:hidden;':''}}">
+                    <view class="bingBox" wx:if="{{!chooseCunPopshow}}">
+                        <chart width="690rpx" height="300rpx" chart-class="chart" option="{{ option1 }}" />
+                        <view class="numBox">
+                            <view class="num">{{zong}}</view>
+                            <view>总数</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="flex-c" style="{{zong==0?'':'display:none;'}}height:300rpx;color:#666;">
+                    暂无数据
+                </view>
+                <view class="tableBox" wx:if="{{list1&&list1.length}}">
+                    <view class="table">
+                        <view class="head flex-l-c">
+                            <view class="ge">颜色</view>
+                            <view class="ge ge1">村名称</view>
+                            <view class="ge ge2">数量</view>
+                        </view>
+                        <block wx:for="{{list1}}" wx:key="index">
+                            <view class="item flex-l-c" wx:if="{{showMore?true:index<maxCount}}">
+                                <view class="ge">
+                                    <view class="color" style="background:{{echartsColor[index % echartsColor.length]}}"></view>
+                                </view>
+                                <view class="ge ge1">{{item.name1}}</view>
+                                <view class="ge ge2">{{item.value}}</view>
+                            </view>
+                        </block>
+
+                    </view>
+                </view>
+                <view class="more flex-c" catch:tap="changeShowMore" wx:if="{{list1.length>maxCount}}">
+                    <block wx:if="{{!showMore}}">点击展开全部数据
+                        <van-icon name="arrow-down" />
+                    </block>
+                    <block wx:if="{{showMore}}">点击收起全部数据
+                        <van-icon name="arrow-up" />
+                    </block>
+                </view>
+
+            </view>
+        </view>
+    </view>
+
+
+    <!-- <view style="margin-bottom: 30rpx;">
+        <view class="title" style="margin-bottom: 35rpx;padding-top:10rpx;">注册人数分析</view>
+        <view class="echarts section" wx:if="{{!chooseCunPopshow}}">
+            <view class="flex-space title2" style="margin-bottom:50rpx;">
+                <view class="">各村注册数量</view>
+                <view class="tabBox flex">
+                    <view class="tabitem flex-c {{sectionIndex2==1?'on':''}}" bindtap="dataChange2" mark:index="{{1}}">本月</view>
+                    <view class="tabitem flex-c {{sectionIndex2==2?'on':''}}" bindtap="dataChange2" mark:index="{{2}}">本季</view>
+                    <view class="tabitem flex-c {{sectionIndex2==3?'on':''}}" bindtap="dataChange2" mark:index="{{3}}">本年</view>
+                </view>
+            </view>
+            <chart width="100%" height="320rpx" chart-class="chart" option="{{ option3 }}" />
+        </view>
+
+    </view> -->
+
+    <!-- <view>
+        <view class="title" style="margin-bottom: 35rpx;padding-top:10rpx;">登录人数分析</view>
+        <view class="echarts section" wx:if="{{!chooseCunPopshow}}">
+            <view class="flex-space title2" style="margin-bottom:50rpx;">
+                <view class="">各村登录数量</view>
+                <view class="tabBox flex">
+                    <view class="tabitem flex-c {{sectionIndex3==1?'on':''}}" bindtap="dataChange3" mark:index="{{1}}">本月</view>
+                    <view class="tabitem flex-c {{sectionIndex3==2?'on':''}}" bindtap="dataChange3" mark:index="{{2}}">本季</view>
+                    <view class="tabitem flex-c {{sectionIndex3==3?'on':''}}" bindtap="dataChange3" mark:index="{{3}}">本年</view>
+                </view>
+            </view>
+            <chart width="100%" height="320rpx" chart-class="chart" option="{{ option4 }}" />
+        </view>
+
+    </view> -->
+
+    <view class="flex-c tuichuBtn" catch:tap="tuichu">退出登录</view>
+
+</view>
+
+<van-popup show="{{ chooseCunPopshow }}" position="bottom">
+    <van-picker bind:cancel="onCancel" loading="{{getCunLoading}}" bind:confirm="onConfirm" title="选择村" show-toolbar columns="{{ columns }}" value-key="name" bind:change="chooseCunOnChange" />
+
+</van-popup>

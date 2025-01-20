@@ -1,0 +1,58 @@
+<!--otherPage/pages/sunVillageAffairs/collectiveMoney/twoIndex.wxml-->
+<view class="page">
+	<cu-custom bgColor="bg-gradual-orangeRed" isBack="{{true}}" bind:tap="backMessage">
+		<view slot="content">资金公开</view>
+	</cu-custom>
+	<view class="oneBox mar-t-30 mar-l-30 mar-r-30">
+		<view class="c-f font-28 font-500 oneTop">
+			{{date}}年{{statistics.month}}月
+		</view>
+		<!--  -->
+		<view class="flex-between oneContent">
+			<view class="mar-l-30 mar-t-30" style="text-align: center;">
+				<view class="c-f oneMoney mar-b-10">
+					{{statistics.moneyDown}}
+				</view>
+				<view class="c-f font-28 font-tc">总支出（元）</view>
+			</view>
+			<view class=" mar-t-30 twoMoneyLine" style="text-align: center;">
+				<view class="c-f oneMoney mar-b-10">
+					{{statistics.moneyUp}}
+				</view>
+				<view class="c-f font-28 font-tc">总收入（元）</view>
+			</view>
+			<view class=" mar-t-30 mar-r-30" style="text-align: center;">
+				<view class="c-f oneMoney mar-b-10">
+					{{statistics.moneyTotal}}
+				</view>
+				<view class="c-f font-28 font-tc">当月结余(元)</view>
+			</view>
+		</view>
+	</view>
+	<!--  -->
+	<view class="tabsBox flex-l-c mar-l-30 mar-r-30 mar-t-30">
+		<view class="{{cateIndex==index?'shouBtn':'zhiBtn'}} " wx:for="{{cateList}}" wx:key="{{index}}" data-id="{{item.id}}" data-index="{{index}}" bind:tap="cateClick">{{item.name}}</view>
+		<!-- <view class="zhiBtn mar-l-20">支出</view> -->
+	</view>
+	<!--  -->
+	<view class="twoBox mar-l-30 mar-r-30 mar-b-30 mar-t-30" wx:for="{{list}}" wx:key="{{index}}">
+		<view class="flex-between a-center ">
+			<view class="flex a-center">
+				<view class="policyLine"></view>
+				<view class="font-32 font-500 mar-l-20 txtCF">{{item.name}}</view>
+			</view>
+			<view class="font-28 c-3 font-500">总计({{cateList[cateIndex].name}})：{{item.allMoney}}(元)</view>
+		</view>
+
+		<!--  -->
+		<block wx:for="{{item.children}}" wx:for-item="item1" wx:for-index="index1" wx:key="{{index1}}">
+			<view class="flex-between listLine  mar-t-40" bind:tap="goDetail" data-id="{{item1.id}}" data-name="{{item1.name}}">
+				<view class="font-32 font-500 c-3">{{item1.name}}</view>
+				<view class="flex-l-c">
+					<view class="mar-r-20 font-28 font-500 txtCF">{{item1.allMoney}}(元)</view>
+					<van-icon name="arrow" color="#CF2B1E" size="14px" wx:if="{{item1.allMoney!=0}}" />
+				</view>
+			</view>
+		</block>
+	</view>
+</view>

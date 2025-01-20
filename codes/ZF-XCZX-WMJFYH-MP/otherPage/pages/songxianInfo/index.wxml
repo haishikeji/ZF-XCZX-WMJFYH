@@ -1,0 +1,15 @@
+<!--otherPage/pages/songxianInfo/index.wxml-->
+<view class="page">
+    <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+        <view slot="content">嵩县简介</view>
+    </cu-custom>
+    <view class="page-content">
+        <!-- <block wx:for="{{image}}">
+            <image catch:tap="yulan" mark:index="{{index}}" src="{{item.value}}" mode="widthFix" />
+        </block> -->
+        <view class="content">
+            <import src="../../../wxParse/wxParse.wxml" />
+            <template is="wxParse" data="{{wxParseData:rule.nodes}}" />
+        </view>
+    </view>
+</view>

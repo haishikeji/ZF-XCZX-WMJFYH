@@ -1,0 +1,285 @@
+/* otherPage/pages/cadre/task.wxss */
+.page {
+    min-height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.catemenu {
+    width: 100%;
+    height: 82rpx;
+    border-bottom: 2rpx solid #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    left: 0;
+    top: 2rpx;
+    z-index: 778;
+    background-color: #ffffff;
+}
+
+.catemenu-item {
+    font-size: 28rpx;
+    color: #333333;
+    position: relative;
+    height: 100%;
+}
+
+.catename {
+    height: 100%;
+    line-height: 82rpx;
+}
+
+.cateline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4rpx;
+}
+
+.active {
+    font-weight: bold;
+}
+
+
+.list {
+    /* padding:0 30rpx;
+  box-sizing: border-box; */
+    background-color: #ffffff;
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+    width: 690rpx;
+    border-radius: 20rpx;
+}
+
+.taskitem {
+    min-height: 200rpx;
+    padding: 30rpx;
+    box-sizing: border-box;
+    border-bottom: 2rpx solid #f7f7f7;
+    position: relative;
+}
+
+.tasktitle {
+    font-size: 30rpx;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.taskname {
+    max-width: 650rpx;
+}
+
+.timemark {
+    width: 32rpx;
+    height: 32rpx;
+    text-align: center;
+    line-height: 32rpx;
+    color: #ffffff;
+    font-size: 20rpx;
+    margin-left: 15rpx;
+    border-radius: 6rpx;
+}
+
+.taskjifen {
+    font-size: 28rpx;
+    color: #0AB481;
+    margin-top: 20rpx;
+    display: flex;
+    align-items: center;
+    max-width: 550rpx;
+}
+
+.taskjifen image {
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 10rpx;
+}
+
+.cishu {
+    color: #666666;
+    margin-top: 10rpx;
+}
+
+.projifen {
+    display: flex;
+    align-items: center;
+}
+
+.progress {
+    margin-top: 20rpx;
+    width: 120rpx;
+}
+
+.protip {
+    font-size: 24rpx;
+    color: #999999;
+    margin-left: 10rpx;
+    margin-top: 16rpx;
+}
+
+.taskbtn {
+    width: 160rpx;
+    height: 56rpx;
+    background: #d9d9d9 linear-gradient(360deg, #18be8d 0%, #3ad190);
+    border-radius: 48rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 24rpx;
+    position: absolute;
+    right: 30rpx;
+    bottom: 30rpx;
+}
+
+.over {
+    opacity: 0.5;
+}
+
+
+.subcateview {
+    position: fixed;
+    left: 0;
+    top: 82rpx;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 776;
+}
+
+.subcate {
+    background-color: #ffffff;
+    padding: 30rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subcate-name {
+    font-size: 28rpx;
+    color: #333333;
+    width: 345rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.subactive {
+    color: #2A78FF;
+}
+
+.catebom {
+    margin-top: 50rpx;
+    width: 690rpx;
+    height: 74rpx;
+    line-height: 74rpx;
+    border-radius: 37rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #ffffff;
+    background: linear-gradient(-90deg, #FD4653, #EE3F48);
+
+}
+
+.tasknum {
+    position: absolute;
+    right: 30rpx;
+    bottom: 90rpx;
+    font-size: 20rpx;
+    font-weight: bold;
+    width: 160rpx;
+    text-align: center;
+}
+
+.nodata1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 28rpx;
+    color: #999999;
+    justify-content: center;
+    padding-bottom: 60rpx;
+    box-sizing: border-box;
+    margin-top: 100rpx;
+}
+
+.nodata1 image {
+    width: 300rpx;
+}
+
+.navBox {
+    position: sticky;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.shaixuanBox {
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    margin-top: 30rpx;
+}
+
+.shaixuanBox .searchBox {
+    /* width: 480rpx; */
+    width: 100%;
+    height: 80rpx;
+    background: #ffffff;
+    border-radius: 94rpx;
+}
+
+.shaixuanBox .searchBox .icon {
+    padding-left: 30rpx;
+    padding-right: 20rpx;
+    height: 100%;
+}
+
+.shaixuanBox .searchBox input {
+    height: 100%;
+    width: calc(100% - 88rpx);
+}
+
+.shaixuanBox .btn2 {
+    width: 180rpx;
+    height: 80rpx;
+    background: #ffffff;
+    border-radius: 94rpx;
+    font-size: 30rpx;
+    color: #000000;
+}
+
+.userInfoBox {
+    border-top: 2rpx solid #f6f6f6;
+    margin-top: 30rpx;
+    padding-top: 15rpx;
+}
+
+.userInfoBox .name {
+    font-weight: 500;
+    margin-bottom: 30rpx;
+}
+
+.userInfoBox .time {
+    font-size: 24rpx;
+    color: #000000;
+    margin-bottom: 30rpx;
+}
+
+.userInfoBox .dec {
+    /* margin-top: 30rpx; */
+    color: #666666;
+}
+
+.userInfoBox .imgBox {
+    margin-top: 30rpx;
+}
+
+.userInfoBox .imgBox image {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 10rpx;
+    margin-right: 30rpx;
+}

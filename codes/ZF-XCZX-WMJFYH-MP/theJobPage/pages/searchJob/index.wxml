@@ -1,0 +1,75 @@
+<!--theJobPage/pages/searchJob/index.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content">人才市场</view>
+</cu-custom>
+<view class="page">
+    <view class="search_box flex-space">
+        <view class="search flex-l-c">
+            <image class="search_icon" src="../../images/5.png" mode="widthFix" />
+            <input style="font-size: calc(28rpx * {{fontMultiple}});" class="search_input" maxlength="10" placeholder="按名称搜索工作" bind:input="search" />
+        </view>
+        <view class="search_btn flex-c" bind:tap="refresh" style="font-size: calc(28rpx * {{fontMultiple}});">
+            <image class="search_btn_icon" src="../../images/6.png" mode="widthFix" />
+            刷新
+        </view>
+    </view>
+
+    <view class="choose_box flex-space">
+        <view class="choose_select flex-space" style="font-size: calc(28rpx * {{fontMultiple}});" catch:tap="chooseShow" data-type="1">
+            <view>位置：<text class="moren">{{didName || '不限'}}</text></view>
+            <van-icon class="icon" name="play" size="24rpx" />
+        </view>
+        <view class="choose_select flex-space" style="font-size: calc(28rpx * {{fontMultiple}});" catch:tap="chooseShow" data-type="2">
+            <view>薪资：<text class="moren">{{xzName || '不限'}}</text></view>
+            <van-icon class="icon" name="play" size="24rpx" />
+        </view>
+    </view>
+
+    <view class="list">
+        <view class="item" wx:for="{{list}}" wx:key="index" wx:if="{{list.length}}" data-id="{{item.id}}" bindtap="goDetail">
+            <view class="title line1" style="font-size: calc(32rpx * {{fontMultiple}});">
+                {{item.title}}
+            </view>
+            <view class="red_font flex-l-c" style="font-size: calc(28rpx * {{fontMultiple}});">
+                <image class="icon" src="../../images/7.png" />
+                期待薪资：{{item.minmoney || 0}}-{{item.maxmoney || 0}}元
+            </view>
+            <view class="infos flex-l-c" style="font-size: calc(28rpx * {{fontMultiple}});flex-wrap: wrap;">
+                <view class="info flex-l-c">
+                    <image class="icon" src="../../images/10.png" />
+                    称呼：{{item.position}}
+                </view>
+                <view class="info flex-l-c">
+                    <image class="icon" src="../../images/8.png" />
+                    性别：
+                    <text wx:if="{{item.sex==0}}">保密</text>
+                    <text wx:if="{{item.sex==1}}">男</text>
+                    <text wx:if="{{item.sex==2}}">女</text>
+                </view>
+                <view class="info flex-l-c">
+                    <image class="icon" src="../../images/9.png" />
+                    年龄：{{item.age}}
+                </view>
+            </view>
+            <view class="bot" style="font-size: calc(28rpx * {{fontMultiple}});">更新时间：{{item.timer}}</view>
+        </view>
+    </view>
+
+    <view class="nolist" wx:if="{{list.length==0}}">
+        <image src="../../images/empty2.png" mode="widthFix"></image>
+        <view>暂无招聘~</view>
+    </view>
+
+    <view class="pos flex-c" bindtap="goAdd">
+        <view class="pos_item">
+            发布简历
+        </view>
+    </view>
+</view>
+
+
+
+
+<van-popup show="{{ choosePopshow }}" position="bottom">
+    <van-picker bind:cancel="onCancel" bind:confirm="onConfirm" title="{{popTitle}}" show-toolbar columns="{{ columns }}" value-key="name" />
+</van-popup>

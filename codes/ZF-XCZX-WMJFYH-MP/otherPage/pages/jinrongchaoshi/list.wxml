@@ -1,0 +1,23 @@
+<!--otherPage/pages/jinrongchaoshi/list.wxml-->
+<view class="page">
+    <cu-custom bgImage="/otherPage/images/jinrongchaoshi/01.png" isBack="{{true}}">
+        <view slot="content">{{name||'金融超市'}}</view>
+    </cu-custom>
+    <view class="page-content">
+        <view class="list" wx:if="{{!kong}}">
+            <view class="item" wx:for="{{d}}" catch:tap="goDetail" mark:item="{{item}}">
+                <image src="{{item.image}}" mode="aspectFill" />
+                <view class="tit line1">{{item.title}}</view>
+                <view class="dec line1">{{item.sortcontent||''}}</view>
+            </view>
+            <view class="no-data">
+                <text>{{noData?'已经到底啦！~':'正在加载~'}}</text>
+            </view>
+        </view>
+        <view class="nodata" wx:if="{{kong}}">
+            <image src="../../images/empty2.png" mode="widthFix"></image>
+            <view>暂无数据~</view>
+        </view>
+
+    </view>
+</view>

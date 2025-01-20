@@ -1,0 +1,9 @@
+<!--components/authorize.wxml-->
+
+<l-dialog 
+  show="{{isShow}}"
+  type="confirm"     
+  title="授权信息"
+  bind:lincancel="close"
+  bind:linconfirm="login"
+  content="请授权头像等信息，以便为您提供更好的服务" />

@@ -1,0 +1,265 @@
+/* otherPage/pages/sunVillageAffairs/index/index.wxss */
+page {
+	box-sizing: border-box;
+
+}
+
+.body {
+	position: relative;
+	z-index: 5;
+	padding-bottom: 40rpx;
+}
+
+.ttimg {
+	width: 100%;
+	height: 400rpx;
+	position: relative;
+	z-index: 4;
+}
+
+.navtitle {
+	color: #fff !important;
+	font-weight: 400 !important;
+}
+
+.tabBackground_choose {
+	background: linear-gradient(103deg, #ed5441, #f45f4c 100%) !important;
+}
+
+.tabBackground {
+	background: transparent !important;
+}
+
+.topBox {
+	position: absolute;
+	left: 80rpx;
+	top: 0rpx;
+	z-index: 99;
+}
+
+
+.logoImg {
+	width: 36rpx;
+	height: 36rpx;
+}
+
+/*  */
+.bannerImg {
+	height: 280rpx;
+	border-radius: 20rpx;
+	width: 100%;
+	position: relative;
+}
+
+.bannerCon {
+	position: absolute;
+	top: 60rpx;
+	left: 112rpx;
+}
+
+.bannerOneImg {
+	width: 40rpx;
+	height: 40rpx;
+	vertical-align: text-bottom;
+}
+
+.bannerTwo {
+	font-size: 56rpx;
+	font-family: Alimama ShuHeiTi, Alimama ShuHeiTi-700;
+	font-weight: 700;
+	/* color: linear-gradient(180deg,#ee681d, #ea2620 100%); */
+	text-align: center;
+	background: linear-gradient(180deg, #ee681d, #ea2620 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	/*以文字的范围对背景进行裁剪*/
+	color: transparent;
+
+}
+
+/*  */
+.topList {
+	margin: 40rpx 86rpx 0 86rpx;
+}
+
+.topOne {
+	margin-bottom: 40rpx;
+	margin-right: 40rpx;
+}
+
+.topImg {
+	width: 88rpx;
+	height: 88rpx;
+}
+
+/*  */
+.videoBox {
+	height: 140rpx;
+	background: linear-gradient(101deg, #ed5441, #f45f4c 100%);
+	border: 2rpx solid;
+	border-image: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0.00) 100%) 1 1;
+	border-radius: 30rpx;
+	box-sizing: border-box;
+	padding: 30rpx 20rpx 30rpx 30rpx;
+	position: relative;
+}
+
+.videoImg {
+	width: 76rpx;
+	height: 76rpx;
+}
+
+.line {
+	width: 2rpx;
+	height: 68rpx;
+	border: 2rpx solid rgba(255, 255, 255, 0.50);
+	margin: 4rpx 0;
+}
+
+.beginBtn {
+	width: 100rpx;
+	height: 36rpx;
+	background: #fa523d;
+	border: 2rpx solid #ffffff;
+	border-radius: 10rpx;
+	text-align: center;
+	line-height: 36rpx;
+}
+
+.joinBtn {
+	width: 120rpx;
+	height: 56rpx;
+	background: #ffffff;
+	border-radius: 28rpx;
+	text-align: center;
+	line-height: 56rpx;
+	z-index: 99;
+	margin-top: 12rpx;
+}
+
+.backImg {
+	width: 112rpx;
+	height: 124rpx;
+	position: absolute;
+	top: 12rpx;
+	right: 80rpx;
+	z-index: 1;
+}
+
+/*  */
+.threeOpen {
+	width: 210rpx;
+	height: 190rpx;
+	background: linear-gradient(132deg, #fff9ef, #fff5f5 100%);
+	border-radius: 20rpx;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+.threeOpenImg {
+	width: 94rpx;
+	height: 94rpx;
+}
+
+.sendBox {
+	height: 200rpx;
+	border-radius: 20rpx;
+	/* width: 100%; */
+}
+
+/*  */
+.policyLine {
+	width: 8rpx;
+	height: 32rpx;
+	background: #cf2b1e;
+	border-radius: 8rpx;
+}
+
+.policyBox {
+	padding: 30rpx 30rpx 12rpx 30rpx;
+}
+
+.policyList {
+	padding: 40rpx 0 30rpx 0;
+	border-bottom: 2px solid #f6f6f6;
+}
+
+.policyTxt {
+	width: 446rpx;
+	height: 80rpx;
+}
+
+.policyImg {
+	width: 200rpx;
+	height: 170rpx;
+	border-radius: 10rpx;
+}
+
+.readTxt {
+	/* width: 110rpx; */
+	/* height: 32rpx; */
+	background: #fff3f2;
+	border-radius: 4rpx;
+	text-align: center;
+	color: #cf2b1e;
+	line-height: 32rpx;
+	padding: 6rpx 10rpx;
+}
+
+.emptyviewOne {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh * 0.3);
+}
+
+.emptyviewOne image {
+	width: 300rpx;
+	height: 300rpx;
+}
+
+.messageOne {
+	width: 330rpx;
+	height: 140rpx;
+}
+
+/*  */
+.oneBox {
+	width: 330rpx;
+	height: 140rpx;
+	background: linear-gradient(92deg, #fff5f1 0%, #fff8f8 100%);
+	border-radius: 20rpx;
+	padding: 30rpx;
+}
+
+.oneImg {
+	width: 72rpx;
+	height: 72rpx;
+}
+
+.box0 {
+	background: linear-gradient(92deg, #fff5f1 0%, #fff8f8 100%);
+}
+
+.box1 {
+	background: linear-gradient(92deg, #ebffff 0%, #ecf9ff 100%);
+}
+
+.box2 {
+	background: linear-gradient(92deg, #fff5f1 0%, #fff8f8 100%);
+}
+
+.box3 {
+	background: linear-gradient(92deg, #fff8ed 0%, #fff1e0 100%);
+}
+
+.box4 {
+	background: linear-gradient(92deg, #f1f8e9 0%, #effdf3 100%);
+}
+
+.box5 {
+	background: linear-gradient(92deg, #f0f6ff 0%, #eef5ff 100%);
+}

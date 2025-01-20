@@ -1,0 +1,49 @@
+<!--pointsPage/pages/shareRank/index.wxml-->
+<view class="page">
+    <cu-custom bgImage="/pointsPage/images/bg2.png" isBack="{{true}}">
+        <view slot="content"></view>
+    </cu-custom>
+    <image class="bg" src="/pointsPage/images/bg2.png" mode="widthFix"></image>
+    <view class="page-content">
+        <view class="page-top">
+            <view class="title flex-c">
+                <image class="chibang" src="./../../images/18.png" mode="widthFix" />
+                <view class="tit">{{d.title}}</view>
+                <image class="chibang chibang2" src="./../../images/18.png" mode="widthFix" />
+            </view>
+            <view class="dateBox flex-c" wx:if="{{d.happen&&d.pubTime}}">{{d.happen}} ~ {{d.pubTime}}</view>
+        </view>
+
+
+        <view class="tableBox">
+            <view class="tableTit">
+                <view class="ge1">排名</view>
+                <view class="ge2">家庭联系人</view>
+                <view class="ge3">积分</view>
+            </view>
+            <view class="tablebody">
+                <view class="item flex-space" wx:for="{{list}}">
+                    <view class="ge ge1">
+                        <block wx:if="{{index==0}}">
+                            <image src="../../images/19.png" mode="widthFix" />
+                        </block>
+                        <block wx:if="{{index==1}}">
+                            <image src="../../images/20.png" mode="widthFix" />
+                        </block>
+                        <block wx:if="{{index==2}}">
+                            <image src="../../images/21.png" mode="widthFix" />
+                        </block>
+                        <block wx:if="{{index>2}}">{{index+1}}
+                        </block>
+                    </view>
+                    <view class="ge ge2">
+                        {{item.code}}{{item.name||'**'}}
+                    </view>
+                    <view class="ge ge3">{{item.score}}</view>
+                </view>
+            </view>
+            <view class="norank" wx:if="{{list.length==0}}">暂无排行~</view>
+        </view>
+
+    </view>
+</view>

@@ -1,0 +1,96 @@
+<!--otherPage/pages/sunVillageAffairs/collectiveMoney/index.wxml-->
+<view class="page">
+	<cu-custom bgColor="bg-gradual-orangeRed" newIsBack="{{true}}" bind:tap="backMessage">
+		<view slot="content">资金公开</view>
+	</cu-custom>
+	<view class="topBox">
+		<view class="flex-between townBox">
+			<view class="flex-l-c">
+				<view class="font-28 c-3">乡镇：</view>
+				<view bindtap="chooseMessage" class="flex-l-c">
+					<view class="font-28 chooseTitle">{{townTxt}}</view>
+				</view>
+			</view>
+			<view class="flex-l-c" style="margin-left: -10rpx;">
+				<view class="font-28 c-3">村社区：</view>
+				<view bindtap="chooseMessage" class="flex-l-c">
+					<view class="font-28 chooseTitle">{{villageTxt}}</view>
+				</view>
+			</view>
+			<view class="flex-l-c" style="margin-left: -10rpx;" wx:if="{{groupTxt!='--'}}">
+				<view class="font-28 c-3">村组：</view>
+				<view bindtap="chooseMessage" class="flex-l-c">
+					<view class="font-28 chooseTitle">{{groupTxt}}</view>
+					<image src="/images/villageAffairs/23.png" mode="" class="arrowImg" />
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!--  -->
+	<view class="contentBox" style="{{'height: calc(100% - ' + StatusBarBar+')'}}">
+		<!--  -->
+		<view class="mar-l-30 mar-r-30">
+			<picker mode="date" value="{{date}}" fields="year" bindchange="bindDateChange">
+				<view class="flex-l-c dateBox">
+					<image src="/images/villageAffairs/24.png" mode="" class="dateMonthImg mar-l-20 mar-r-10" />
+					<view class="font-32 c-0 yearTxt">按年查询：</view>
+					<view class="font-32 c-0 ">{{date}}{{date?'年':''}}</view>
+					<image src="/images/villageAffairs/23.png" mode="" class="dateImg" />
+				</view>
+			</picker>
+		</view>
+		<view class="oneBox mar-t-30 mar-l-30 mar-r-30">
+			<view class="allMoney font-28 font-500 c-f">资金总览</view>
+			<view class="c-f font-28">累计年余额(元)</view>
+			<view class=" flex-between a-center mar-r-30">
+				<view class="font-56 c-f font-700" style="font-family: D-DIN Exp, D-DIN Exp-700;">{{statistics.moneyTotal}}</view>
+				<view>
+					<text class="font-36 font-700 c-f mar-r-10" style="font-family: D-DIN Exp, D-DIN Exp-700;">{{statistics.amplitude}}%</text>
+					<text class="c-f font-28">(相比上一年)</text>
+				</view>
+			</view>
+			<view class=" flex-l-c mar-t-20">
+				<view style="margin-right: 172rpx;">
+					<view class=" font-28 c-f">累计年收入(元)</view>
+					<view class="font-36 c-f">{{statistics.lastMoneyUp}}</view>
+				</view>
+				<view>
+					<view class=" font-28 c-f">累计年支出(元)</view>
+					<view class="font-36 c-f">{{statistics.lastMoneyDown}}</view>
+				</view>
+			</view>
+		</view>
+		<!--  -->
+		<view class="twoBox mar-t-30 mar-l-30 mar-r-30"   wx:for="{{statistics.monthMaps}}" wx:key="{{index}}"  bind:tap="goDetail" data-item="{{item}}">
+			<view class="flex-between twoTop">
+				<view class="c-f font-36 font-500">
+					{{date}}年{{item.month}}月
+				</view>
+				<image src="/images/villageAffairs/39.png" mode="aspectFill" class="twoImg" />
+			</view>
+			<!--  -->
+			<view class="flex-between">
+				<view class="mar-l-30 mar-t-30" style="text-align: center;">
+					<view class="c-3 oneMoney mar-b-10">
+					{{item.moneyDown}}
+					</view>
+					<view class="c-6 font-28 font-tc">总支出（元）</view>
+				</view>
+				<view class=" mar-t-30 twoMoneyLine" style="text-align: center;">
+					<view class="c-3 oneMoney mar-b-10">
+						{{item.moneyUp}}
+					</view>
+					<view class="c-6 font-28 font-tc">总收入（元）</view>
+				</view>
+				<view class=" mar-t-30 mar-r-30" style="text-align: center;">
+					<view class="c-3 oneMoney mar-b-10">
+						{{item.moneyTotal}}
+					</view>
+					<view class="c-6 font-28 font-tc">余额（元）</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+</view>

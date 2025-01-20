@@ -1,0 +1,74 @@
+<!--otherPage/pages/sunVillageAffairs/complaintLook/detail.wxml-->
+<view class="page">
+	<cu-custom bgColor="bg-gradual-orangeRed" isBack="{{true}}">
+		<view slot="content">投诉建议</view>
+	</cu-custom>
+	<view class="oneBox mar-t-30 mar-l-30 mar-r-30">
+		<view class="flex-between mar-t-20 listLine">
+			<view class="c-6 font-28">乡/社区：</view>
+			<view class="c-3 font-28">{{detail.dname}}</view>
+		</view>
+		<view class="flex-between mar-t-20 listLine">
+			<view class="c-6 font-28">地址：</view>
+			<view class="c-3 font-28">{{detail.address}}</view>
+		</view>
+		<view class="flex-between mar-t-20 listLine">
+			<view class="c-6 font-28">投诉类型：</view>
+			<view class="c-3 font-28">{{detail.typeName}}</view>
+		</view>
+		<view class="flex-between mar-t-20 listLine">
+			<view class="c-6 font-28">是否实名：</view>
+			<view class="c-3 font-28">{{detail.isRealName==1?'实名':'匿名'}}</view>
+		</view>
+		<view class="flex-between mar-t-20 listLine" wx:if="{{detail.isRealName==1}}">
+			<view class="c-6 font-28">真实名称：</view>
+			<view class="c-3 font-28">{{detail.name}}</view>
+		</view>
+		<view class="flex-between mar-t-20 {{detail.isAccepted==1?'listLine':''}}">
+			<view class="c-6 font-28">时间：</view>
+			<view class="c-3 font-28">{{detail.createTime}}</view>
+		</view>
+		<view class="flex-between mar-t-20 listLine" wx:if="{{detail.isAccepted==1}}">
+			<view class="c-6 font-28">回复内容：</view>
+			<view class="c-3 font-28">{{detail.returnContent}}</view>
+		</view>
+		<view class="flex-between mar-t-20"  wx:if="{{detail.isAccepted==1}}">
+			<view class="c-6 font-28">回复时间：</view>
+			<view class="c-3 font-28">{{detail.returnTime}}</view>
+		</view>
+
+	</view>
+	<!--  -->
+	<view class="oneBox mar-t-30 mar-l-30 mar-r-30">
+		<view class="flex  a-center">
+			<view class="policyLine"></view>
+			<view class="font-32 font-cf font-500 mar-l-20">投诉内容</view>
+		</view>
+		<view class="con font-32 c-3 mar-t-30">
+			<view class="">
+				<import src="../../../../wxParse/wxParse" />
+				<template is="wxParse" data="{{wxParseData:rule.nodes}}" />
+			</view>
+		</view>
+	</view>
+	<!--  -->
+	<view class="oneBox mar-t-30 mar-l-30 mar-r-30" wx:for="{{detail.newFile.length}}">
+		<view class="flex  a-center">
+			<view class="policyLine"></view>
+			<view class="font-32 font-cf font-500 mar-l-20">附件</view>
+		</view>
+		<block wx:for="{{detail.newFile}}" wx:key="{{index}}">
+			<view class="onLineBox mar-t-40 flex-l-c" bind:tap="onLineLook" data-url="{{item.value}}">
+				<image src="/images/villageAffairs/17.png" mode="" class="onLineImg" wx:if="{{item.type=='pdf'||item.type=='PDF'}}" />
+				<image src="/images/villageAffairs/20.png" mode="" class="onLineImg" wx:if="{{item.type=='XLSX'||item.type=='XLS'||item.type=='xlsx'||item.type=='xls'}}" />
+				<image src="/images/villageAffairs/21.png" mode="" class="onLineImg" wx:if="{{item.type=='doc'||item.type=='DOC'||item.type=='docx'||item.type=='DOCX'}}" />
+				<image src="/images/villageAffairs/25.png" mode="" class="onLineImg" wx:if="{{item.type=='jpg'||item.type=='JPG'||item.type=='png'||item.type=='PNG'}}" />
+				<view class="mar-l-30">
+					<view class=" font-28 c-3 line2" style="width:436rpx;">{{item.label}}</view>
+					<!-- <view class="font-24 c-9 mar-t-10">文件大小：2.45M</view> -->
+				</view>
+			</view>
+		</block>
+	</view>
+
+</view>

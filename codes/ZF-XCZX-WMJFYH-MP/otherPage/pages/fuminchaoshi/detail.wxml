@@ -1,0 +1,67 @@
+<!--pages/home/peopledetail.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content" class="line1">{{name||'富民超市详情'}}</view>
+</cu-custom>
+<view class="topline"></view>
+<view class="title">{{d.title}}</view>
+<view class="info flex-c">
+    <!-- <view style="margin-right: 40rpx;">浏览次数：{{d.views?d.views:0}}</view> -->
+    <view>发布时间：{{d.createTime}}</view>
+</view>
+
+<video wx:if="{{d.video}}" src="{{d.video}}" autoplay='{{true}}' object-fit='fit' id='myvideo' controls class="video"></video>
+
+<view class="content">
+    <import src="../../../wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:rule.nodes}}" />
+    <view style="margin-top:50rpx" wx:if="{{d.linkname||d.college||d.phone}}">
+        <view wx:if="{{d.linkname}}">联系人：{{d.linkname}}</view>
+        <view wx:if="{{d.college}}">责任单位：{{d.college}}</view>
+        <view wx:if="{{d.phone}}">联系电话：{{d.phone}}</view>
+    </view>
+</view>
+<!-- <view style="height:120rpx"></view> -->
+<!-- <view class="bomview">
+    <view class="bomview-l">
+        <image src="/images/see.png" mode="aspectFit"></image>
+        <view class="fontcolor">浏览次数：{{d.views?d.views:0}}次</view>
+    </view>
+    <button class="bomview-l" open-type="share">
+        <image src="/images/share.png" mode="aspectFit"></image>
+        <view class="fontcolor">分享</view>
+    </button>
+</view> -->
+<!-- <view class="bomviewBox">
+    <view class="bomview">
+        <view class="shoucang">
+            <image class="icon" src="./../../images/41.png" mode="widthFix" />  <image class="icon" src="./../../images/41-1.png" mode="widthFix" />
+            <view>取消收藏</view>
+        </view>
+
+        <view class="btn flex-c" mark:phone="{{d.phone}}" catch:tap="callPhone">我要咨询</view>
+
+    </view>
+</view> -->
+
+<movable-area>
+    <movable-view x="590rpx" direction="all" y="800rpx" class="fixedBox">
+        <view class="fixedCont">
+            <view class="item flex-c" catch:tap="collect">
+                <view>
+                    <image src="../../images/41.png" mode="widthFix" wx:if="{{!isCollect}}" />
+                    <image src="../../images/41-1.png" mode="widthFix" wx:else />
+                    <view>{{isCollect ? '取消收藏' : '我要收藏'}}</view>
+                </view>
+            </view>
+            <block wx:if="{{d.phone}}">
+                <view class="xian"></view>
+                <view class="item flex-c" mark:phone="{{d.phone}}" catch:tap="callPhone">
+                    <view>
+                        <image src="../../images/42.png" mode="widthFix" />
+                        <view>我要咨询</view>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </movable-view>
+</movable-area>

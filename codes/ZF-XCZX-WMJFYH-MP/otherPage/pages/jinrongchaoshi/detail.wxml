@@ -1,0 +1,85 @@
+<!--otherPage/pages/activity2/detail1.wxml-->
+<!-- 金融信息详情 -->
+<import src="../../../wxParse/wxParse.wxml" />
+<view class="page">
+  <cu-custom bgColor="bg-gradual-orange" isBack="{{true}}">
+    <view slot="content" class="line1">{{name||'金融信息详情'}}</view>
+  </cu-custom>
+  <view class="page-content">
+    <image src="{{d.image}}" mode="aspectFill" class="detailImg mar-b-20" />
+    <view class="pageCont">
+
+      <view class="item" wx:if="{{d.title||d.content}}">
+        <view class="desc font-40 font-500 c-3">{{d.title}}</view>
+        <view class=" c-9 font-28 desc mar-t-10">
+          {{d.content}}
+          <!-- <rich-text nodes="{{d.content}}"></rich-text> -->
+          <!-- <template is="wxParse" data="{{wxParseData:rule.nodes}}" /> -->
+        </view>
+      </view>
+      <view class="item" wx:if="{{d.title1||d.content1}}">
+        <view class="title flex-c" wx:if="{{d.title1}}">
+          <view class="text"><text>{{d.title1}}</text></view>
+        </view>
+        <view class="textCont" wx:if="{{d.content1}}">
+          <!-- <rich-text nodes="{{d.content1}}"></rich-text> -->
+          <template is="wxParse" data="{{wxParseData:rule1.nodes}}" />
+        </view>
+      </view>
+      <view class="item" wx:if="{{d.title2||d.content2}}">
+        <view class="title flex-c" wx:if="{{d.title2}}">
+          <view class="text"><text>{{d.title2}}</text></view>
+        </view>
+        <view class="textCont" wx:if="{{d.content2}}">
+          <!-- <rich-text nodes="{{d.content2}}"></rich-text> -->
+          <template is="wxParse" data="{{wxParseData:rule2.nodes}}" />
+        </view>
+      </view>
+      <view class="item" wx:if="{{d.title3||d.content3}}">
+        <view class="title flex-c" wx:if="{{d.title3}}">
+          <view class="text"><text>{{d.title3}}</text></view>
+        </view>
+        <view class="textCont" wx:if="{{d.content3}}">
+          <!-- <rich-text nodes="{{d.content3}}"></rich-text> -->
+          <template is="wxParse" data="{{wxParseData:rule3.nodes}}" />
+        </view>
+      </view>
+      <view class="item" wx:if="{{d.title4||d.content4}}">
+        <view class="title flex-c" wx:if="{{d.title4}}">
+          <view class="text"><text>{{d.title4}}</text></view>
+        </view>
+        <view class="textCont" wx:if="{{d.content4}}">
+          <!-- <rich-text nodes="{{d.content4}}"></rich-text> -->
+          <template is="wxParse" data="{{wxParseData:rule4.nodes}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--  -->
+  <view class="yinhangBox mar-l-30 mar-r-30 mar-b-30">
+    <view class="item">
+      <view class="title flex-c">
+        <view class="text"><text>相关办理银行</text></view>
+      </view>
+      <view class="flex a-center" style="flex-wrap: wrap;">
+        <view class="mar-r-30 desc mar-b-40" wx:for="{{newList}}" wx:key="{{index}}">
+          <image src="{{item.icon}}" mode="aspectFill" class="yinhangImg" />
+          <view class="font-24 mar-t-20 c-0 desc">{{item.title}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--  -->
+  <view class="bomviewBox">
+    <view class="bomview">
+      <view class="shoucang" catch:tap="collect">
+        <image class="icon" src="./../../images/47.png" wx:if="{{!isCollect}}" mode="widthFix" />
+        <image class="icon" src="./../../images/47-1.png" mode="widthFix" wx:else />
+        <view>{{isCollect ? '已收藏' : '收藏'}}</view>
+      </view>
+
+      <view class="btn flex-c" mark:phone="{{d.phone}}" catch:tap="callPhone">电话联系</view>
+
+    </view>
+  </view>
+</view>

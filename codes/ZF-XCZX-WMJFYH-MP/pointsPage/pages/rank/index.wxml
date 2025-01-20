@@ -1,0 +1,77 @@
+<!--pointsPage/pages/rank/index.wxml-->
+<view class="page">
+    <cu-custom bgImage="/pointsPage/images/bg.png" isBack="{{true}}">
+        <view slot="content"></view>
+    </cu-custom>
+    <image class="bg" src="/pointsPage/images/bg.png" mode="widthFix"></image>
+    <view class="page-content">
+        <view class="flex-space">
+            <view class="tabBox flex-l-c">
+                <view class="item flex-c {{bangIndex==0?'on':''}}" mark:index='{{0}}' catch:tap="changeBangIndex">年榜</view>
+                <view class="item flex-c {{bangIndex==1?'on':''}}" mark:index='{{1}}' catch:tap="changeBangIndex">季榜</view>
+                <view class="item flex-c {{bangIndex==2?'on':''}}" mark:index='{{2}}' catch:tap="changeBangIndex">月榜</view>
+            </view>
+            <view wx:if="{{dangqianYear&&bangIndex==0}}" class="dateBtn flex-c" catch:tap="openChooseYear">{{dangqianYear.label}}
+                <van-icon name="arrow-down" />
+            </view>
+            <view wx:if="{{dangqianJidu&&bangIndex==1}}" class="dateBtn flex-c" catch:tap="openChooseYear">{{dangqianJidu.label}}
+                <van-icon name="arrow-down" />
+            </view>
+
+            <view wx:if="{{dangqianYue&&bangIndex==2}}" class="dateBtn flex-c" catch:tap="openChooseYear">{{dangqianYue.label}}
+                <van-icon name="arrow-down" />
+            </view>
+
+        </view>
+        <view class="flex-space myRank" wx:if="{{myPoints}}">
+            <view class="flex-l-c">
+                <image class="icon1" src="../../images/13.png" mode="widthFix" />
+                <view class="xian"></view>
+                <image class="head" src="{{myPoints.avatar?myPoints.avatar:'/images/headPic.png'}}" mode="aspectFill" />
+                <view>
+                    <view class="name">{{myPoints.name}}{{lang.a5}}</view>
+                    <view class="rank">{{myPoints.rank?'第'+myPoints.rank+'名':'暂无排名'}}</view>
+                </view>
+            </view>
+            <view class="num">{{myPoints.sumPoints||0}}分</view>
+        </view>
+
+        <view class="tableBox" style="margin-top:30rpx;">
+            <view class="tableTit flex-space mar-b-40">
+                <view class="ge1">排名</view>
+                <view class="ge2">{{lang.a5}}</view>
+                <view class="ge3">积分</view>
+            </view>
+            <view class="tablebody">
+                <view class="item flex-space mar-b-40" wx:for="{{list}}">
+                    <view class="ge1">
+                        <block wx:if="{{index==0}}">
+                            <image src="../../images/14.png" mode="widthFix" />
+                        </block>
+                        <block wx:if="{{index==1}}">
+                            <image src="../../images/15.png" mode="widthFix" />
+                        </block>
+                        <block wx:if="{{index==2}}">
+                            <image src="../../images/16.png" mode="widthFix" />
+                        </block>
+                        <block wx:if="{{index>2}}">{{index+1}}
+                        </block>
+                    </view>
+                    <view class="ge2 flex-l-c">
+                        <image class="head" src="{{item.photo?item.photo:'/images/headPic.png'}}" mode="aspectFill" />
+                        {{item.name||'**'}}{{lang.a5}}
+                    </view>
+                    <view class="ge3">{{item.score}}</view>
+                </view>
+
+                <view class="norank" wx:if="{{list.length==0}}">暂无排行~</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<van-popup close-on-click-overlay="{{true}}" show="{{ chooseYear }}" position="bottom" bind:close="cancel">
+    <van-picker wx:if="{{bangIndex==0}}" show-toolbar title="选择年份" columns="{{ yearArray }}" bind:confirm="confirm" value-key="label" bind:cancel="cancel" />
+    <van-picker wx:if="{{bangIndex==1}}" show-toolbar title="选择季度" columns="{{ jiduArray }}" bind:confirm="confirm" value-key="label" bind:cancel="cancel" />
+    <van-picker wx:if="{{bangIndex==2}}" show-toolbar title="选择月份" columns="{{ yueArray }}" bind:confirm="confirm" value-key="label" bind:cancel="cancel" />
+</van-popup>

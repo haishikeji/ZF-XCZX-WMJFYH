@@ -1,0 +1,44 @@
+<!--otherPage/pages/sunVillageAffairs/complaintLook/index.wxml-->
+<view class="page">
+	<cu-custom bgColor="bg-gradual-orangeRed" isBack="{{true}}">
+		<view slot="content">投诉建议</view>
+	</cu-custom>
+	<view class="searchBox flex-l-c mar-t-40 mar-l-30 mar-r-30">
+		<view class="icon flex-c">
+			<van-icon name="search" size="38rpx" color="#CF2B1E" />
+		</view>
+		<input type="text" class="font-32 c-9" bindinput="search" placeholder="按名称搜索" value="{{searchName}}" />
+	</view>
+	<!--  -->
+	<view>
+		<block wx:for="{{list}}" wx:key="{{index}}">
+			<view class="listBox" bind:tap="goDetail" data-id="{{item.id}}">
+				<view class="font-32 c-3 font-500 mar-b-20 line1">{{item.content}}</view>
+
+				<view class="flex-between">
+					<view>
+						<view class="flex-l-c mar-b-20">
+							<image src="/images/villageAffairs/19.png" mode="" class="listImg mar-r-10" />
+							<view class="c-6 font-28">地址：{{item.address}}</view>
+						</view>
+						<view class="flex-l-c mar-b-10">
+							<image src="/images/villageAffairs/15.png" mode="" class="listImg mar-r-10" />
+							<view class="c-6 font-28">时间：{{item.createTime}}</view>
+						</view>
+					</view>
+
+					<image src="/images/villageAffairs/36.png" mode="aspectFill" class="stausImg" wx:if="{{item.isAccepted==1}}" />
+					<image src="/images/villageAffairs/35.png" mode="aspectFill" class="stausImg" wx:else />
+				</view>
+				<view class="flex-between resultBox">
+					<view class="c-3 font-28">投诉类型：</view>
+					<view class="resultBtn font-28">{{item.typeName}}</view>
+				</view>
+			</view>
+		</block>
+		<view class="emptyview" wx:if="{{list.length==0}}">
+			<image src="/images/villageAffairs/e2.png" mode="aspectFit"></image>
+			<view class="f-28 c-9">{{emptyTxt}}</view>
+		</view>
+	</view>
+</view>

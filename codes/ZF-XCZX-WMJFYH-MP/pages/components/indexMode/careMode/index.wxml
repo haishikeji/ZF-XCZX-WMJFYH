@@ -1,0 +1,32 @@
+<!--pages/components/careMode/index.wxml-->
+<view class="page">
+    <cu-custom bgColor="bg-gradual-green" isBack="{{false}}">
+        <view slot="content">嵩县乡村振兴积分超市</view>
+    </cu-custom>
+    <view class="page-content">
+
+        <view class="flex-space page-top" catch:tap="changeCun">
+            <view class="line1 shequName">{{currentCun.parentName}}·{{currentCun.name}}</view>
+            <view class="changeBtn flex-c">切换</view>
+        </view>
+
+        <view class="list">
+            <block wx:for="{{list}}" wx:key="{{index}}">
+                <view class="item" mark:item="{{item}}" catch:tap="goPage">
+                    <image class="bg" src="{{item.pic}}" mode="aspectFill" />
+                </view>
+            </block>
+
+
+        </view>
+        <view class="btns">
+            <view class="flex-space" wx:if="{{role!=0}}">
+                <view class="getPointsBtn btn flex-c" style="{{role!=1?'width:100%':''}}" catch:tap="goPoints">获取积分</view>
+                <view class="PointsCode btn flex-c" wx:if="{{role==1}}" catch:tap="codePopOpen">家庭积分码</view>
+            </view>
+            <view class="editBtn btn flex-c" catchtap="changeMode">退出长辈版</view>
+            <view wx:if="{{role==0}}" class="editBtn btn flex-c" style="background: #0ab481;" catch:tap="tuichu">去登录</view>
+        </view>
+
+    </view>
+</view>

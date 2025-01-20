@@ -1,0 +1,60 @@
+/* otherPage/pages/sunVillageAffairs/send/index.wxss */
+
+.page {
+	position: relative;
+	background: #ccc;
+}
+
+/*  */
+.searchBigBox {
+	position: fixed;
+	left: 0rpx;
+	width: 100%;
+}
+
+.searchBox {
+	/* left: 0; */
+	height: 80rpx;
+	background: #ffffff;
+	border-radius: 94rpx;
+	margin-bottom: 30rpx;
+}
+
+.searchBox .icon {
+	padding-left: 30rpx;
+	padding-right: 20rpx;
+	height: 100%;
+}
+
+.searchBox input {
+	height: 100%;
+	width: calc(100% - 88rpx);
+}
+
+.listImg {
+	width: 100%;
+	height: 550rpx;
+	border-radius: 40rpx;
+}
+
+.classifyBox {
+	border: 2rpx solid #dedede;
+	border-radius: 10rpx;
+	padding: 8rpx 10rpx;
+}
+
+.addressImg {
+	width: 44rpx;
+	height: 44rpx;
+	margin-left: 14rpx;
+}
+
+.listBox {
+	margin-top: 160rpx;
+	height: calc(100% - 260rpx);
+	position: fixed;
+	left: 0rpx;
+	overflow-y: scroll;
+	padding-bottom: 60rpx;
+	width: 100%;
+}

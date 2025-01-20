@@ -1,0 +1,5 @@
+/* otherPage/pages/sunVillageAffairs/complaintLook/complaintSuggest.wxss */
+.suggestImg{
+	height: 240rpx;
+	/* width: 100%; */
+}

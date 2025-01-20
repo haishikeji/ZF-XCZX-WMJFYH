@@ -1,0 +1,207 @@
+/* pages/mine/index.wxss */
+.page {
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    background: #f6f6f6;
+    padding-bottom: calc(calc(100rpx + env(safe-area-inset-bottom) / 2));
+    box-sizing: border-box;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.page-content {
+    padding: 30rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.page-top {
+    color: #fff;
+    margin-bottom: 30rpx;
+}
+
+.avatar-wrapper {
+    width: 120rpx;
+    height: 120rpx;
+    padding: 0;
+    margin: 0 30rpx 0 0;
+    background: none;
+}
+
+.page-top .headPic {
+    width: 120rpx;
+    height: 120rpx;
+    border: 2rpx solid #ffffff;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.page-top .headPic image {
+    width: 100%;
+    height: 100%;
+}
+
+.page-top .userInfo .name {
+    font-weight: 400;
+    margin-bottom: 15rpx;
+}
+
+.page-top .userInfo .name text {
+    font-size: 36rpx;
+    font-weight: 500;
+    margin-right: 10rpx;
+}
+
+.page-top .codeBtn {
+    text-align: center;
+    font-size: 24rpx;
+    color: #ffffff;
+}
+
+.page-top .codeBtn .icon {
+    width: 44rpx;
+    margin-bottom: 5rpx;
+}
+
+.codeBox {
+    width: 570rpx;
+    border-radius: 40rpx;
+    background: #fff;
+    position: relative;
+    border-radius: 40rpx;
+    overflow: hidden;
+}
+
+.codeBox .popBg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.codeCont {
+    position: relative;
+    text-align: center;
+    padding-top: 160rpx;
+    padding-bottom: 60rpx;
+}
+
+.codeCont .tit {
+    font-size: 44rpx;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 56rpx;
+}
+
+.codeCont .codePic {
+    width: 290rpx;
+    margin-bottom: 110rpx;
+}
+
+.codeCont .text1 {
+    font-size: 36rpx;
+    font-weight: 500;
+    color: #0faf7f;
+    margin-bottom: 15rpx;
+}
+
+.codeCont .text2 {
+    font-size: 24rpx;
+    color: #0faf7f;
+}
+
+.myPoints {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20rpx;
+    padding: 30rpx;
+    box-sizing: border-box;
+    margin-bottom: 30rpx;
+}
+
+.myPoints .tit {
+    font-size: 32rpx;
+    font-weight: 500;
+    color: #000000;
+}
+
+.myPoints .goRecord {
+    font-size: 24rpx;
+}
+
+.mar-b-28 {
+    margin-bottom: 28rpx;
+}
+
+.myPoints .xian {
+    width: 0rpx;
+    height: 80rpx;
+    border: 2rpx solid #f3f3f3;
+}
+
+.myPoints .item {
+    width: 33.33%;
+    text-align: center;
+    font-size: 24rpx;
+    color: #666666;
+}
+
+.myPoints .item .num {
+    font-size: 40rpx;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 10rpx;
+}
+
+.list {
+    font-size: 32rpx;
+}
+
+.list .item {
+    height: 80rpx;
+    background: #ffffff;
+    border-radius: 20rpx;
+    padding: 0 20rpx 0 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.list .item .icon {
+    width: 32rpx;
+    margin-right: 24rpx;
+}
+
+.headPicBox {
+    position: relative;
+}
+
+.headPicBox .icon {
+    width: 36rpx;
+    position: absolute;
+    bottom: 3rpx;
+    right: 15rpx;
+    z-index: 2;
+}
+
+.loginBtn {
+    height: 80rpx;
+    background: linear-gradient(113deg, #18be8d, #3ad190 100%);
+    border-radius: 30rpx;
+    color: #ffffff;
+    margin-top: 50rpx
+}
+
+.tuichuBtn {
+    height: 80rpx;
+    background: #fe6655;
+    border-radius: 10rpx;
+    color: #ffffff;
+    margin-top: 100rpx;
+    font-size: 32rpx;
+}

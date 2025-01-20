@@ -1,0 +1,103 @@
+/* theJobPage/pages/searchJob/add.wxss */
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.page-content {
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.label {
+  font-size: 32rpx;
+  margin-bottom: 30rpx;
+}
+
+.label text {
+  color: #ff0b0b;
+}
+
+.inputBox {
+  position: relative;
+}
+
+.inputBox .overBtn {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.inputItem {
+  margin-bottom: 40rpx;
+}
+
+.inputItem input {
+  height: 88rpx;
+  background: #ffffff;
+  border: 2rpx solid #dedede;
+  border-radius: 10rpx;
+  padding: 0 20rpx;
+  position: relative;
+}
+
+.sex_input::after {
+  content: '';
+  position: absolute;
+  top: 44rpx;
+  right: 20rpx;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+}
+
+.input_arr input {
+  width: 290rpx;
+}
+
+textarea {
+  width: 100%;
+  height: 200rpx;
+  border: 2rpx solid #dedede;
+  border-radius: 10rpx;
+  padding: 20rpx;
+}
+
+.imagepicker {
+  display: block;
+  width: 500rpx;
+}
+
+button::after {
+  border: none;
+}
+
+button.subBtn[type=primary] {
+  height: 100rpx;
+  background: linear-gradient(270deg, #18be8d 0%, #3ad190 100%);
+  border-radius: 74rpx;
+  font-size: 32rpx;
+}
+
+.page-content {
+  position: relative;
+}
+
+.topBtn {
+  position: absolute;
+  right: 30rpx;
+  top: 16rpx;
+  width: 210rpx;
+  height: 60rpx;
+  background: linear-gradient(270deg, #18be8d 0%, #3ad190 100%);
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+}
+

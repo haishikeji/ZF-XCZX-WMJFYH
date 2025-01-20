@@ -1,0 +1,36 @@
+<!--pointsPage/pages/task/koufenFinish.wxml-->
+<view class="page">
+    <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+        <view slot="content">负向扣分</view>
+    </cu-custom>
+
+    <view class="page-content">
+        <view class="inputitem" wx:if="{{type==2}}">
+            <view class="title"><text class="red">*</text>扣分村户：</view>
+            <view class="content" bindtap="gosearch">
+                <input type="text" placeholder="请选择扣分村户" disabled="true" value="{{cunhu}}"></input>
+                <l-icon name="right" size="24" color="#999999" />
+            </view>
+        </view>
+
+        <view class="inputitem txt" wx:if="{{type!=1}}">
+            <view class="title"><text class="red">*</text>扣分描述：</view>
+            <view class="content">
+                <textarea name="" id="" cols="30" rows="10" maxlength="120" placeholder="请填写扣分描述" bindinput="getcontent"></textarea>
+            </view>
+        </view>
+
+        <view class="inputitem">
+            <view class="title"><text class="red">*</text>上传照片:</view>
+            <view class="imagepicker">
+                <l-image-picker size-type="compressed" size="3" count="3" bind:linchange="onChangeTap" bind:linremove="onRemoveTap" />
+            </view>
+        </view>
+        <view class="confirm flex-c" bindtap="submit">提交</view>
+
+    </view>
+
+</view>
+
+
+<l-dialog show="{{isShow}}" type="confirm" title="提示" content="确认提交吗？" confirm-color="#2A78FF" bind:linconfirm="finishtask" />

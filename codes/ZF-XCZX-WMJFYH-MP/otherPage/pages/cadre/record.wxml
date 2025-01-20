@@ -1,0 +1,25 @@
+<!--otherPage/pages/cadre/record.wxml-->
+<wxs src="../../../utils/tool.wxs" module="tools"></wxs>
+<view class="topline"></view>
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content">积分明细</view>
+</cu-custom>
+<view class="list">
+    <block wx:for="{{list}}" wx:key='item'>
+        <view class="item">
+            <view class="flex-l-c">
+                <image class="icon" src="{{item.opType==3&&item.goods&&item.goods.image?item.goods.image:'../../images/ganbu/17.png'}}" mode="aspectFill" />
+                <view>
+                    <view class="mark" style="font-size: calc(32rpx * {{fontMultiple}});">{{item.msg}}</view>
+                    <view class="time" style="font-size: calc(24rpx * {{fontMultiple}});">{{tools.substr(item.createTime,16)}}</view>
+                </view>
+            </view>
+            <view class="item-r {{item.operator==1?'':'jian'}}" style="font-size: calc(36rpx * {{fontMultiple}});">{{item.operator==1?'+':'-'}}{{item.points}}</view>
+        </view>
+    </block>
+
+    <view class="norecord" style="font-size: calc(28rpx * {{fontMultiple}});" wx:if="{{list.length==0}}">
+        <image src="../../images/empty2.png" mode="widthFix"></image>
+        <text>暂无积分明细~</text>
+    </view>
+</view>

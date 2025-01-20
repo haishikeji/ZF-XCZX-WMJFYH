@@ -1,0 +1,37 @@
+<!--otherPage/pages/sunVillageAffairs/send/index.wxml-->
+<view class="page">
+	<cu-custom bgColor="bg-gradual-orangeRed" isBack="{{true}}" bind:tap="backMessage">
+		<view slot="content">资产资源发布平台</view>
+	</cu-custom>
+	<view class="searchBigBox">
+		<view class="searchBox flex-l-c mar-t-40 mar-l-30 mar-r-30">
+			<view class="icon flex-c">
+				<van-icon name="search" size="38rpx" color="#CF2B1E" />
+			</view>
+			<input type="text" class="font-32 c-9" bindinput="search" placeholder="按名称搜索" value="{{name}}" />
+		</view>
+	</view>
+	<!--  -->
+	<view class="listBox">
+		<view class="mar-l-30 mar-r-30 mar-b-30" wx:for="{{list}}" wx:key="{{index}}" bind:tap="goDetail" data-id="{{item.id}}">
+			<image src="{{item.assetsContent.content}}" mode="aspectFill" class="listImg" />
+			<view class="flex-between a-center">
+				<view>
+					<view class="line1 font-32 c-3 font-500 mar-t-30 mar-l-10 mar-r-30" style="width:580rpx;">{{item.assetsContent.name}}</view>
+					<view class="flex mar-t-20" wx:if="{{item.status}}">
+						<view class="classifyBox mar-r-20 c-9 font-24">{{item.status}}</view>
+					</view>
+				</view>
+				<view>
+					<image src="/images/villageAffairs/48.png" mode="aspectFill" class="addressImg" />
+					<view class="font-24 c-3">{{item.dname}}</view>
+				</view>
+			</view>
+		</view>
+		<view class="emptyview" wx:if="{{list.length==0}}">
+			<image src="/images/villageAffairs/e2.png" mode="aspectFit"></image>
+			<view class="f-28 c-9">{{emptyTxt}}</view>
+		</view>
+	</view>
+	<!--  -->
+</view>

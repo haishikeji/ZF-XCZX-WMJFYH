@@ -1,0 +1,43 @@
+<!--theJobPage/pages/job/index.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content">就业超市</view>
+</cu-custom>
+<view class="page">
+    <view class="top_btn">
+        <navigator url="/theJobPage/pages/searchJob/index" open-type="navigate" hover-class="none" class="btn">
+            <image class="bg" src="../../images/2.png" mode="widthFix" />
+            <view class="font_36" style="font-size: calc(36rpx * {{fontMultiple}});">人才市场</view>
+            <view class="font_24" style="font-size: calc(24rpx * {{fontMultiple}});">发布个人简历</view>
+            <view class="font_24" style="font-size: calc(24rpx * {{fontMultiple}});">寻找工作</view>
+        </navigator>
+        <navigator url="/theJobPage/pages/searchEmployee/index" open-type="navigate" hover-class="none" class="btn">
+            <image class="bg" src="../../images/3.png" mode="widthFix" />
+            <view class="font_36" style="font-size: calc(36rpx * {{fontMultiple}});">招聘中心</view>
+            <view class="font_24" style="font-size: calc(24rpx * {{fontMultiple}});">发布招聘信息</view>
+            <view class="font_24" style="font-size: calc(24rpx * {{fontMultiple}});">寻找员工</view>
+        </navigator>
+    </view>
+
+    <view class="line_title" style="font-size: calc(32rpx * {{fontMultiple}});">招聘政策</view>
+
+    <view class="list">
+        <view class="item" wx:for="{{list}}" wx:key="index" wx:if="{{list.length}}" data-id="{{item.id}}" bindtap="godetail">
+            <view class="title" style="font-size: calc(32rpx * {{fontMultiple}});">{{item.title}}</view>
+            <view class="content" style="font-size: calc(24rpx * {{fontMultiple}});">{{item.position || ''}}</view>
+            <view class="bot" style="font-size: calc(24rpx * {{fontMultiple}});">
+                <view class="flex-l-c">
+                    <image class="icon" src="../../images/1.png" />
+                    发布于 {{item.createTime}}
+                </view>
+                <!-- <view class="flex-l-c">
+                    <image class="icon" src="../../images/4.png" />
+                    {{item.views}}
+                </view> -->
+            </view>
+        </view>
+    </view>
+    <view class="nolist" wx:if="{{list.length==0}}">
+        <image src="../../images/empty2.png" mode="widthFix"></image>
+        <view>暂无招聘~</view>
+    </view>
+</view>

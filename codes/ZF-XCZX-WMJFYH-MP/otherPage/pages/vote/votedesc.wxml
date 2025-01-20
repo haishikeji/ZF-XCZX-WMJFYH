@@ -1,0 +1,11 @@
+<!--pages/home/vote/votedesc.wxml-->
+
+<import src="/wxParse/wxParse.wxml" />
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content">活动介绍</view>
+</cu-custom>
+<view class="topline"></view>
+
+<view class='desc'>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+</view>

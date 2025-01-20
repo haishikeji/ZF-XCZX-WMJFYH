@@ -1,0 +1,33 @@
+/* theJobPage/pages/job/detail.wxss */
+page {
+  background-color: #fff;
+}
+.page {
+  padding: 40rpx;
+}
+.title {
+  padding: 0 40rpx;
+  font-size: 44rpx;
+  font-weight: 500;
+  text-align: CENTER;
+  color: #333333;
+  line-height: 76rpx;
+}
+.timer {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #999999;
+  line-height: 24rpx;
+  margin: 20rpx 0 40rpx 0;
+}
+.m-30 {
+  margin-right: 40rpx;
+}
+.content {
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-400;
+  font-weight: 400;
+  text-align: JUSTIFIED;
+  color: #333333;
+  line-height: 58rpx;
+}

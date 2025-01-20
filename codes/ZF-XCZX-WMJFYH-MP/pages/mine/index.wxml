@@ -1,0 +1,149 @@
+<!--pages/mine/index.wxml-->
+<view class="page">
+    <cu-custom bgImage="/images/index/bg.png" isBack="{{false}}">
+        <view slot="content">个人中心</view>
+    </cu-custom>
+    <image class="bg" src="/images/index/bg.png" mode="widthFix"></image>
+
+    <view class="page-content" wx:if="{{userInfo&&role!=0}}">
+        <view class="page-top flex-space">
+            <view class="flex-l-c">
+                <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+                    <view class="headPicBox">
+                        <image class="icon" src="/images/mine/06.png" mode="widthFix" />
+                        <view class="headPic">
+                            <image src="{{userInfo.avatar?userInfo.avatar:'/images/headPic.png'}}" mode="aspectFill" />
+                        </view>
+                    </view>
+                </button>
+
+
+                <view class="userInfo">
+                    <view class="name" style="font-size: calc(24rpx * {{fontMultiple}});"><text style="font-size: calc(36rpx * {{fontMultiple}});">{{userInfo.name||(role==4?userInfo.zname:'')}}</text>
+                        <block wx:if="{{userInfo.cdname}}">（{{userInfo.cdname}}）</block>
+                    </view>
+                    <view class="phone" style="font-size: calc(28rpx * {{fontMultiple}});">手机号：{{phone}}</view>
+                </view>
+            </view>
+            <!-- <view class="codeBtn" catch:tap="codePopOpen">
+                <image class="icon" src="/images/index/02.png" mode="widthFix" />
+                <view>积分码</view>
+            </view> -->
+
+        </view>
+        <view class="myPoints" wx:if="{{jifen}}">
+            <view class="flex-space mar-b-28">
+                <view class="tit" style="font-size: calc(32rpx * {{fontMultiple}});">{{lang.a5}}积分</view>
+                <view style="font-size: calc(24rpx * {{fontMultiple}});" class="goRecord" catch:tap="goPage" mark:url="/pointsPage/pages/myintegral/index">{{lang.a5}}积分台账></view>
+            </view>
+            <view class="flex-space" style=" margin-left: -30rpx;margin-right: -30rpx;">
+                <view class="item">
+                    <view class="num" style="font-size: calc(40rpx * {{fontMultiple}});">{{jifen.shopCount||0}}</view>
+                    <view style="font-size: calc(24rpx * {{fontMultiple}});">兑换物品数</view>
+                </view>
+                <view class="xian"></view>
+                <view class="item">
+                    <!-- <view class="num" style="font-size: calc(40rpx * {{fontMultiple}});">{{jifen.totalPoints||0}}</view> -->
+                    <view class="num" style="font-size: calc(40rpx * {{fontMultiple}});">{{jifen.points||0}}</view>
+                    <view style="font-size: calc(24rpx * {{fontMultiple}});">任务积分数</view>
+                </view>
+                <view class="xian"></view>
+                <view class="item">
+                    <view class="num" style="font-size: calc(40rpx * {{fontMultiple}});">{{jifen.totalSubPoints||0}}</view>
+                    <view style="font-size: calc(24rpx * {{fontMultiple}});">消耗积分数</view>
+                </view>
+                <view class="xian"></view>
+                <view class="item">
+                    <view class="num" style="font-size: calc(40rpx * {{fontMultiple}});">{{jifen.shopPoints||0}}</view>
+                    <view style="font-size: calc(24rpx * {{fontMultiple}});">剩余积分数</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="list" style="font-size: calc(32rpx * {{fontMultiple}});">
+            <view class="item flex-space" catch:tap="goPage" mark:url="{{role==4?'/pages/login/zyzSetInfo?type=edit':'/pages/login/setInfo?type=edit'}}">
+                <view class="flex-l-c">
+                    <image class="icon" src="/images/mine/01.png" mode="widthFix"></image>信息修改
+                </view>
+                <van-icon name="arrow" size="32rpx" />
+            </view>
+            <view class="item flex-space" catch:tap="goPage" mark:url="/otherPage/pages/myfamily/index" wx:if="{{cunminFlag&&role!=4}}">
+                <view class="flex-l-c">
+                    <image class="icon" src="/images/mine/02.png" mode="widthFix"></image>我的家庭
+                </view>
+                <van-icon name="arrow" size="32rpx" />
+            </view>
+            <view class="item flex-space" catch:tap="goPage" mark:url="/theJobPage/pages/myPublish/index" wx:if="{{role!=4}}">
+                <view class="flex-l-c">
+                    <image class="icon" src="/images/mine/08.png" mode="widthFix"></image>我的发布
+                </view>
+                <van-icon name="arrow" size="32rpx" />
+            </view>
+            <view class="item flex-space" catch:tap="goPage" mark:url="/theJobPage/pages/myCollect/index">
+                <view class="flex-l-c">
+                    <image class="icon" src="/images/mine/07.png" mode="widthFix"></image>我的收藏
+                </view>
+                <van-icon name="arrow" size="32rpx" />
+            </view>
+            <view class="item flex-space" catch:tap="goPage" mark:url="/pointsPage/pages/myFinish/index">
+                <view class="flex-l-c">
+                    <image class="icon" src="/images/mine/10.png" mode="widthFix"></image>完成的任务
+                </view>
+                <van-icon name="arrow" size="32rpx" />
+            </view>
+            <view class="item flex-space" wx:if="{{cunganbuFlag&&role!=4}}" catch:tap="goPage2" mark:type="{{2}}" mark:url="/otherPage/pages/cadre/index">
+                <view class="flex-l-c">
+                    <image class="icon" src="/images/mine/03.png" mode="widthFix"></image>我是干部
+                </view>
+                <van-icon name="arrow" size="32rpx" />
+            </view>
+            <view class="item flex-space" wx:if="{{cunganbuFlag&&role!=4}}" catch:tap="goPage2" mark:type="{{2}}" mark:url="/otherPage/pages/dataAnalysis/index">
+                <view class="flex-l-c">
+                    <image class="icon" src="/images/mine/05.png" mode="widthFix"></image>数据分析
+                </view>
+                <van-icon name="arrow" size="32rpx" />
+            </view>
+            <view class="item flex-space" wx:if="{{shanghuFlag&&role!=4}}" catch:tap="goPage2" mark:type="{{3}}">
+                <view class="flex-l-c">
+                    <image class="icon" src="/images/mine/04.png" mode="widthFix"></image>我是商户
+                </view>
+                <van-icon name="arrow" size="32rpx" />
+            </view>
+            <!-- <view class="item flex-space" catch:tap="tuichu">
+                <view class="flex-l-c">
+                    <image class="icon" src="/images/mine/09.png" mode="widthFix"></image>退出登录
+                </view>
+                <van-icon name="arrow" size="32rpx" />
+            </view> -->
+        </view>
+
+        <view class="flex-c tuichuBtn" catch:tap="tuichu">退出登录</view>
+    </view>
+
+    <view class="page-content" wx:if="{{role==0}}">
+        <view class="flex-c" style="text-align: center;height: 50vh;">
+            <view>
+                您当前登录的是游客模式
+                <view class="loginBtn flex-c" catch:tap="tuichu">去登录</view>
+            </view>
+        </view>
+
+    </view>
+</view>
+
+<!-- <van-popup close-on-click-overlay="{{true}}" show="{{codePopShow }}" custom-style="background:none;" bind:close="codePopHide">
+
+    <view class="codeBox">
+        <image class="popBg" src="/images/03.png" mode="aspectFill" />
+        <view class="codeCont">
+            <view class="tit">家庭积分码</view>
+            <image class="codePic" src="/images/02.png" mode="widthFix" />
+            <view class="text1">嵩县乡村振兴积分超市</view>
+            <view class="text2">您可在线下店铺快捷支付积分</view>
+        </view>
+
+    </view>
+
+</van-popup> -->
+
+<tabBar active="3" />

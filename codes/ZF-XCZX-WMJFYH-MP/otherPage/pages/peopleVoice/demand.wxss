@@ -1,0 +1,193 @@
+/* pages/home/demand.wxss */
+page {
+    background: #F6F6F6 !important;
+}
+
+/* .searchbar {
+    margin-left: 30rpx;
+    width: 690rpx;
+    height: 80rpx;
+    border: 2rpx solid #f7f7f7;
+    display: flex;
+    align-items: center;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    border-radius: 40rpx;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50rpx;
+}
+
+.searchbar image {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.searchbar input {
+    width: 410rpx;
+    font-size: 28rpx;
+}
+
+.searchbtn {
+    width: 154rpx;
+    height: 74rpx;
+    text-align: center;
+    line-height: 74rpx;
+    color: #ffffff;
+    font-size: 30rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+} */
+.page-content {
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+
+.searchBox {
+    height: 80rpx;
+    background: #ffffff;
+    border-radius: 94rpx;
+    margin-bottom: 30rpx;
+}
+
+.searchBox .icon {
+    padding-left: 30rpx;
+    padding-right: 20rpx;
+    height: 100%;
+}
+
+.searchBox input {
+    height: 100%;
+    width: calc(100% - 88rpx);
+}
+
+.topview {
+    background-color: #ffffff;
+    /* padding: 30rpx; */
+    box-sizing: border-box;
+    /* position: relative; */
+    width: 100%;
+    padding-bottom: 20rpx;
+}
+
+.banner {
+    width: 750rpx;
+    height: 370rpx;
+    /* position: absolute;
+  left: 30rpx;
+  top: 30rpx; */
+    /* border-radius: 15rpx; */
+}
+
+.demand {
+    width: 620rpx;
+    padding: 0 65rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40rpx;
+}
+
+.demand-get {
+    width: 280rpx;
+    /* height: 100rpx; */
+    /* display: flex;
+  align-items: center;
+  flex-wrap: wrap; */
+}
+
+.demand-get image {
+    width: 280rpx;
+    height: 80rpx;
+    margin: 0 auto;
+    margin-bottom: 10rpx;
+}
+
+/* .demand-title{
+  color: #333;
+  font-size: 30rpx;
+  text-align: center;
+  font-weight: 600;
+  font-family: PingFang SC;
+} */
+.demand-list {
+    width: 690rpx;
+    margin: 0 auto 30rpx;
+    padding: 30rpx;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 20rpx;
+}
+
+.list-title {
+    color: #333;
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-bottom: 30rpx;
+}
+
+.list-time {
+    color: #666666;
+    font-size: 28rpx;
+}
+
+.mar-b-20 {
+    margin-bottom: 20rpx;
+}
+
+.list-time image {
+    width: 28rpx;
+    margin-right: 10rpx;
+}
+
+
+.noneed {
+    width: 100%;
+    height: 300rpx;
+    line-height: 300rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #999999;
+}
+
+.fixedBox {
+    position: fixed;
+    right: 20rpx;
+    top: 40vh;
+    text-align: center;
+    width: 140rpx;
+    background: #ffffff;
+    border-radius: 20rpx;
+    box-shadow: 0rpx 4rpx 12rpx 0rpx rgba(9, 141, 102, 0.12);
+}
+
+.fixedBox .item {
+    height: 140rpx;
+    font-size: 24rpx;
+    color: #0ab481;
+}
+
+.fixedBox .xian {
+    width: 100rpx;
+    height: 0rpx;
+    border: 2rpx solid #f6f6f6;
+    margin: 0 auto;
+}
+
+.fixedBox image {
+    width: 56rpx;
+}
+
+.imgBox {
+    margin-bottom: 30rpx;
+}
+
+.imgBox image {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 10rpx;
+    margin-right: 30rpx;
+    background: #f7f7f7;
+}

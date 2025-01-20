@@ -1,0 +1,39 @@
+/* pages/task/recorddetail.wxss */
+page
+{
+  background-color: #f7f7f7;
+}
+.item
+{
+  margin:30rpx;
+  width: 690rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 20rpx;
+  border-radius: 20rpx;
+}
+.title
+{
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.line
+{
+  width: 9rpx;
+  height: 30rpx;
+  border-radius: 4.5rpx;
+  margin-right: 20rpx;
+}
+.content
+{
+  width: 650rpx;
+  padding-top: 20rpx;
+  font-size: 28rpx;
+}
+.content image
+{
+  width: 650rpx;
+  border-radius: 20rpx;
+}

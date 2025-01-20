@@ -1,0 +1,45 @@
+<!--otherPage/pages/cadre/detail.wxml-->
+<view class="page">
+    <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+        <view slot="content">{{lang.a6}}管理</view>
+    </cu-custom>
+    <view class="page-content">
+        <block wx:if="{{lang.zyzHide}}">
+            <l-collapse bind:linexpand="openItem">
+                <block class="item" wx:for="{{list}}">
+                    <l-collapse-item title="{{item.code}}" item-id="{{index}}" l-title-class="title">
+                        <view class="peopleList" wx:if="{{item.family&&item.family.length}}">
+                            <view class="peoItem flex-l-c" wx:for="{{item.family}}" wx:for-item="i">
+                                <image class="head" src="{{i.avatar?i.avatar:'../../../images/headPic.png'}}" mode="widthFix" />
+                                <view>
+                                    <view class="name">{{i.name}}</view>
+                                    <view class="phone">联系方式：{{i.phone}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view wx:else style="padding: 30rpx 0;text-align: center;color:#666;">
+                            该户未找到家庭成员~
+                        </view>
+                    </l-collapse-item>
+                </block>
+            </l-collapse>
+        </block>
+
+        <block wx:if="{{!lang.zyzHide&&list.length}}" wx:for="{{list}}">
+            <view class="peopleList">
+                <view class="peoItem flex-l-c">
+                    <image class="head" src="{{item.avatar?i.avatar:'../../../images/headPic.png'}}" mode="widthFix" />
+                    <view>
+                        <view class="name">{{item.zname}}</view>
+                        <view class="phone">联系方式：{{item.zlinkphone}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+
+        <view wx:if="{{list.length==0}}" style="padding: 30rpx 0;text-align: center;color:#666;">
+            未找到您要的数据~
+        </view>
+
+    </view>
+</view>

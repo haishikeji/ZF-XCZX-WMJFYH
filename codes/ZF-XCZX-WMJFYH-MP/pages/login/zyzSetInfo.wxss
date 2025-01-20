@@ -1,0 +1,155 @@
+/* pages/login/zyzSetInfo.wxss */
+.page {
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+.page-content {
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+
+.label {
+    font-size: 32rpx;
+    margin-bottom: 30rpx;
+}
+
+.label text {
+    color: #ff0b0b;
+}
+
+.inputBox {
+    position: relative;
+}
+
+
+.inputBox .overBtn {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.inputItem {
+    margin-bottom: 40rpx;
+}
+
+.inputItem input {
+    height: 88rpx;
+    background: #ffffff;
+    border: 2rpx solid #dedede;
+    border-radius: 10rpx;
+    padding: 0 20rpx;
+    font-size: 30rpx;
+}
+
+.inputItem textarea {
+    width: 100%;
+    background: #ffffff;
+    border: 2rpx solid #dedede;
+    border-radius: 10rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    font-size: 30rpx;
+}
+
+button::after {
+    border: none;
+}
+
+button.subBtn[type=primary] {
+    height: 100rpx;
+    background: linear-gradient(270deg, #18be8d 0%, #3ad190 100%);
+    border-radius: 74rpx;
+    font-size: 32rpx;
+    margin-top: 50rpx;
+}
+
+.page-content {
+    position: relative;
+}
+
+.topBtn {
+    position: absolute;
+    right: 30rpx;
+    top: 16rpx;
+    width: 210rpx;
+    height: 60rpx;
+    background: linear-gradient(270deg, #18be8d 0%, #3ad190 100%);
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    color: #ffffff;
+}
+
+.searchList {
+    position: absolute;
+    bottom: 0rpx;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    background: #fff;
+    z-index: 5;
+    border: 1rpx solid #f6f6f6;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    max-height: 450rpx;
+    overflow-y: auto;
+    box-shadow: 0rpx -4rpx 16rpx 0rpx rgba(0, 0, 0, 0.04);
+}
+
+.searchList .item {
+    padding: 20rpx 0rpx;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid #f6f6f6;
+}
+
+.searchList .item:last-child {
+    border-bottom: 0;
+}
+
+.zhangbei {
+    width: 550rpx;
+    padding-top: 60rpx;
+    text-align: center;
+    background: #ffffff;
+}
+
+.zhangbei .tit1 {
+    font-size: 42rpx;
+    color: #333333;
+    font-weight: 600;
+    margin-bottom: 20rpx;
+}
+
+.zhangbei .tit2 {
+    font-size: 36rpx;
+    color: #0ab481;
+    width: 384rpx;
+    margin: 0 auto 55rpx;
+}
+
+.zhangbei .pic {
+    width: 400rpx;
+    height: 308rpx;
+    margin: 0 auto;
+}
+
+.zhangbei .pic image {
+    width: 100%;
+    height: 100%;
+}
+
+.zhangbei .btn {
+    flex: 1;
+    border-top: 2rpx solid #f6f6f6;
+    height: 110rpx;
+    font-size: 36rpx;
+    color: #666666;
+    font-weight: 500;
+}
+
+.zhangbei .btn2 {
+    color: #0ab481;
+}

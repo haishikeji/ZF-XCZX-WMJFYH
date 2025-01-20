@@ -1,0 +1,55 @@
+<!--theJobPage/pages/searchEmployee/add.wxml-->
+<view class="page">
+    <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+        <view slot="content">发布工作</view>
+    </cu-custom>
+    <view class="page-content">
+        <form catchsubmit="formSubmit">
+            <view class="inputItem">
+                <view class="label"><text>*</text>招聘工作标题：</view>
+                <input name="title" placeholder="请输入招聘工作标题" type="text" value="{{title}}" />
+            </view>
+            <view class="inputItem">
+                <view class="label"><text>*</text>薪资：</view>
+                <view class="input_arr flex-space">
+                    <input name="minmoney" placeholder="请输入薪资" type="text" value="{{minmoney}}" />
+                    至
+                    <input name="maxmoney" placeholder="请输入薪资" type="text" value="{{maxmoney}}" />
+                </view>
+            </view>
+            <view class="inputItem">
+                <view class="label"><text>*</text>招募人数：</view>
+                <input name="number" placeholder="请输入招募人数" type="text" value="{{number}}" />
+            </view>
+            <view class="inputItem">
+                <view class="label"><text>*</text>招募地址</view>
+                <input name="address" placeholder="请输入招募地址" type="text" value="{{address}}" />
+            </view>
+            <view class="inputItem">
+                <view class="label"><text>*</text>招募公司：</view>
+                <input name="unit" placeholder="请输入招募公司" type="text" value="{{unit}}" />
+            </view>
+            <view class="inputItem">
+                <view class="label"><text>*</text>工作地点：</view>
+                <input name="defanAddress" placeholder="请输入工作地点" type="text" value="{{defanAddress}}" />
+            </view>
+            <view class="inputItem">
+                <view class="label"><text>*</text>联系人：</view>
+                <input name="pubUser" placeholder="请输入联系人" type="text" value="{{pubUser}}" />
+            </view>
+            <view class="inputItem">
+                <view class="label"><text>*</text>联系电话：</view>
+                <input name="phone" placeholder="请输入联系电话" type="text" maxlength="11" value="{{phone}}" />
+            </view>
+            <view class="inputItem">
+                <view class="label"><text>*</text>工作描述：</view>
+                <textarea placeholder="请输入工作描述" name="content" value="{{content}}"/>
+            </view>
+            <view class="inputItem">
+                <view class="label"><text>*</text>公司简介：</view>
+                <textarea placeholder="请输入公司简介" name="position" value="{{position}}"/>
+            </view>
+            <button hover-class="none" class="subBtn flex-c" type="primary" formType="submit">提交</button>
+        </form>
+    </view>
+</view>

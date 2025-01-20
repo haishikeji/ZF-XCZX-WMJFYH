@@ -1,0 +1,133 @@
+/* pointsPage/pages/shareRank/index.wxss */
+
+.page {
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    background: #fff;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.page-content {
+    position: relative;
+    padding-top: 275rpx;
+}
+
+.page-top {
+    position: absolute;
+    top: 0rpx;
+    left: 0;
+    right: 0;
+}
+
+.title {
+    font-size: 76rpx;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0rpx 4rpx 4rpx 0rpx #1bbe85;
+    height: 180rpx;
+}
+
+.title .tit {
+    max-width: 600rpx;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.dateBox {
+    /* width: 440rpx; */
+    padding: 0 20rpx;
+    height: 60rpx;
+    background: #16bf89;
+    border-radius: 40rpx;
+    margin: 0 auto;
+    font-size: 32rpx;
+    color: #ffffff;
+    line-height: 1.1;
+    position: absolute;
+    top: 190rpx;
+    left: 50%;
+    white-space: nowrap;
+    transform: translateX(-50%);
+}
+
+.title .chibang {
+    width: 52rpx;
+}
+
+.title .chibang2 {
+    transform: rotateY(180deg);
+}
+
+.tableBox {
+    background: #fff;
+    border-radius: 40rpx 40rpx 0rpx 0rpx;
+    box-sizing: border-box;
+    padding: 30rpx;
+}
+
+.tableTit {
+    color: #12AC7B;
+    display: flex;
+    align-items: center;
+    background: #eafde8;
+    border-radius: 10rpx;
+    height: 62rpx;
+}
+
+.tablebody {
+    font-weight: 500;
+}
+
+.tablebody .item {
+    border-bottom: 1rpx solid #f6f6f6;
+    min-height: 92rpx;
+    padding: 14rpx 0;
+    box-sizing: border-box;
+}
+
+.tablebody .item:last-child {
+    border-bottom: none;
+}
+
+.tablebody .ge {
+    line-height: 1.1;
+    font-size: 32rpx;
+}
+
+.ge1 {
+    width: 100rpx;
+    text-align: center;
+}
+
+.ge2 {
+    width: calc(100% - 200rpx);
+    padding: 0 70rpx;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.ge3 {
+    width: 100rpx;
+    text-align: center;
+}
+
+.ge1 image {
+    width: 48rpx;
+}
+
+.norank {
+    width: 100%;
+    height: 300rpx;
+    line-height: 300rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #999999;
+}

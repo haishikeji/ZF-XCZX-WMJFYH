@@ -1,0 +1,62 @@
+<!--theJobPage/pages/searchJob/detail.wxml-->
+<cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+    <view slot="content">人才市场详情</view>
+</cu-custom>
+<view class="page">
+  <view class="info_card">
+    <view class="info flex">
+      <image class="left" src="{{detail.img}}" mode="widthFix"/>
+      <view class="right">
+        <view class="title">{{detail.title}}</view>
+        <view class="red_font flex-l-c">
+          <image class="icon" src="../../images/7.png"/>
+          期待薪资：{{detail.minmoney || 0}}-{{detail.maxmoney || 0}}元
+        </view>
+        <view class="details flex-l-c">
+          <image class="icon" src="../../images/10.png"/>
+          称呼：{{detail.position}}
+        </view>
+        <view class="details flex-l-c">
+          <image class="icon" src="../../images/8.png"/>
+          性别： <text wx:if="{{detail.sex==0}}">保密</text>
+                <text wx:if="{{detail.sex==1}}">男</text>
+                <text wx:if="{{detail.sex==2}}">女</text>
+        </view>
+        <view class="details flex-l-c">
+          <image class="icon" src="../../images/9.png"/>
+          年龄：{{detail.age}}
+        </view>
+        <view class="details flex-l-c" wx:if="{{detail.defanAddress}}">
+          <image class="icon" src="../../images/13.png"/>
+          期望工作地点：{{detail.defanAddress}}
+        </view>
+      </view>
+    </view>
+    <view class="card_bot flex-space">
+      <text>联系电话：{{detail.phone}}</text>
+      <text>更新时间：{{detail.timer}}</text>
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="title flex-l-c">
+      <image class="icon" src="../../images/11.png"/>
+      个人介绍
+    </view>
+    <view class="text">
+      {{detail.content}}
+    </view>
+
+  </view>
+</view>
+
+
+<view class="pos flex-space">
+  <view class="collect flex-row" bindtap="collect">
+    <image class="" src="../../images/12.png" wx:if="{{!isCollect}}" mode="widthFix"/>
+    <image class="" src="../../images/12-1.png" wx:else mode="widthFix"/>
+    {{isCollect ? '已收藏' : '收藏'}}
+  </view>
+  <button class="btn" bindtap="call">电话联系</button>
+</view>
+

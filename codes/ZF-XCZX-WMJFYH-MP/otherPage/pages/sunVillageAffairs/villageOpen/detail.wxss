@@ -1,0 +1,68 @@
+/* otherPage/pages/sunVillageAffairs/villageOpen/detail.wxss */
+.page {
+	padding-bottom: 150rpx;
+}
+
+.oneBox {
+	background: #ffffff;
+	border-radius: 20rpx;
+	padding: 30rpx;
+}
+
+/*  */
+.onLineBox {
+	background: #ffffff;
+	border: 2rpx solid #cccccc;
+	border-radius: 20rpx;
+	padding: 30rpx;
+}
+
+.onLineImg {
+	width: 92rpx;
+	height: 108rpx;
+}
+
+.listLine {
+	padding-bottom: 30rpx;
+	border-bottom: 2rpx solid #F6F6F6;
+}
+
+.policyLine {
+	width: 8rpx;
+	height: 32rpx;
+	background: #cf2b1e;
+	border-radius: 8rpx;
+}
+
+.font-cf {
+	color: #cf2b1e;
+}
+
+.detailBox {
+	padding: 20rpx;
+	border-radius: 40rpx 40rpx 0rpx 0rpx;
+	box-shadow: 0rpx -4rpx 16rpx 0rpx rgba(0, 0, 0, 0.04);
+	position: fixed;
+	left: 0rpx;
+	right: 0rpx;
+	bottom: 0rpx;
+	background: #fff;
+}
+
+.complaintBtn {
+	width: calc(50% - 15rpx);
+	height: 80rpx;
+	background: linear-gradient(96deg, #ed5441, #f45f4c 100%);
+	border-radius: 20rpx;
+	text-align: center;
+	line-height: 80rpx;
+}
+
+.editBox {
+	width: calc(50% - 15rpx);
+	height: 80rpx;
+	border-radius: 20rpx;
+	background: linear-gradient(270deg, #18be8d 0%, #3ad190 100%);
+	text-align: center;
+	line-height: 80rpx;
+}

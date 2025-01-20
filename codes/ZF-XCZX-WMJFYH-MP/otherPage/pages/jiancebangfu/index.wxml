@@ -1,0 +1,29 @@
+<!--otherPage/pages/jiancebangfu/index.wxml-->
+<view class="page">
+    <cu-custom bgColor="bg-gradual-green" isBack="{{true}}">
+        <view slot="content">监测帮扶</view>
+    </cu-custom>
+    <view class="page-content">
+        <!-- <block wx:for="{{image}}">
+            <image catch:tap="yulan" mark:index="{{index}}" src="{{item.value}}" mode="widthFix" />
+        </block> -->
+        <view class="content">
+            <import src="../../../wxParse/wxParse.wxml" />
+            <template is="wxParse" data="{{wxParseData:rule.nodes}}" />
+        </view>
+    </view>
+</view>
+
+<movable-area wx:if="{{d.phone}}">
+    <movable-view x="590rpx" direction="all" y="800rpx" class="fixedBox">
+        <view class="fixedCont">
+            <view class="item flex-c" mark:phone="{{d.phone}}" catch:tap="callPhone">
+                <view>
+                    <image src="../../images/42.png" mode="widthFix" />
+                    <view>我要咨询</view>
+                </view>
+            </view>
+            <!-- </block> -->
+        </view>
+    </movable-view>
+</movable-area>
